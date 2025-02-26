@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Suez+One&display=swap');
+
+
+@media only screen and (max-width: 950px) {
+    .desktop {display: none;}
+    .desktop * {display: none;}
+}
+
+.justify {text-align: justify;}
+
+ul li ul li ul li ul {list-style-type: "- ";}
