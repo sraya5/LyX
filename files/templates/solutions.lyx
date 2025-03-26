@@ -269,7 +269,7 @@ status open
 \begin_layout Plain Layout
 \align center
 שם:
- שריה אנסבכר | ת
+ ישראל ישראלי | ת
 \begin_inset Quotes qrd
 \end_inset
 
@@ -280,6 +280,7 @@ status open
 \shape up
 \size normal
 \emph off
+\nospellcheck off
 \bar no
 \strikeout off
 \xout off
@@ -294,6 +295,7 @@ status open
 \size default
 \emph default
 \numeric on
+\nospellcheck default
 \bar default
 \strikeout default
 \xout default
@@ -301,7 +303,7 @@ status open
 \uwave default
 \noun default
 \color inherit
-208026948
+1111111111
 \numeric off
  
 \end_layout
