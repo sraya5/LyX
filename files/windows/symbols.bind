@@ -1,0 +1,275 @@
+Format 5
+
+# This file is based on the LyX's original shortcut files, and on the Michael Kali's shortcut file (see https://mkali56.wixsite.com/madlyx).
+# These files edited and published by me (Sraya Ansbacher), in the hope that it would help as many people as possible.
+
+# This file is one of six files: cua.bind, design.bind, environments.bind, symbols.bind, letters.bind, retroactive.bind
+# For more details go to my site: https://srayaa.wixsite.com/math
+# Email: sraya.ansbacher@mail.huji.ac.il
+
+
+#########################################################################################################################################
+
+##### COMMON MATH SYMBOLS #####
+
+# prefix: as short as possible
+
+# Inequation
+\bind "C-S-plus"            "math-insert \\neq"
+\bind "C-M-equal"	        "math-insert \\pm"
+\bind "C-M-minus"           "math-insert \\mp"
+\bind "M-comma"             "math-insert \\leq"
+\bind "M-period"            "math-insert \\geq"
+\bind "C-M-comma"           "math-insert \\leqslant"
+\bind "C-M-period"          "math-insert \\geqslant"
+
+# Equivalences
+\bind "C-grave"             "math-insert \\cong"
+\bind "C-S-asciitilde"      "math-insert \\ncong"
+\bind "M-equal"             "math-insert \\equiv"
+\bind "M-S-plus"            "math-insert \\MKnotequiv"
+\bind "M-S-asciitilde"      "math-insert \\approx"
+
+# Dots
+\bind "S-asterisk"          "math-insert \\cdot"
+\bind "C-period"            "math-insert \\ldots"
+\bind "C-slash"             "math-insert \\vdots"
+\bind "M-slash"             "math-insert \\cdots"
+\bind "C-M-slash"           "math-insert \\ddots"
+
+# Others
+\bind "M-8"                 "math-insert \\infty"
+\bind "C-8"                 "math-insert \\ast"
+\bind "C-backslash"         "math-insert \\mid"
+\bind "C-M-backslash"       "math-insert \\nmid"
+\bind "M-S-bar"             "math-insert \\Bigg|"
+\bind "C-S-d"		        "math-insert \\partial"
+
+# Macros prefix
+\bind "C-k"                 "command-sequence math-insert \\MK; char-backward"
+
+
+#########################################################################################################################################
+
+##### ARROWS #####
+
+# prefix: as short as possible or Alt+a
+
+# Regular
+\bind "M-Up"                "math-insert \\uparrow"
+\bind "M-Down"              "math-insert \\downarrow"
+\bind "M-Right"             "math-insert \\rightarrow"
+\bind "M-Left"              "math-insert \\leftarrow"
+
+\bind "M-S-Down"            "math-insert \\longleftrightarrow"
+\bind "M-S-Right"           "math-insert \\longrightarrow"
+\bind "M-S-Left"            "math-insert \\longleftarrow"
+
+# Blackboard bold
+\bind "C-Up"                "math-insert \\Uparrow"
+\bind "C-Down"              "math-insert \\Downarrow"
+\bind "C-Right"             "math-insert \\Rightarrow"
+\bind "C-Left"              "math-insert \\Leftarrow"
+
+\bind "C-S-Down"            "math-insert \\Longleftrightarrow"
+\bind "C-S-Right"           "math-insert \\Longrightarrow"
+\bind "C-S-Left"            "math-insert \\Longleftarrow"
+
+# Special arrows
+\bind "M-a Right"           "math-insert \\mapsto"
+\bind "M-a M-Right"         "math-insert \\twoheadrightarrow"
+\bind "M-a C-Right"         "math-insert \\hookrightarrow"
+
+
+#########################################################################################################################################
+
+##### FUNCTIONS & LIMITS #####
+
+# prefix: Alt+q
+
+# General functions
+\bind "M-q S-z"             "math-insert \\MKid"
+\bind "M-q S-less"          "math-insert \\MKim"
+\bind "M-q minus"           "math-insert \\MKsign"
+\bind "M-q M-n"             "math-insert \\min"
+\bind "M-q M-x"             "math-insert \\max"
+\bind "M-q m"               "command-sequence math-insert \\mod; char-backward;"
+\bind "M-q g"               "math-insert \\gcd"
+\bind "M-q l"               "math-insert \\MKlcm"
+
+# Algebra
+\bind "M-q k"               "math-insert \\ker"
+\bind "M-q M-d"             "math-insert \\dim"
+\bind "M-q S-d"             "math-insert \\deg"
+\bind "M-q d"               "math-insert \\det"
+\bind "M-q C-S-t"           "math-insert \\MKtrace"
+\bind "M-q r"               "math-insert \\MKrank"
+
+# Analysis
+\bind "M-q e"               "math-insert \\exp"
+\bind "M-q n"               "math-insert \\ln"
+\bind "M-q S-n"             "math-insert \\log"
+\bind "M-q S-a"             "math-insert \\arg"
+\bind "M-q i"               "math-insert \\inf"
+\bind "M-q u"               "math-insert \\sup"
+
+# Trigonometric & hyperbolic functions
+\bind "M-q s"               "math-insert \\sin"
+\bind "M-q c"               "math-insert \\cos"
+\bind "M-q t"               "math-insert \\tan"
+\bind "M-q S-s"             "math-insert \\arcsin"
+\bind "M-q S-c"             "math-insert \\arccos"
+\bind "M-q S-t"             "math-insert \\arctan"
+\bind "M-q M-s"             "math-insert \\sec"
+\bind "M-q M-t"             "math-insert \\cot"
+\bind "M-q M-c"             "math-insert \\csc"
+
+\bind "M-q C-s"             "math-insert \\sinh"
+\bind "M-q C-c"             "math-insert \\cosh"
+\bind "M-q C-t"             "math-insert \\tanh"
+\bind "M-q C-S-s"           "math-insert \\MKarsinh"
+\bind "M-q C-S-c"           "math-insert \\MKarcosh"
+\bind "M-q C-S-t"           "math-insert \\MKartanh"
+
+# Limits
+\bind "M-q S-i"             "command-sequence math-insert \\liminf_{n\\rightarrow\\infty}; escape"
+\bind "M-q S-u"             "command-sequence math-insert \\limsup_{n\\rightarrow\\infty}; escape"
+\bind "M-q S-l"             "command-sequence math-insert \\lim_{n\\rightarrow\\infty}; escape"
+\bind "M-q M-l"             "math-insert \\lim_{\\rightarrow0}"
+\bind "M-q S-question"      "command-sequence math-insert \\xrightarrow[n\\rightarrow\\infty]{}; escape"
+\bind "M-q slash"           "command-sequence math-insert \\xrightarrow; cell-forward"
+
+
+#########################################################################################################################################
+
+##### SET THEORY #####
+
+# prefix: Alt+i
+
+# Classic sets
+\bind "M-i e"               "math-insert \\emptyset"
+\bind "M-i n"               "math-insert \\MKnatural"
+\bind "M-i z"               "math-insert \\MKinteger"
+\bind "M-i q"               "math-insert \\MKrational"
+\bind "M-i r"               "math-insert \\MKreal"
+\bind "M-i c"               "math-insert \\MKcomplex"
+\bind "M-i f"               "math-insert \\MKfield"
+
+# Cardinalities
+\bind "M-i C-t"             "math-insert \\aleph"
+\bind "M-i t"             "math-insert \\aleph"
+\bind "M-i C-c"             "math-insert \\beth"
+\bind "M-i C-d"             "math-insert \\gimel"
+\bind "M-i C-s"             "math-insert \\daleth"
+
+\bind "M-i M-a"             "math-insert \\MKfka"
+\bind "M-i M-b"             "math-insert \\MKfkb"
+\bind "M-i M-c"             "math-insert \\MKfkc"
+
+# Operations
+\bind "M-i minus"           "math-insert \\setminus"
+\bind "M-i m"               "math-insert \\setminus"
+\bind "C-S-asterisk"        "math-insert \\times"
+\bind "M-i v"               "math-insert \\circ"
+
+# Relations
+\bind "M-i i"               "math-insert \\in"
+\bind "M-i b"               "math-insert \\subseteq"
+\bind "M-i p"               "math-insert \\supseteq"
+\bind "M-i M-b"             "math-insert \\subset"
+\bind "M-i M-p"             "math-insert \\supset"
+\bind "M-i comma"           "math-insert \\trianglelefteq"
+\bind "M-i period"          "math-insert \\trianglerighteq"
+\bind "M-i M-comma"         "math-insert \\triangleleft"
+\bind "M-i M-period"        "math-insert \\triangleright"
+
+\bind "M-i S-i"             "math-insert \\notin"
+\bind "M-i S-b"             "math-insert \\nsubseteq"
+\bind "M-i S-p"             "math-insert \\nsupseteq"
+\bind "M-i M-S-b"           "math-insert \\subsetneq"
+\bind "M-i M-S-p"           "math-insert \\supsetneq"
+\bind "M-i S-less"          "math-insert \\ntrianglelefteq"
+\bind "M-i S-greater"       "math-insert \\ntrianglerighteq"
+\bind "M-i M-S-less"        "math-insert \\ntriangleleft"
+\bind "M-i M-S-greater"     "math-insert \\ntriangleright"
+
+# Operators
+\bind "M-i u"               "math-insert \\cup"
+\bind "M-i d"               "math-insert \\MKcupdot"
+\bind "M-i j"               "math-insert \\cap"
+\bind "M-i 8"               "math-insert \\otimes"
+\bind "M-i equal"           "math-insert \\oplus"
+
+\bind "M-i S-u"             "command-sequence math-insert \\bigcup; math-superscript; cell-backward; math-subscript"
+\bind "M-i S-d"             "command-sequence math-insert \\stackrelthree{\\MKbigcupdot}; down; down"
+\bind "M-i S-j"             "command-sequence math-insert \\bigcap; math-superscript; cell-backward; math-subscript"
+\bind "M-i S-asterisk"      "command-sequence math-insert \\bigotimes; math-superscript; cell-backward; math-subscript"
+\bind "M-m S-plus"          "command-sequence math-insert \\bigoplus; math-superscript; cell-backward; math-subscript"
+
+\bind "M-i C-S-u"           "command-sequence math-insert \\bigcup_{n=1}^{\\infty}; escape"
+\bind "M-i C-S-d"           "command-sequence math-insert \\stackrelthree{\\MKbigcupdot}{\\infty}{n=1}; escape"
+\bind "M-i C-S-j"           "command-sequence math-insert \\bigcap_{n=1}^{\\infty}; escape"
+\bind "M-i C-S-asterisk"    "command-sequence math-insert \\bigotimes_{n=1}^{\\infty}; escape"
+\bind "M-i C-S-plus"        "command-sequence math-insert \\bigoplus_{n=1}^{\\infty}; escape"
+
+
+#########################################################################################################################################
+
+##### LOGIC #####
+
+# prefix: Alt+l
+
+# Connectives
+\bind "M-l n"               "math-insert \\lnot"
+\bind "M-l a"               "math-insert \\land"
+\bind "M-l o"               "math-insert \\lor"
+
+\bind "M-l S-o"             "math-insert \\bigvee"
+\bind "M-l S-a"             "math-insert \\bigwedge"
+
+# Quantifiers
+\bind "M-l f"               "math-insert \\forall"
+\bind "M-l e"               "math-insert \\exists"
+\bind "M-l S-e"             "math-insert \\nexists"
+
+# Truth values
+\bind "M-l 0"               "math-insert \\MKfalse"
+\bind "M-l 1"               "math-insert \\MKtrue"
+
+
+#########################################################################################################################################
+
+##### GEOMETRY #####
+
+# prefix: Alt+g
+
+\bind "M-g t"               "math-insert \\perp"
+\bind "M-g p"               "math-insert \\parallel"
+\bind "M-g S-p"             "math-insert \\nparallel"
+\bind "M-g a"               "math-insert \\measuredangle"
+\bind "M-g M-a"             "math-insert \\sphericalangle"
+
+
+#########################################################################################################################################
+
+##### INTEGRALS #####
+
+# prefix: as short as possible
+
+
+# Product, Sum & Series
+\bind "C-M-p"               "command-sequence math-insert \\prod; math-superscript; cell-backward; math-subscript"
+\bind "C-M-u"               "command-sequence math-insert \\sum; math-superscript; cell-backward; math-subscript"
+\bind "C-M-i"               "command-sequence math-insert \\intop; math-superscript; cell-backward; math-subscript"
+\bind "C-M-o"               "command-sequence math-insert \\ointop; math-subscript"
+
+\bind "C-S-u"               "command-sequence math-insert \\sum_{n=1}^{\\infty}; escape"
+\bind "C-S-i"               "command-sequence math-insert \\intop_{a}^{b}f\\left(x\\right)dx; char-left; char-left; char-left; char-left; char-left; char-left; char-right-select"
+
+\bind "M-S-u 1"             "command-sequence math-insert \\sum_{n=1}^{\\infty}; escape"
+\bind "M-S-u 0"             "command-sequence math-insert \\sum_{n=0}^{\\infty}; escape"
+\bind "M-S-u a"             "math-insert \\sum_{n=1}^{\\infty}a_{n}"
+\bind "M-S-u M-a"           "math-insert \\sum_{n=0}^{\\infty}a_{n}"
+
+\bind "M-S-i"               "command-sequence math-insert \\iintop; math-subscript"
+\bind "M-S-o"               "command-sequence math-insert \\oiintop; math-subscript"

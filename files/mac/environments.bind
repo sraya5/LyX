@@ -1,0 +1,193 @@
+Format 5
+
+# This file is based on the LyX's original shortcut files, and on the Michael Kali's shortcut file (see https://mkali56.wixsite.com/madlyx).
+# These files edited and published by me (Sraya Ansbacher), in the hope that it would help as many people as possible.
+
+# This file is one of six files: cua.bind, design.bind, environments.bind, symbols.bind, letters.bind, retroactive.bind
+# For more details go to my site: https://srayaa.wixsite.com/math
+# Email: sraya.ansbacher@mail.huji.ac.il
+
+
+#########################################################################################################################################
+
+##### ARRAYS: TABLES, MATRICES, VECTORS, etc... #####
+
+# prefix: Ctrl+t or as short as possible
+
+# Equations
+\bind "C-M-apostrophe"          "command-sequence newline-insert newline; inset-select-all; copy; cell-forward; cell-forward; paste"
+\bind "C-M-semicolon"           "command-sequence newline-insert newline; cell-backward; space-insert normal; inset-select-all; copy; line-begin; char-delete-forward; cell-forward; cell-forward; paste; line-begin; char-delete-forward; cell-backward; inset-select-all; copy; cell-forward; cell-forward; paste"
+\bind "C-S-quotedbl"            "command-sequence inset-select-all; cut; cell-backward; cell-backward; line-end; paste; cell-forward; cell-forward; tabular-feature delete-row"
+\bind "C-apostrophe"            "command-sequence line-begin; line-begin; line-begin; line-begin; line-begin; line-begin; line-begin; line-begin; line-end-select; copy; line-end; math-display; paste"
+
+\bind "C-S-Return"              "command-sequence line-end-select; math-insert \\left[\\right.; char-left; inset-select-all; textstyle-update family 16 series 2 shape 4 size 12 color 0; escape; escape; char-left-select; textstyle-update family ignore series ignore shape ignore size ignore color 16; newline-insert newline; cell-forward; math-insert +; cell-forward; textstyle-update family ignore series ignore shape ignore size ignore color 16; math-insert \\left.\\right]; textstyle-update family ignore series ignore shape ignore size ignore color 0"
+\bind "M-backslash backslash"   "command-sequence textstyle-update family 16 series 2 shape 4 size 12 color 7 language ignore; space-insert normal; math-insert \\backslash"
+
+# Elementary row-operations
+\bind "C-S-1"              "command-sequence word-left-select; copy; word-right; math-insert \\stackrel{R\\longleftrightarrow R}{\\Rightarrow}; escape; paste; word-left; char-left; up; char-left; math-subscript"
+\bind "C-S-2"                  "command-sequence word-left-select; copy; word-right; math-insert \\stackrel{R\\rightarrow R}{\\Rightarrow}; escape; paste; word-left; char-left; up; math-insert c\\cdot; word-left; char-left; math-subscript"
+\bind "C-S-3"          "command-sequence word-left-select; copy; word-right; math-insert \\stackrel{R\\rightarrow RR}{\\Rightarrow}; escape; paste; word-left; char-left; up; math-insert +c\\cdot; word-left; word-left; char-left; math-subscript"
+
+\bind "C-S-4"              "command-sequence word-left-select; copy; word-right; math-insert \\stackrel{\\begin{cases}R\\rightarrow RR\\\\R\\rightarrow RR\\end{cases}}{\\Rightarrow}; escape; paste; word-left; char-left; up; up; char-left; char-left; char-left; math-subscript"
+
+# Creata matrix
+\bind "M-m x"                   "math-insert \\begin{pmatrix} & \\\\\\\\ & \end{pmatrix}"
+\bind "M-m m"                   "command-sequence math-insert \\left[\\begin{array}{ccc}\\\\\\\\\\\\\\end{array}\\right]; word-backward; char-right; char-right; up"
+\bind "M-m e"                   "command-sequence math-insert \\begin{bmatrix}\\begin{array}{ccl|c}  &  & \\\\  &  & \\\\  &  & \\\\ \\end{array}\\end{bmatrix}; word-backward; char-right; char-right; up"
+\bind "M-m d"                   "math-insert \\begin{vmatrix} & \\\\\\\\ & \end{vmatrix}"
+
+\bind "M-m S-a"                 "math-insert \\begin{array}{c|cccc} & \\left|00\\right\\rangle  & \\left|01\\right\\rangle  & \\left|10\\right\\rangle  & \\left|11\\right\\rangle \\\\\\hline \\left\\langle 00\\right|\\\\\\left\\langle 01\\right|\\\\\\left\\langle 10\\right|\\\\\\left\\langle 11\\right|\\end{array}"
+
+# Vectors
+\bind "M-v"                 "command-sequence math-insert \\begin{pmatrix}\\\\ \\\\ \\end{pmatrix}"
+\bind "M-S-v"                 "command-sequence math-insert \\begin{bmatrix}\\\\ \\\\ \\\\ \\end{bmatrix}; up"
+
+# Row actions
+\bind "M-bracketright"          "tabular-feature append-row"
+\bind "M-bracketleft"           "tabular-feature delete-row"
+
+\bind "C-t C-c"		            "tabular-feature copy-row"
+\bind "C-t S-r"		            "command-alternatives tabular-feature move-row-up; tabular-feature swap-row"
+\bind "C-t M-r"		            "command-alternatives tabular-feature move-row-down; tabular-feature swap-row"
+
+\bind "C-t Up"		            "tabular-feature add-hline-above"
+\bind "C-t S-Up"	            "tabular-feature delete-hline-above"
+\bind "C-t Down"	            "tabular-feature add-hline-below"
+\bind "C-t S-Down"	            "tabular-feature delete-hline-below"
+
+\bind "C-t t"	                "tabular-feature valign-top"
+\bind "C-t m"		            "tabular-feature valign-middle"
+\bind "C-t b"	                "tabular-feature valign-bottom"
+
+# Column actions
+\bind "C-M-bracketright"        "tabular-feature append-column"
+\bind "C-M-bracketleft"         "tabular-feature delete-column"
+
+\bind "C-t C-M-c"	            "tabular-feature copy-column"
+\bind "C-t S-c"		            "command-alternatives tabular-feature move-column-left; tabular-feature swap-column"
+\bind "C-t S-c"		            "command-alternatives tabular-feature move-column-right; tabular-feature swap-column"
+
+\bind "C-t Left"	            "tabular-feature add-vline-left"
+\bind "C-t S-Left"	            "tabular-feature delete-vline-left"
+\bind "C-t Right"	            "tabular-feature add-vline-right"
+\bind "C-t S-Right"	            "tabular-feature delete-vline-right"
+
+\bind "C-t l"	                "tabular-feature align-left"
+\bind "C-t c"		            "tabular-feature align-center"
+\bind "C-t r"	                "tabular-feature align-right"
+
+#########################################################################################################################################
+
+##### COMMON MATH ENVIRONMENTS #####
+
+# prefix: as short as possible
+
+# Basic
+\bind "C-m"			            "math-mode"
+\bind "C-S-M"		            "math-display"
+\bind "C-M-m"                   "math-insert \\displaystyle"
+
+\bind "C-l"			            "ert-insert" # LaTeX code
+
+\bind "M-m n"		            "math-number-toggle" # number all the lines in the formula
+\bind "M-m S-N"		            "math-number-line-toggle" # number formula
+\bind "C-M-n"		            "command-sequence math-display; math-number-toggle"
+
+\bind "M-f"                     "math-insert \\frac"
+\bind "C-M-f"                   "math-insert \\nicefrac"
+\bind "M-S-f"                   "math-insert \\nicefrac"
+
+\bind "C-M-s"                   "math-insert \\sqrt"
+\bind "C-M-r"                   "math-insert \\root"
+
+\bind "C-M-c"                   "math-insert \\cases"
+
+# Exponentiation
+\bind "S-7"             "math-insert ^"
+\bind "C-semicolon"             "command-sequence math-superscript; math-insert -1; escape"
+\bind "C-p"                     "command-sequence math-superscript; math-insert 2; escape"
+\bind "M-S-p"                   "command-sequence math-superscript; math-insert 3; escape"
+
+\bind "C-S-semicolon"               "command-sequence math-insert ^{-1}; escape"
+\bind "C-S-p"                   "command-sequence math-insert ^{2}; escape"
+\bind "M-apostrophe"            "command-sequence math-superscript; math-insert \\prime; escape"
+
+\bind "C-M-2"                   "command-sequence math-superscript; math-insert \\dagger; escape"
+\bind "C-M-8"                   "command-sequence math-superscript; math-insert \\ast; escape"
+\bind "C-M-t"                   "command-sequence math-superscript; math-insert T; escape"
+
+# Delimeters
+\bind "C-S-9"           "math-delim ( )"
+\bind "C-9"                     "math-delim ( )"
+\bind "C-bracketleft"           "math-delim [ ]"
+\bind "C-S-bracketleft"           "math-delim { }"
+\bind "C-S-backslash"                 "math-delim | |"
+\bind "C-comma"                 "math-delim < >"
+\bind "C-S-comma"                "math-delim < >"
+\bind "C-S-period"             "math-delim > <"
+\bind "C-S-slash"            "math-insert \\left\\Vert \\right\\Vert"
+\bind "C-bracketright"          "math-insert \\left\\lfloor \\right\\rfloor"
+\bind "C-S-bracketright"          "math-insert \\left\\lceil \\right\\rceil"
+
+\bind "M-S-bracketleft"           "math-delim [ )"
+\bind "M-S-9"           "math-delim ( ]"
+\bind "M-S-comma"                "math-delim < |"
+\bind "M-S-period"             "math-delim | >"
+
+# common Decoration accents
+\bind "M-S-Up"                  "math-insert \\vec"
+\bind "M-h"                     "math-insert \\hat"
+\bind "M-grave"                 "math-insert \\tilde"
+\bind "M-semicolon"             "math-insert \\dot"
+\bind "M-S-semicolon"               "math-insert \\ddot"
+\bind "M-minus"                 "math-insert \\bar"
+
+\bind "C-S-q"                   "command-sequence math-insert \\overbrace; char-left-select; math-insert \\overset"
+\bind "C-q"                     "command-sequence math-insert \\underbrace; char-left-select; math-insert \\underset"
+
+# quick sequences
+\bind "M-k s"                   "command-sequence math-insert \\MKseq; char-backward; cell-backward; cell-backward; cell-backward; cell-backward; cell-backward"
+\bind "M-k M-s"                 "command-sequence math-insert \\MKseqz; char-backward; cell-backward; cell-backward; cell-backward; cell-backward; cell-backward"
+\bind "M-k d s"                 "command-sequence math-insert \\MKdseq; char-backward; cell-backward; cell-backward; cell-backward; cell-backward"
+\bind "M-k d M-s"               "command-sequence math-insert \\MKdseqz; char-backward; cell-backward; cell-backward; cell-backward;cell-backward"
+
+
+#########################################################################################################################################
+
+##### ADDITIONAL MATH ENVIRONMENTS #####
+
+# prefix: Alt+m
+
+# Decoration accents
+\bind "M-m S-v"	                "math-insert \check"
+\bind "M-m v"                   "math-insert \\vec"
+\bind "M-m h"                   "math-insert \\hat" # Alt+m h & Alt+h
+\bind "M-m grave"               "math-insert \\tilde" # Alt+m ` & Alt+`
+\bind "M-m backslash"           "math-insert \\grave"
+\bind "M-m slash"               "math-insert \\acute"
+\bind "M-m period"              "math-insert \\dot"
+\bind "M-m M-period"            "math-insert \\ddot"
+\bind "M-m C-u"                 "math-insert \\breve"
+\bind "M-m minus"               "math-insert \\bar" # Alt+m - & Alt+-
+
+\bind "M-m S-h"                 "math-insert \\widehat"
+\bind "M-m S-grave"        "math-insert \\widetilde"
+\bind "M-m Left"                "math-insert \\overleftarrow"
+\bind "M-m Right"               "math-insert \\overrightarrow"
+\bind "M-m S-b"                 "math-insert \\overline"
+\bind "M-m b"                   "math-insert \\underline"
+\bind "M-m S-q"                 "command-sequence math-insert \\overbrace; char-left-select; math-insert \\overset"
+\bind "M-m q"                   "command-sequence math-insert \\underbrace; char-left-select; math-insert \\underset"
+\bind "M-m C-c"                 "math-insert \\cancel"
+\bind "M-m S-s"                 "math-insert \\overset"
+\bind "M-m M-s"                 "math-insert \\underset"
+
+# Others
+\bind "M-m s"                   "math-insert \\sqrt"
+\bind "M-m r"                   "math-insert \\root"
+\bind "M-S-s"                   "command-sequence math-insert \\left\\{ \\begin{array}{c|c}\\end{array}\\right\\}; char-backward; char-backward; char-backward"
+\bind "M-m M-bracketleft"       "command-sequence math-delim [ ]; math-superscript; cell-backward; math-subscript"
+\bind "M-m M-bracketright"      "command-sequence math-delim . |; math-superscript; cell-backward; math-subscript"
+\bind "M-m a"                   "command-sequence math-delim ( ); escape; math-superscript; math-insert \\infty; escape; math-subscript; math-insert n=1; escape; char-backward; char-backward"
+\bind "M-m o"                   "math-insert \\boxed"
+\bind "M-m c"                   "math-insert \\choose"

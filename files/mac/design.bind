@@ -1,0 +1,267 @@
+Format 5
+
+# This file is based on the LyX's original shortcut files, and on the Michael Kali's shortcut file (see https://mkali56.wixsite.com/madlyx).
+# These files edited and published by me (Sraya Ansbacher), in the hope that it would help as many people as possible.
+
+# This file is one of six files: cua.bind, design.bind, environments.bind, symbols.bind, letters.bind, retroactive.bind
+# For more details go to my site: https://srayaa.wixsite.com/math
+# Email: sraya.ansbacher@mail.huji.ac.il
+
+
+#########################################################################################################################################
+
+##### FONT SIZE #####
+
+# prefix: Alt+s
+
+# Size
+\bind "M-s t"			    "font-size tiny"
+\bind "M-s C-s"			    "font-size scriptsize"
+\bind "M-s S-s"			    "font-size footnotesize"
+\bind "M-s s"			    "font-size small"
+\bind "M-s n"			    "font-size normal"
+\bind "M-s l"			    "font-size large"
+\bind "M-s S-L"			    "font-size larger"
+\bind "M-s C-L"			    "font-size largest"
+\bind "M-s h"			    "font-size huge"
+\bind "M-s S-H"			    "font-size giant"
+
+\bind "M-s 1"		        "font-size tiny"
+\bind "M-s 2"		        "font-size scriptsize"
+\bind "M-s 3"		        "font-size footnotesize"
+\bind "M-s 4"		        "font-size small"
+\bind "M-s 5"		        "font-size normal"
+\bind "M-s 6"		        "font-size large"
+\bind "M-s 7"		        "font-size larger"
+\bind "M-s 8"		        "font-size largest"
+\bind "M-s 9"		        "font-size huge"
+\bind "M-s 0"		        "font-size giant"
+
+\bind "M-s equal"		    "font-size increase"
+\bind "M-s minus"		    "font-size decrease"
+
+#########################################################################################################################################
+
+##### TEXT PROPERTIES #####
+
+# prefix: Alt+c
+
+\bind "C-b"			        "font-boldsymbol"
+\bind "C-u"			        "font-underline"
+\bind "C-i"                 "font-ital"
+\bind "C-e"			        "font-emph"
+\bind "C-M-b"			    "font-bold"
+\bind "C-S-O"			    "font-strikeout"
+
+\bind "M-c c"			    "font-noun" # small caps
+
+\bind "M-c r"			    "font-roman"
+\bind "M-c s"			    "font-sans"
+\bind "M-c p"			    "font-typewriter"
+
+\bind "M-c w"			    "font-underwave"
+\bind "M-c d"			    "font-underunderline"
+
+\bind "M-c Down"		    "word-lowcase"
+\bind "M-c Up"			    "word-upcase"
+\bind "M-c Right"		    "word-capitalize"
+
+\bind "M-c space"		    "font-default"
+\bind "M-c l"               "textstyle-apply"
+
+
+#########################################################################################################################################
+
+##### PARAGRAPH SETTINGS #####
+
+# prefix: Alt+a
+
+\bind "M-a l"			    "paragraph-params \align left"
+\bind "M-a r"			    "paragraph-params \align right"
+\bind "M-a c"			    "paragraph-params \align center"
+\bind "M-a j"			    "paragraph-params \align block"
+\bind "M-a e"			    "paragraph-params \align default"
+
+\bind "M-a i"			    "paragraph-params \indent-toggle"
+
+\bind "M-a s"			    "paragraph-params \paragraph_spacing single"
+\bind "M-a o"			    "paragraph-params \paragraph_spacing onehalf"
+\bind "M-a d"			    "paragraph-params \paragraph_spacing double"
+\bind "M-a f"			    "paragraph-params \paragraph_spacing default"
+
+
+#########################################################################################################################################
+
+##### DIALOGS #####
+
+# prefix: Ctrl+d
+
+\bind "C-d b"               "branch-add-insert"
+\bind "C-d c"	            "dialog-show spellchecker"
+\bind "C-d s"               "inset-settings"
+\bind "C-d t"               "dialog-show toc"
+
+#########################################################################################################################################
+
+##### INSERT #####
+
+# prefix: Alt+r
+
+\bind "M-r a"               "float-insert algorithm"
+\bind "M-r b"               "box-insert"
+\bind "M-r c"               "math-insert \\cases"
+\bind "M-r d"               "dialog-show mathdelimiter"
+\bind "M-r f"               "command-sequence float-insert figure; escape; inset-settings;  line-begin"
+\bind "M-r g"               "command-sequence paragraph-params \\align center; dialog-show-new-inset graphics"
+\bind "M-r h"               "dialog-show-new-inset line"
+\bind "M-r k"               "href-insert"
+\bind "M-r l"               "label-insert"
+\bind "M-r n"               "note-insert"
+\bind "M-r o"               "footnote-insert"
+\bind "M-r p"               "newpage-insert newpage"
+\bind "M-r r"               "dialog-show-new-inset ref"
+\bind "M-r t"               "command-sequence paragraph-params \align center; tabular-insert 4 3; tabular-feature delete-row"
+\bind "M-r S-d"             "branch-insert draft"
+\bind "M-r S-p"             "branch-insert proofs"
+\bind "M-r S-t"             "argument-insert 1"
+
+
+#########################################################################################################################################
+
+##### LAYOUTS #####
+
+# prefix: Alt+p or Alt+e
+
+\bind "M-p space"		    "drop-layouts-choice"
+
+\bind "M-p s"			    "layout Standard"
+\bind "M-p c"			    "layout LyX-Code"
+\bind "M-p q"			    "layout Quote"
+\bind "M-p S-Q"			    "layout Quotation"
+\bind "M-p v"			    "layout Verse"
+
+# Lists
+\bind "M-p l"			    "layout Labeling"
+\bind "M-p n"			    "layout Enumerate"	# numbered list
+\bind "M-p e"			    "layout Enumerate"	# numbered list
+\bind "M-p i"			    "layout Itemize"	# bulleted list
+\bind "M-p b"			    "layout Itemize"	# bulleted list
+\bind "M-p d"			    "layout Description"
+
+# Sections
+\bind "M-p 0"		        "layout Part"
+\bind "M-p 1"		        "layout Chapter"
+\bind "M-p 2"		        "layout Section"
+\bind "M-p 3"		        "layout Subsection"
+\bind "M-p 4"		        "layout Subsubsection"
+\bind "M-p 5"		        "layout Paragraph"
+\bind "M-p 6"		        "layout Subparagraph"
+\bind "M-p 7"		        "layout Subparagraph"
+\bind "M-p 8"			    "layout Standard"
+
+# Unnumbered Sections
+\bind "M-p S-9"	    "layout Part*"
+\bind "M-p S-1"	    "layout Chapter*"
+\bind "M-p S-2"	        "layout Section*"
+\bind "M-p S-3"    "layout Subsection*"
+\bind "M-p S-4"	    "layout Subsubsection*"
+\bind "M-p S-5"	    "layout Paragraph*"
+\bind "M-p S-asciicircum"   "layout Subparagraph*"
+\bind "M-p S-7"	    "layout Subparagraph*"
+
+# FrontMaster
+\bind "M-p t"			    "layout Title"
+\bind "M-p S-A"			    "layout Author"
+\bind "M-p a"			    "layout Abstract"
+\bind "M-p S-D"			    "layout Date"
+\bind "M-p M-a"			    "layout Address"
+\bind "M-p C-a"			    "layout Right_Address"
+
+# BackMatter
+\bind "M-p S-B"			    "layout Bibliography"
+
+# Reasoning
+\bind "M-e d"               "layout Definition"
+\bind "M-e t"               "layout Theorem"
+\bind "M-e x"               "layout Corollary"
+\bind "M-e c"               "layout Claim"
+\bind "M-e l"               "layout Lemma"
+\bind "M-e e"               "layout Example"
+\bind "M-e p"               "layout Problem"
+\bind "M-e s"               "layout Solution"
+\bind "M-e comma"           "layout Exercise"
+\bind "M-e g"               "layout Remark"
+\bind "M-e q"               "layout Question"
+\bind "M-e n"               "layout Notation"
+
+# Unnumbered Reasoning
+\bind "M-e S-d"             "layout Definition*"
+\bind "M-e S-t"             "layout Theorem*"
+\bind "M-e S-x"             "layout Corollary*"
+\bind "M-e S-c"             "layout Claim*"
+\bind "M-e S-l"             "layout Lemma*"
+\bind "M-e S-e"             "layout Example*"
+\bind "M-e S-p"             "layout Problem*"
+\bind "M-e S-s"             "layout Solution*"
+\bind "M-e S-comma"          "layout Exercise*"
+\bind "M-e S-g"             "layout Remark*"
+
+# Proofs
+\bind "M-e v"               "layout Proof"
+\bind "M-e r"               "command-sequence layout Proof; line-begin; space-insert normal; paragraph-break; layout Itemize; depth-increment; math-insert \\Leftarrow; escape; paragraph-break; depth-increment; space-insert normal; line-end; paragraph-break; depth-decrement; math-insert \\Rightarrow; escape; up; line-begin; char-delete-forward confirm ; line-end; up; escape; newline-insert newline"
+\bind "M-e f"               "command-sequence layout Proof; line-begin; space-insert normal; paragraph-break; layout Itemize; depth-increment; line-end"
+
+# Personal
+\bind "C-S-c"               "command-sequence layout Labeling; math-insert \\clubsuit; escape"
+\bind "C-S-x"               "command-sequence layout Labeling; font-boldsymbol"
+
+
+#########################################################################################################################################
+
+##### COLORS #####
+
+# prefix: Alt+o
+
+# Regular
+\bind "M-o 0"               "textstyle-update family 16 series 2 shape 4 size 12 color 0 language ignore"
+\bind "M-o 1"               "textstyle-update family 16 series 2 shape 4 size 12 color 1 language ignore"
+\bind "M-o 2"               "textstyle-update family 16 series 2 shape 4 size 12 color 2 language ignore"
+\bind "M-o b"               "textstyle-update family 16 series 2 shape 4 size 12 color 3 language ignore"
+\bind "M-o n"               "textstyle-update family 16 series 2 shape 4 size 12 color 4 language ignore"
+\bind "M-o c"               "textstyle-update family 16 series 2 shape 4 size 12 color 5 language ignore"
+\bind "M-o C-y"             "textstyle-update family 16 series 2 shape 4 size 12 color 6 language ignore"
+\bind "M-o y"               "textstyle-update family 16 series 2 shape 4 size 12 color 7 language ignore"
+\bind "M-o g"               "textstyle-update family 16 series 2 shape 4 size 12 color 8 language ignore"
+\bind "M-o M-y"             "textstyle-update family 16 series 2 shape 4 size 12 color 9 language ignore"
+\bind "M-o M-g"             "textstyle-update family 16 series 2 shape 4 size 12 color 10 language ignore"
+\bind "M-o m"               "textstyle-update family 16 series 2 shape 4 size 12 color 11 language ignore"
+\bind "M-o l"               "textstyle-update family 16 series 2 shape 4 size 12 color 12 language ignore"
+\bind "M-o o"               "textstyle-update family 16 series 2 shape 4 size 12 color 13 language ignore"
+\bind "M-o M-p"             "textstyle-update family 16 series 2 shape 4 size 12 color 14 language ignore"
+\bind "M-o p"               "textstyle-update family 16 series 2 shape 4 size 12 color 15 language ignore"
+\bind "M-o r"               "textstyle-update family 16 series 2 shape 4 size 12 color 16 language ignore"
+\bind "M-o t"               "textstyle-update family 16 series 2 shape 4 size 12 color 17 language ignore"
+\bind "M-o v"               "textstyle-update family 16 series 2 shape 4 size 12 color 18 language ignore"
+\bind "M-o w"               "textstyle-update family 16 series 2 shape 4 size 12 color 19 language ignore"
+
+# Bold
+\bind "M-o S-0"    "textstyle-update family 16 series 1 shape 4 size 12 color 0 language ignore"
+\bind "M-o S-1"        "textstyle-update family 16 series 1 shape 4 size 12 color 1 language ignore"
+\bind "M-o S-2"            "textstyle-update family 16 series 1 shape 4 size 12 color 2 language ignore"
+\bind "M-o S-b"             "textstyle-update family 16 series 1 shape 4 size 12 color 3 language ignore"
+\bind "M-o S-n"             "textstyle-update family 16 series 1 shape 4 size 12 color 4 language ignore"
+\bind "M-o S-c"             "textstyle-update family 16 series 1 shape 4 size 12 color 5 language ignore"
+\bind "M-o C-S-y"           "textstyle-update family 16 series 1 shape 4 size 12 color 6 language ignore"
+\bind "M-o S-y"             "textstyle-update family 16 series 1 shape 4 size 12 color 7 language ignore"
+\bind "M-o S-g"             "textstyle-update family 16 series 1 shape 4 size 12 color 8 language ignore"
+\bind "M-o M-S-y"           "textstyle-update family 16 series 1 shape 4 size 12 color 9 language ignore"
+\bind "M-o M-S-g"           "textstyle-update family 16 series 1 shape 4 size 12 color 10 language ignore"
+\bind "M-o S-m"             "textstyle-update family 16 series 1 shape 4 size 12 color 11 language ignore"
+\bind "M-o S-l"             "textstyle-update family 16 series 1 shape 4 size 12 color 12 language ignore"
+\bind "M-o S-o"             "textstyle-update family 16 series 1 shape 4 size 12 color 13 language ignore"
+\bind "M-o M-p"             "textstyle-update family 16 series 1 shape 4 size 12 color 14 language ignore"
+\bind "M-o S-p"             "textstyle-update family 16 series 1 shape 4 size 12 color 15 language ignore"
+\bind "M-o S-r"             "textstyle-update family 16 series 1 shape 4 size 12 color 16 language ignore"
+\bind "M-o S-t"             "textstyle-update family 16 series 1 shape 4 size 12 color 17 language ignore"
+\bind "M-o S-v"             "textstyle-update family 16 series 1 shape 4 size 12 color 18 language ignore"
+\bind "M-o S-w"             "textstyle-update family 16 series 1 shape 4 size 12 color 19 language ignore"

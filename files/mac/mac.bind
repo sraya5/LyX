@@ -1,0 +1,153 @@
+Format 5
+
+# This file is based on the LyX's original shortcut files, and on the Michael Kali's shortcut file (see https://mkali56.wixsite.com/madlyx).
+# These files edited and published by me (Sraya Ansbacher), in the hope that it would help as many people as possible.
+
+# This file is one of six files: cua.bind, design.bind, environments.bind, symbols.bind, letters.bind, retroactive.bind
+# For more details go to my site: https://srayaa.wixsite.com/math
+# Email: sraya.ansbacher@mail.huji.ac.il
+
+
+#########################################################################################################################################
+
+##### BASIC SHORTCUTS #####
+
+# prefix: as short as possible
+
+\bind "C-r"			    "buffer-view"
+\bind "F12"             "language hebrew"
+\bind "M-x"			    "command-execute"
+
+
+#########################################################################################################################################
+
+##### UNIVERSAL SHORTCUTS #####
+
+# prefix: as short as possible
+
+# Files
+\bind "C-n"			    "buffer-new"
+\bind "C-S-n"		    "dialog-show lyxfiles templates"
+\bind "C-o"			    "file-open"
+\bind "C-w"			    "view-close"
+\bind "C-s"			    "buffer-write"
+\bind "C-S-s"		    "buffer-write-as"
+
+#  Tabs & Windows
+\bind "C-Next"			"buffer-next"
+\bind "C-Tab"			"buffer-next"
+\bind "C-Prior"			"buffer-previous"
+\bind "C-S-BackTab"		"buffer-previous"
+\bind "M-F4"			"lyx-quit"
+\bind "C-F4"			"buffer-close"
+
+# Zoom & FullScreen
+\bind "F11"			    "ui-toggle fullscreen"
+\bind "C-0"			    "buffer-zoom" # default zoom
+\bind "C-equal"			"buffer-zoom-in"
+\bind "C-minus"			"buffer-zoom-out"
+
+# Common shortcuts
+\bind "C-f"			    "dialog-show findreplace"
+\bind "C-S-f"			"dialog-show findreplaceadv"
+
+\bind "C-a"			    "inset-select-all"
+
+\bind "C-c"			    "copy"
+\bind "C-x"			    "cut"
+\bind "C-v"			    "paste"
+\bind "C-M-v"           "clipboard-paste"
+\bind "C-S-v"           "clipboard-paste-simple" # paste the text without design, like google and microsoft.
+
+\bind "C-z"			    "undo"
+\bind "C-y"			    "redo"
+
+
+#########################################################################################################################################
+
+##### MOTION & SELECTION #####
+
+# prefix: as short as possible
+
+# Move only
+\bind "C-KP_Insert"		"paragraph-up"
+\bind "C-KP_Delete"		"paragraph-down"
+\bind "C-Home"			"buffer-begin"
+\bind "C-End"			"buffer-end"
+\bind "C-M-Home"		"inset-begin"
+\bind "C-M-End"			"inset-end"
+\bind "C-S-b"           "line-begin"
+\bind "C-S-e"           "line-end"
+\bind "C-M-0"			"screen-recenter" # the screen on the current cursor position.
+\bind "S-Escape"        "char-backward"
+
+
+# Move & Select
+\bind "S-Right"			"char-right-select"
+\bind "S-Left"			"char-left-select"
+\bind "S-Up"			"up-select"
+\bind "S-Down"			"down-select"
+\bind "C-S-Up"			"paragraph-up-select"
+\bind "C-S-Down"		"paragraph-down-select"
+\bind "S-Home"			"line-begin-select"
+\bind "S-End"			"line-end-select"
+\bind "S-Prior"			"screen-up-select"
+\bind "S-Next"			"screen-down-select"
+\bind "S-C-Home"		"buffer-begin-select"
+\bind "S-C-End"			"buffer-end-select"
+\bind "S-M-C-Home"		"inset-begin-select"
+\bind "S-M-C-End"		"inset-end-select"
+
+
+#########################################################################################################################################
+
+##### TEXT EDIT #####
+
+# prefix: as short as possible
+
+\bind "Return"          "command-alternatives paragraph-break; newline-insert newline"
+\bind "S-Return"        "newline-insert newline"
+\bind "C-Return"        "command-sequence paragraph-break; paragraph-break; separator-insert; paragraph-break"
+
+\bind "C-M-Right"       "depth-decrement" # designed for Hebrew
+\bind "C-M-Left"        "depth-increment" # designed for Hebrew
+\bind "C-M-Up"          "command-alternatives outline-up; paragraph-move-up; tabular-feature move-row-up"
+\bind "C-M-Down"        "command-alternatives outline-down; paragraph-move-down; tabular-feature move-row-down"
+
+\bind "C-space"         "space-insert normal"
+\bind "C-S-space"       "space-insert thin"
+
+
+#########################################################################################################################################
+
+##### NUMERIC KEYPAD #####
+
+# prefix: as short as possible
+
+\bind "S-KP_Right"		"char-right-select"
+\bind "S-KP_Left"		"char-left-select"
+\bind "S-KP_Up"			"up-select"
+\bind "S-KP_Down"		"down-select"
+\bind "S-C-KP_Right"	"word-right-select"
+\bind "S-C-KP_Left"		"word-left-select"
+\bind "S-C-KP_Up"		"paragraph-up-select"
+\bind "S-C-KP_Down"		"paragraph-down-select"
+\bind "S-KP_Home"		"line-begin-select"
+\bind "S-KP_End"		"line-end-select"
+\bind "S-KP_Prior"		"screen-up-select"
+\bind "S-KP_Next"		"screen-down-select"
+\bind "S-C-KP_Home"		"buffer-begin-select"
+\bind "S-C-KP_End"		"buffer-end-select"
+\bind "S-C-KP_Prior"	"buffer-move-previous"
+\bind "S-C-KP_Next"		"buffer-move-next"
+
+
+#########################################################################################################################################
+
+# Include additional bindings
+
+\bind_file design.bind
+\bind_file environments.bind
+\bind_file symbols.bind
+\bind_file letters.bind
+\bind_file retroactive.bind

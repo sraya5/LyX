@@ -1,0 +1,142 @@
+Format 5
+
+# This file is based on the LyX's original shortcut files, and on the Michael Kali's shortcut file (see https://mkali56.wixsite.com/madlyx).
+# These files edited and published by me (Sraya Ansbacher), in the hope that it would help as many people as possible.
+
+# This file is one of six files: cua.bind, design.bind, environments.bind, symbols.bind, letters.bind, retroactive.bind
+# For more details go to my site: https://srayaa.wixsite.com/math
+# Email: sraya.ansbacher@mail.huji.ac.il
+
+
+#########################################################################################################################################
+
+##### COLORS #####
+
+# prefix: Alt+d o
+
+\bind "M-d o 0"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 0 language ignore; escape"
+\bind "M-d o 1"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 1 language ignore; escape"
+\bind "M-d o 2"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 2 language ignore; escape"
+\bind "M-d o b"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 3 language ignore; escape"
+\bind "M-d o n"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 4 language ignore; escape"
+\bind "M-d o c"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 5 language ignore; escape"
+\bind "M-d o C-y"               "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 6 language ignore; escape"
+\bind "M-d o y"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 7 language ignore; escape"
+\bind "M-d o g"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 8 language ignore; escape"
+\bind "M-d o M-y"               "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 9 language ignore; escape"
+\bind "M-d o M-g"               "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 10 language ignore; escape"
+\bind "M-d o m"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 11 language ignore; escape"
+\bind "M-d o l"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 12 language ignore; escape"
+\bind "M-d o o"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 13 language ignore; escape"
+\bind "M-d o M-p"               "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 14 language ignore; escape"
+\bind "M-d o p"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 15 language ignore; escape"
+\bind "M-d o r"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 16 language ignore; escape"
+\bind "M-d o t"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 17 language ignore; escape"
+\bind "M-d o v"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 18 language ignore; escape"
+\bind "M-d o w"                 "command-sequence char-left-select; textstyle-update family 16 series 2 shape 4 size 12 color 19 language ignore; escape"
+
+\bind "M-d o S-parenleft"       "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 0 language ignore; escape"
+\bind "M-d o S-exclam"          "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 1 language ignore; escape"
+\bind "M-d o S-at"              "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 2 language ignore; escape"
+\bind "M-d o S-b"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 3 language ignore; escape"
+\bind "M-d o S-n"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 4 language ignore; escape"
+\bind "M-d o S-c"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 5 language ignore; escape"
+\bind "M-d o C-S-y"             "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 6 language ignore; escape"
+\bind "M-d o S-y"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 7 language ignore; escape"
+\bind "M-d o S-g"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 8 language ignore; escape"
+\bind "M-d o M-S-y"             "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 9 language ignore; escape"
+\bind "M-d o M-S-g"             "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 10 language ignore; escape"
+\bind "M-d o S-m"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 11 language ignore; escape"
+\bind "M-d o S-l"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 12 language ignore; escape"
+\bind "M-d o S-o"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 13 language ignore; escape"
+\bind "M-d o M-S-p"             "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 14 language ignore; escape"
+\bind "M-d o S-p"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 15 language ignore; escape"
+\bind "M-d o S-r"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 16 language ignore; escape"
+\bind "M-d o S-t"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 17 language ignore; escape"
+\bind "M-d o S-v"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 18 language ignore; escape"
+\bind "M-d o S-w"               "command-sequence char-left-select; textstyle-update family 16 series 1 shape 4 size 12 color 19 language ignore; escape"
+
+
+#########################################################################################################################################
+
+##### MATH ENVIRONMENTS #####
+
+# prefix: alt+d as short as possible
+
+# Basic
+\bind "M-d f"                   "command-sequence char-left-select; math-insert \\frac"
+\bind "M-d C-M-f"               "command-sequence char-left-select; math-insert \\nicefrac"
+\bind "M-d M-S-f"               "command-sequence char-left-select; math-insert \\nicefrac"
+
+\bind "M-d s"                   "command-sequence char-left-select; math-insert \\sqrt"
+\bind "M-d r"                   "command-sequence char-left-select; math-insert \\root"
+
+# Exponentiation
+\bind "M-d 2"                   "command-sequence math-superscript; math-insert \\dagger; escape"
+\bind "M-d 8"                   "command-sequence math-superscript; math-insert \\ast; escape"
+\bind "M-d S-t"                 "command-sequence math-superscript; math-insert T; escape"
+\bind "M-d S-ampersand"         "command-sequence char-left-select; math-delim ( ); math-superscript"
+
+# Delimeters
+\bind "M-d S-parenleft"         "command-sequence char-left-select; math-delim ( )"
+\bind "M-d bracketleft"         "command-sequence char-left-select; math-delim [ ]"
+\bind "M-d S-braceleft"         "command-sequence char-left-select; math-delim { }"
+\bind "M-d S-bar"               "command-sequence char-left-select; math-delim | |"
+\bind "M-d comma"               "command-sequence char-left-select; math-delim < >"
+\bind "M-d S-greater"           "command-sequence char-left-select; math-delim > <"
+\bind "M-d slash"               "command-sequence char-left-select; math-insert \\left\\Vert \\right\\Vert"
+\bind "M-d bracketright"        "command-sequence char-left-select; math-insert \\left\\lfloor \\right\\rfloor"
+\bind "M-d S-braceright"        "command-sequence char-left-select; math-insert \\left\\lceil \\right\\rceil"
+
+\bind "M-d M-S-braceleft"       "command-sequence char-left-select; math-delim [ )"
+\bind "M-d M-S-parenleft"       "command-sequence char-left-select; math-delim ( ]"
+\bind "M-d M-S-less"            "command-sequence char-left-select; math-delim < |"
+\bind "M-d M-S-greater"         "command-sequence char-left-select; math-delim | >"
+
+# Decoration accents
+\bind "M-d S-v"                 "command-sequence char-left-select; math-insert \\check"
+\bind "M-d h"                   "command-sequence char-left-select; math-insert \\hat"
+\bind "M-d grave"               "command-sequence char-left-select; math-insert \\tilde"
+\bind "M-d v"                   "command-sequence char-left-select; math-insert \\vec"
+\bind "M-d backslash"           "command-sequence char-left-select; math-insert \\grave"
+\bind "M-d S-question"          "command-sequence char-left-select; math-insert \\acute"
+\bind "M-d period"              "command-sequence char-left-select; math-insert \\dot"
+\bind "M-d M-period"            "command-sequence char-left-select; math-insert \\ddot"
+\bind "M-d C-u"                 "command-sequence char-left-select; math-insert \\breve"
+\bind "M-d minus"               "command-sequence char-left-select; math-insert \\bar"
+
+\bind "M-d S-h"                 "command-sequence char-left-select; math-insert \\widehat"
+\bind "M-d S-asciitilde"        "command-sequence char-left-select; math-insert \\widetilde"
+\bind "M-d Left"                "command-sequence char-left-select; math-insert \\overleftarrow"
+\bind "M-d Right"               "command-sequence char-left-select; math-insert \\underrightarrow"
+\bind "M-d S-b"                 "command-sequence char-left-select; math-insert \\overline"
+\bind "M-d b"                   "command-sequence char-left-select; math-insert \\underline"
+\bind "M-d S-q"                 "command-sequence char-left-select; math-insert \\overbrace; char-left-select; math-insert \\overset"
+\bind "M-d q"                   "command-sequence char-left-select; math-insert \\underbrace; char-left-select; math-insert \\underset"
+\bind "M-d c"                   "command-sequence char-left-select; math-insert \\cancel"
+\bind "M-d S-s"                 "command-sequence char-left-select; math-insert \\overset"
+\bind "M-d M-s"                 "command-sequence char-left-select; math-insert \\underset"
+
+# Others
+\bind "M-d M-S-s"               "command-sequence char-left-select; cut; math-insert \\left\\{ \\begin{array}{c|c}\\end{array}\\right\\}; char-backward; char-backward; char-backward; paste"
+\bind "M-d M-bracketleft"       "command-sequence char-left-select; math-delim [ ]; math-superscript; cell-backward; math-subscript"
+\bind "M-d M-bracketright"      "command-sequence char-left-select; math-delim . |; math-superscript; cell-backward; math-subscript"
+\bind "M-d a"                   "command-sequence char-left-select; math-delim ( );  math-superscript; math-insert \\infty; escape; math-subscript; math-insert n=1; escape"
+\bind "M-d o"                   "command-sequence char-left-select;  math-insert \\boxed"
+
+#########################################################################################################################################
+
+##### RELATION CHANGER #####
+
+# prefix: alt+d
+
+\bind "M-d i"                   "command-sequence char-left-select; cut; char-delete-backward confirm; line-begin; paste; math-insert \\ni; word-forward"
+\bind "M-d C-b"                 "command-sequence char-left-select; cut; char-delete-backward confirm; line-begin; paste; math-insert \\supset; word-forward"
+\bind "M-d C-S-b"               "command-sequence char-left-select; cut; char-delete-backward confirm; line-begin; paste; math-insert \\nsubseteq; word-forward"
+\bind "M-d M-S-b"               "command-sequence char-left-select; cut; char-delete-backward confirm; line-begin; paste; math-insert \\subsetneq; word-forward"
+\bind "M-d equal"               "command-sequence char-left-select; cut; char-delete-backward confirm; line-begin; paste; math-insert =; word-forward"
+\bind "M-d S-less"              "command-sequence char-left-select; cut; char-delete-backward confirm; line-begin; paste; math-insert >; word-forward"
+\bind "M-d S-greater"           "command-sequence char-left-select; cut; char-delete-backward confirm; line-begin; paste; math-insert <; word-forward"
+\bind "M-d Right"               "command-sequence char-left-select; cut; char-delete-backward confirm; line-begin; paste; math-insert \\leftarrow; word-forward"
+
+\bind "M-d M-equal"             "command-sequence char-left-select; math-insert \\overset; math-insert \\text"
