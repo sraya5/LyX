@@ -1,0 +1,3864 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage{relsize}
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{12pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{12pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{12pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{12pt}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{14,107,217}
+\definecolor{green}{RGB}{0,158,40}
+\definecolor{red}{RGB}{235,16,16}
+\definecolor{brown}{RGB}{164,66,0}
+\definecolor{orange}{RGB}{231,135,26}
+\definecolor{purple}{RGB}{94,53,177}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+% Create large And symbol
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פיתרון: "
+End
+Style Notation
+	LabelString           "סימון  \thetheorem: "
+End
+Style Theorem
+	LabelString           "משפט \thetheorem: "
+End
+Style Property
+	LabelString           "תזכורת: "
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "Times New Roman"
+\font_sans "default" "Arial"
+\font_typewriter "default" "Courier New"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 2cm
+\secnumdepth -2
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+\lang hebrew
+עקרונות מנחים לכתיבת פקודות
+\family roman
+\shape up
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Macros
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\lang hebrew
+כל פקודה תתחיל ב-
+\series bold
+\color red
+\lang english
+MK
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+גדולות ע
+\begin_inset Quotes erd
+\end_inset
+
+ש מיכאל קלי (
+\series bold
+\color red
+\lang english
+M
+\series default
+\color inherit
+ichael 
+\series bold
+\color red
+K
+\series default
+\color inherit
+ali
+\lang hebrew
+),
+ וזאת משתי סיבות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\lang hebrew
+כדי שבטבלת הקיצורים שבתוך \SpecialChar LyX
+ תופענה כל הפקודות זו לצד זו.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang hebrew
+הבחירה דווקא באותיות גדולות נועדה לוודא שהפקודות אינן מתנגשות עם פקודות \SpecialChar LaTeX
+ מקוריות.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang hebrew
+על הפקודות להיות קצרות ככל האפשר,
+ וזאת כדי לאפשר את כתיבתן במהירות מבלי ליצור להן קיצור מקלדת.
+ הסיבה לכך שלא ניצור קיצור מקלדת לכל פקודה היא שפעמים רבות ניצור פקודות שתיועדנה למקרים מסוימים מאוד,
+ ואז יעבור זמן רב עד שנשתמש בקיצור המקלדת בפעם הבאה ולכן לא נזכור אותו - הרבה יותר פשוט לזכור את הפקודה שיצרנו מכיוון שיש לה תוכן אמיתי שקשור לפלט הרצוי מן הפקודה.
+ סיבה נוספת היא שיצירת קיצור מקלדת לכל פקודה ולו החריגה ביותר תקשה עלינו ליצור קיצורי מקלדת לפקודות חשובות יותר.
+\begin_inset Newline newline
+\end_inset
+
+לפיכך פקודות שימושיות מאוד שבוודאי ניצור להן קיצור מקלדת ונשתמש בו פעמים רבות אינן צריכות להיות קצרות.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang hebrew
+כדי להקל על כתיבת פקודות שלא יצרתי להן קיצור מקלדת כתבתי קיצור מקלדת שיוצר את הקידומת של כל פקודות ה-
+\lang english
+macros
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שלי ואז כל מה שנותר הוא להקיש שלוש-ארבע אותיות כדי לבחור את הפקודה הרצויה,
+ קיצור המקלדת המדובר הוא "
+\lang english
+Ctrl+k
+\lang hebrew
+".
+\end_layout
+
+\begin_layout Enumerate
+
+\lang hebrew
+לכל גופן יש קידומת בת שתי אותיות.
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+\lang hebrew
+קבוצות ופונקציות לפי קורסים
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+המספרים המרוכבים ופונקציות מרוכבות
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcis}{\text{cis}}
+{\text{cis}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset Formula $\cos+i\cdot\sin$
+\end_inset
+
+.
+ המספרים המרוכבים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKre}{\text{Re}}
+{\text{Re}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+החלק הממשי של מספר מרוכב.
+ המספרים המרוכבים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKim}{\text{Im}}
+{\text{Im}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+החלק המדומה של מספר מרוכב.
+ המספרים המרוכבים.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+מופיע גם כתמונה של פונקציה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKind}{\text{Ind}}
+{\text{Ind}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+אינדקס ליפוף.
+ מרוכבות.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKres}{\text{Res}}
+{\text{Res}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+שארית (
+\lang english
+residue
+\lang hebrew
+).
+ מרוכבות.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+אינפי',
+ יריעות ופונקציונלית
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKarsinh}{\text{arsinh}}
+{\text{arsinh}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+סינוס היפרבולי הפוך,
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKarcosh}{\text{arcosh}}
+{\text{arcosh}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קוסינוס היפרבולי הפוך,
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKartanh}{\text{artanh}}
+{\text{artanh}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+טנגנס היפרבולי הפוך,
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKar}{\text{ar}}
+{\text{ar}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+יחס אורך-רוחב (
+\lang english
+aspect ratio
+\lang hebrew
+).
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclos}{\text{Cl}}
+{\text{Cl}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+סגור (
+\lang english
+closure
+\lang hebrew
+).
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKdiam}{\text{diam}}
+{\text{diam}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קוטר (
+\lang english
+diameter
+\lang hebrew
+).
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKdiv}{\text{div}}
+{\text{div}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+דיברגנץ (
+\lang english
+divergence
+\lang hebrew
+).
+ יריעות.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKext}{\text{Ext}}
+{\text{Ext}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חוץ (
+\lang english
+exterior
+\lang hebrew
+).
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKint}{\text{Int}}
+{\text{Int}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+פנים (
+\lang english
+interior
+\lang hebrew
+).
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKop}{\text{op}}
+{\text{op}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+נורמה אופרטורית.
+ אינפי'.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKvol}{\text{Vol}}
+{\text{Vol}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+נפח של קבוצה (
+\lang english
+volume
+\lang hebrew
+).
+ יריעות.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsupp}{\text{Supp}}
+{\text{Supp}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+התומך של פונקציה (
+\lang english
+support
+\lang hebrew
+).
+ פונקציונלית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+אלגברה ליניארית ומבנים אלגבריים
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKadj}{\text{adj}}
+{\text{adj}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+המטריצה המצורפת (
+\lang english
+adjoint
+\lang hebrew
+).
+ ליניארית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKaut}{\text{Aut}}
+{\text{Aut}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת האוטומורפיזמים.
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKchar}{\text{char}}
+{\text{char}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+המציין של שדה.
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcor}{\text{Core}}
+{\text{Core}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+הליבה של חבורה (
+\lang english
+core
+\lang hebrew
+).
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKend}{\text{End}}
+{\text{End}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קבוצת האנדומורפיזמים.
+ ליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ומבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKfix}{\text{Fix}}
+{\text{Fix}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קבוצת נקודות השבת של פונקציה או איבר בחבורה.
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKgal}{\text{Gal}}
+{\text{Gal}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת גלואה של הרחבת שדות.
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKgl}{\text{GL}}
+{\text{GL}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת המטריצות ההפיכות.
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKhom}{\text{Hom}}
+{\text{Hom}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קבוצת ההומומורפיזמים.
+ ליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ומבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKinn}{\text{Inn}}
+{\text{Inn}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת האוטומורפיזמים הפנימיים (
+\lang english
+inner
+\lang hebrew
+).
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKnull}{\text{null}}
+{\text{null}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+דרגת האפסיות של העתקה.
+ ליניארית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKorth}{\text{O}}
+{\text{O}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת המטריצות האורתוגונליות.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKout}{\text{Out}}
+{\text{Out}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת האוטומורפיזמים החיצוניים (
+\lang english
+outer
+\lang hebrew
+).
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKrank}{\text{rk}}
+{\text{rk}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+דרגה של מטריצה/העתקה.
+ ליניארית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsep}{\text{sep}}
+{\text{sep}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+משמש לסימון הסגור הספרבילי של שדה.
+ מבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsl}{\text{SL}}
+{\text{SL}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת המטריצות בעלות דטרמיננטה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $1$
+\end_inset
+
+.
+ ליניארית ומבנים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKso}{\text{SO}}
+{\text{SO}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת המטריצות האורתוגונליות בעלות דטרמיננטה 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ ליניארית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsu}{\text{SU}}
+{\text{SU}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+חבורת המטריצות האוניטריות בעלות דטרמיננטה 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ ליניארית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKspan}{\text{span}}
+{\text{span}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+פרוש.
+ ליניארית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKtrace}{\text{tr}}
+{\text{tr}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+עקבה (
+\lang english
+trace
+\lang hebrew
+).
+ ליניארית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+תורת הקבוצות
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcupdot}{\mathbin{\cupdot}}
+{\mathbin{\dot{\cup}}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+איחוד זר
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+תודה למיכאל קלי שכתב את הפקודה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbigcupdot}{\mathbin{\bigcupdot}}
+{\mathbin{\dot{\bigcup}}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+איחוד זר גדול
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+תודה למיכאל קלי שכתב את הפקודה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKdom}{\text{dom}}
+{\text{dom}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+תחום ההגדרה של פונקציה (
+\lang english
+domain
+\lang hebrew
+).
+ קבוצות.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKrng}{\text{rng}}
+{\text{rng}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+הטווח של פונקציה (
+\lang english
+range
+\lang hebrew
+).
+ קבוצות.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\renewcommand{\MKim}{\text{Im}}
+{\text{Im}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+תמונה של פונקציה.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+מופיע גם כחלק מדומה של מספר מרוכב.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsequ}{\text{Seq}}
+{\text{Seq}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קבוצת הסדרות הסופיות של איברים מתוך קבוצה נתונה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+תורת ההסתברות
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKalmsur}{\overset{\text{a.s.}}{=}}
+{\overset{\text{a.s.}}{=}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+שוויון בין משתנים מקריים כמעט תמיד (
+\lang english
+almost surely
+\lang hebrew
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsmallalmsur}{\overset{\text{a.s.}}{\leq}}
+{\overset{\text{a.s.}}{\leq}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+שוויון בין משתנים מקריים כמעט תמיד (
+\lang english
+almost surely
+\lang hebrew
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKgreatalmsur}{\overset{\text{a.s.}}{\geq}}
+{\overset{\text{a.s.}}{\geq}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+שוויון בין משתנים מקריים כמעט תמיד (
+\lang english
+almost surely
+\lang hebrew
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKvar}{\text{Var}}
+{\text{Var}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+שונות (
+\lang english
+variance
+\lang hebrew
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcovar}{\text{Cov}}
+{\text{Cov}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+שונות (
+\lang english
+co-variance
+\lang hebrew
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKdist}{\overset{\text{d}}{=}}
+{\overset{\text{d}}{=}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+שוויון התפלגויות (
+\lang english
+distributions
+\lang hebrew
+) בין משתנים מקריים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKber}{\text{Ber}}
+{\text{Ber}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+התפלגות ברנולי.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKunif}{\text{Unif}}
+{\text{Unif}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+התפלגות אחידה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKgeo}{\text{Geo}}
+{\text{Geo}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+התפלגות גאומטרית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbin}{\text{Bin}}
+{\text{Bin}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+התפלגות בינומית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKpoi}{\text{Poi}}
+{\text{Poi}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+התפלגות פואסון.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKhypergeo}{\text{HG}}
+{\text{HG}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+התפלגות היפר-גאומטרית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+\lang hebrew
+שונות
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKfalse}{\text{False}}
+{\text{False}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+ערך שקר של פסוק.
+ דיסקרטית ואינטרו.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKtrue}{\text{True}}
+{\text{True}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+ערך אמת של פסוק.
+ דיסקרטית ואינטרו.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKnotequiv}{\not\equiv}
+{\not\equiv}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKtickmark}{\textcolor{green}{\checkmark}}
+{\textcolor{green}{\checkmark}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKxmark}{{\color{red}\boldsymbol{\times}}}
+{{\color{red}\boldsymbol{\times}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+פיזיקה
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKtot}{\text{tot}}
+{\text{tot}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קיצור של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+total
+\lang hebrew
+,
+ מכניקה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\renewcommand{\MKext}{\text{ext}}
+{\text{ext}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קיצור של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+external
+\lang hebrew
+,
+ מכניקה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+מספרים שלמים
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKeven}{\text{Even}}
+{\text{Even}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קבוצת הזוגיים
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKodd}{\text{Odd}}
+{\text{Odd}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קבוצת האי-זוגיים
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKprime}{\text{Prime}}
+{\text{Prime}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+קבוצת הראשוניים.
+ תורת המספרים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+פונקציות שונות
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKid}{\text{Id}}
+{\text{Id}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+פונקציית הזהות.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKlcm}{\text{lcm}}
+{\text{lcm}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+כפולה משותפת מינימלית
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKord}{\text{Ord}}
+{\text{Ord}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+סדר (
+\lang english
+order
+\lang hebrew
+).
+ תורת המספרים.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsign}{\text{sgn}}
+{\text{sgn}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+פונקציית הסימן
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+\lang hebrew
+גופנים
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+גופן
+\family roman
+\shape up
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+mathbb
+\lang hebrew
+:
+ הטבעיים,
+ השלמים.
+ הרציונליים.
+ הממשיים.
+ המרוכבים ועוד
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbba}{\mathbb{A}}
+{\mathbb{A}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbb}{\mathbb{B}}
+{\mathbb{B}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcomplex}{\mathbb{C}}
+{\mathbb{C}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+המספרים המרוכבים
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbd}{\mathbb{D}}
+{\mathbb{D}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbe}{\mathbb{E}}
+{\mathbb{E}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKfield}{\mathbb{F}}
+{\mathbb{F}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+שדה
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbg}{\mathbb{G}}
+{\mathbb{G}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbh}{\mathbb{H}}
+{\mathbb{H}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbi}{\mathbb{I}}
+{\mathbb{I}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbj}{\mathbb{J}}
+{\mathbb{J}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbk}{\mathbb{K}}
+{\mathbb{K}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbl}{\mathbb{L}}
+{\mathbb{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbm}{\mathbb{M}}
+{\mathbb{M}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKnatural}{\mathbb{N}}
+{\mathbb{N}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+המספרים הטבעיים
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbo}{\mathbb{O}}
+{\mathbb{O}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbp}{\mathbb{P}}
+{\mathbb{P}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKrational}{\mathbb{Q}}
+{\mathbb{Q}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+המספרים הרציונליים
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKreal}{\mathbb{R}}
+{\mathbb{R}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+המספרים הממשיים
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbs}{\mathbb{S}}
+{\mathbb{S}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbt}{\mathbb{T}}
+{\mathbb{T}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbu}{\mathbb{U}}
+{\mathbb{U}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbv}{\mathbb{V}}
+{\mathbb{V}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbw}{\mathbb{W}}
+{\mathbb{W}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbbx}{\mathbb{X}}
+{\mathbb{X}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKbby}{\mathbb{Y}}
+{\mathbb{Y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKinteger}{\mathbb{Z}}
+{\mathbb{Z}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+המספרים השלמים
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKindicator}{\mathds{1}}
+{\mathds{1}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+פונקציה מציינת - אינדיקטור
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+גופן
+\family roman
+\shape up
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+mathcal
+\lang hebrew
+:
+ בסיסים,
+ קבוצת חזקה,
+ העתקות גלואה,
+ המילטוניאן ועוד
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcla}{\mathcal{A}}
+{\mathcal{A}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclb}{\mathcal{B}}
+{\mathcal{B}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclc}{\mathcal{C}}
+{\mathcal{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcld}{\mathcal{D}}
+{\mathcal{D}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcle}{\mathcal{E}}
+{\mathcal{E}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclf}{\mathcal{F}}
+{\mathcal{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclg}{\mathcal{G}}
+{\mathcal{G}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclh}{\mathcal{H}}
+{\mathcal{H}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcli}{\mathcal{I}}
+{\mathcal{I}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclj}{J}
+{\mathcal{J}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclk}{\mathcal{K}}
+{\mathcal{K}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcll}{\mathcal{L}}
+{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclm}{\mathcal{M}}
+{\mathcal{M}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcln}{\mathcal{N}}
+{\mathcal{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclo}{\mathcal{O}}
+{\mathcal{O}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclp}{\mathcal{P}}
+{\mathcal{P}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclq}{\mathcal{Q}}
+{\mathcal{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclr}{\mathcal{R}}
+{\mathcal{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcls}{\mathcal{S}}
+{\mathcal{S}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclt}{\mathcal{T}}
+{\mathcal{T}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclu}{\mathcal{U}}
+{\mathcal{U}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclv}{\mathcal{V}}
+{\mathcal{V}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclw}{\mathcal{W}}
+{\mathcal{W}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclx}{\mathcal{X}}
+{\mathcal{X}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKcly}{\mathcal{Y}}
+{\mathcal{Y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKclz}{\mathcal{Z}}
+{\mathcal{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+גופן
+\family roman
+\shape up
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+mathscr
+\lang hebrew
+:
+ ?
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsrb}{\mathscr{B}}
+{\mathscr{B}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKsrf}{\mathscr{F}}
+{\mathscr{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang hebrew
+גופן
+\family roman
+\shape up
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+mathfrak
+\lang hebrew
+:
+ אותיות גותיות לעוצמות
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKfka}{\mathfrak{a}}
+{\mathfrak{a}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKfkb}{\mathfrak{b}}
+{\mathfrak{b}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKfkc}{\mathfrak{c}}
+{\mathfrak{c}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+\lang hebrew
+כתיבת סדרות במהירות
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang hebrew
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKseq}[3]{#1_{1}#2#1_{2}#2\ldots#2#1_{#3}}
+{#1_{1}#2#1_{2}#2\ldots#2#1_{#3}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+תודה למיכאל קלי שכתב את הפקודה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKseqz}[3]{#1_{0}#2#1_{1}#2\ldots#2#1_{#3}}
+{#1_{0}#2#1_{1}#2\ldots#2#1_{#3}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+תודה למיכאל קלי שכתב את הפקודה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKdseq}[5]{#1_{1}#2#3_{1}#4#1_{2}#2#3_{2}#4\ldots#1_{#5}#2#3_{#5}}
+{#1_{1}#2#3_{1}#4#1_{2}#2#3_{2}#4\ldots#1_{#5}#2#3_{#5}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+תודה למיכאל קלי שכתב את הפקודה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\MKdseqz}[5]{#1_{0}#2#3_{0}#4#1_{1}#2#3_{1}#4\ldots#1_{#5}#2#3_{#5}}
+{#1_{0}#2#3_{0}#4#1_{1}#2#3_{1}#4\ldots#1_{#5}#2#3_{#5}}
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang hebrew
+תודה למיכאל קלי שכתב את הפקודה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

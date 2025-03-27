@@ -105,7 +105,7 @@ End
 \language_package default
 \inputencoding auto-legacy
 \fontencoding auto
-\font_roman "default" "David"
+\font_roman "default" "Times New Roman"
 \font_sans "default" "Arial"
 \font_typewriter "default" "Courier New"
 \font_math "auto" "auto"
@@ -303,7 +303,7 @@ status open
 \uwave default
 \noun default
 \color inherit
-1111111111
+123456789
 \numeric off
  
 \end_layout
