@@ -6,16 +6,9 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-% Necessary Commands:
-\usepackage{autobreak}
-\usepackage[T1]{fontenc}
-\usepackage{relsize}
-
 % Set vertical space before and after dislpay equations to be longer for better redability:
 \AtBeginDocument{\setlength\abovedisplayskip{6pt}}
 \AtBeginDocument{\setlength\belowdisplayskip{6pt}}
-\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
-\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
 
 % The head's design for summuries,make the layout more similar to a book:
 \AtBeginDocument{
@@ -32,8 +25,12 @@
   \kern 4pt
 }}
 
-% Set space between words to be wider:
-\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
 
 % Convert the Lyx colors into more pleasent colors:
 \usepackage{xcolor}
@@ -47,16 +44,6 @@
 % Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
 \usepackage{amssymb}
 \renewcommand{\qedsymbol}{$\blacksquare$}
-
-% Make the layout more similar to Hebrew Article, which I am more used to:
-\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
-\usepackage{titlesec}
-\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
-\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
-\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
-
-\usepackage{polyglossia}
-\setmainlanguage{hebrew}
 
 % Create disjoint union symbols:
 \makeatletter

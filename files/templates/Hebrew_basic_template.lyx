@@ -6,16 +6,9 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-% Necessary Commands:
-\usepackage{autobreak}
-\usepackage[T1]{fontenc}
-\usepackage{relsize}
-
 % Set vertical space before and after dislpay equations to be longer for better redability:
 \AtBeginDocument{\setlength\abovedisplayskip{6pt}}
 \AtBeginDocument{\setlength\belowdisplayskip{6pt}}
-\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
-\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
 
 % The footnoterule's design, put it on the right side.
 \AtBeginDocument{
@@ -44,9 +37,6 @@
 \titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
 \titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
 \titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
-
-\usepackage{polyglossia}
-\setmainlanguage{hebrew}
 
 % Create disjoint union symbols:
 \makeatletter

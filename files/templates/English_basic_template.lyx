@@ -6,10 +6,6 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-% Necessary Commands:
-\usepackage{autobreak}
-\usepackage{relsize}
-
 % Set vertical space before and after dislpay equations to be longer for better redability:
 \AtBeginDocument{\setlength\abovedisplayskip{6pt}}
 \AtBeginDocument{\setlength\belowdisplayskip{6pt}}
@@ -66,8 +62,9 @@
 \newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
 \newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
 
-\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
 
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
 \newcommand{\indep}{\perp \!\!\! \perp}
 \end_preamble
 \use_default_options true
