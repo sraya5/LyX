@@ -106,7 +106,7 @@ theorems-ams
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
-\html_math_output 0
+\html_math_output 3
 \html_css_as_file 0
 \html_be_strict false
 \docbook_table_output 0
