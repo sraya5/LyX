@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he-IL">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta src="https://www.w3schools.com/howto/howto_css_responsive_form.asp" />
+</head>
+<body>
+  <style>
+    input, label, textarea {
+      box-sizing: border-box;
+      border-radius: 1em;
+      font-family: Heebo, Arial, sans-serif;
+    }
+    
+    input[type=text], textarea {
+      width: 100%;
+      padding: 0.5em;
+      border: 1px solid #555555;
+    }
+    
+    label {
+      padding: 0.5em 0.2em 0em 0em;
+      display: inline-block;
+    }
+    
+    input[type=submit] {
+      background-color: #084149;
+      color: white;
+      padding: 0.2em 0.5em;
+      border: none;
+      border-radius: 0.5em;
+      cursor: pointer;
+      float: left;
+      font-family: 'Suez One', Arial, sans-serif;
+      font-size: 1.2em;
+    }
+    
+    input[type=submit]:hover {background-color: #555555;}
+  </style>
+  <div class="container" align="right" style="background-color: #CCCCCC;">
+    <form action="https://api.staticforms.xyz/submit" method="post" id="staticform">
+      <input type="hidden" name="accessKey" value="sf_m7bkc64hg8dfa6a06m8dgnc9" />
+      <input type="hidden" name="$source" value="lyx.srayaa.com" />
+      <div class="row">
+        <div>
+          <label>שם מלא*</label>
+        </div>
+        <div>
+          <input type="text" id="name" name="$name" style="text-align: right;" required="required" />
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>כתובת דוא"ל לתשובה (אופציונלי)</label>
+        </div>
+        <div>
+          <input type="text" id="email" name="$email" style="text-align: left;" />
+        </div>
+      </div>
+      <div class="row">
+        <label>כאן המקום לכתוב לי כל מה שתרצו*</label>
+        <textarea id="message" name="message" style="height: 7em; text-align: right;" required="required"></textarea>
+      </div>
+      <div class="row">
+        <script src="https://www.google.com/recaptcha/enterprise.js" async="async" defer="defer"></script>
+        <div class="g-recaptcha" data-sitekey="6LdNHxcrAAAAAOm-FCLcu_m1-t0IFyeZZ6HnaIBK"></div>
+        <input type="hidden" name="redirectTo" value="https://lyx.srayaa.com/contact" />
+        <input type="submit" value="שלח" />
+      </div>
+    </form>
+  </div>
+</body>
+</html>
