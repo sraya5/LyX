@@ -6,96 +6,20 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-% Set vertical space before and after dislpay equations to be longer for better redability:
-\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
-\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
 
-% The head's design for summuries,make the layout more similar to a book:
-\AtBeginDocument{
-\renewcommand\headrule{%
-  \kern -7pt
-  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
-  \kern 10pt
-}}
-% The footnoterule's design, put it on the right side.
-\AtBeginDocument{
-\renewcommand\footnoterule{%
-  \kern 3pt
-  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
-  \kern 4pt
-}}
-
-% Make the layout more similar to Hebrew Article, which I am more used to:
-\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
-\usepackage{titlesec}
-\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
-\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
-\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
-
-% Convert the Lyx colors into more pleasent colors:
-\usepackage{xcolor}
-\definecolor{blue}{RGB}{12,97,197}
-\definecolor{brown}{RGB}{154,58,0}
-\definecolor{green}{RGB}{0,128,40}
-\definecolor{orange}{RGB}{255,114,38}
-\definecolor{purple}{RGB}{94,53,177}
-\definecolor{red}{RGB}{235,16,16}
-
-% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
-\usepackage{amssymb}
-\renewcommand{\qedsymbol}{$\blacksquare$}
-
-% Create disjoint union symbols:
-\makeatletter
-\def\moverlay{\mathpalette\mov@rlay}
-\def\mov@rlay#1#2{\leavevmode\vtop{%
-   \baselineskip\z@skip \lineskiplimit-\maxdimen
-   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
-\newcommand{\charfusion}[3][\mathord]{
-    #1{\ifx#1\mathop\vphantom{#2}\fi
-        \mathpalette\mov@rlay{#2\cr#3}
-      }
-    \ifx#1\mathop\expandafter\displaylimits\fi}
-\makeatother
-\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
-\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
-
-
-
-\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
-\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
 \end_preamble
 \use_default_options true
 \begin_modules
 theorems-ams
 theorems-sec
 customHeadersFooters
+hebrew-fixes
+filled-qed-symbol
+tca-style
 \end_modules
 \maintain_unincluded_children no
 \begin_local_layout
-Style Section
-	Font
-	  Series     Medium
-	  Shape      Smallcaps
-	  Size       Larger
-	  Series     Bold
-	EndFont
-	TocLevel 1
-End
-Style Section*
-	Font
-	  Series     Medium
-	  Shape      Smallcaps
-	  Size       Larger
-	  Series     Bold
-	EndFont
-End
-Style Solution
-	LabelString           ".פתרון \thetheorem "
-End
-Style Theorem
-	LabelString           ".משפט \thetheorem "
-End
+
 \end_local_layout
 \language hebrew
 \language_package default
@@ -105,7 +29,7 @@ End
 \font_sans "default" "Arial"
 \font_typewriter "default" "Courier New"
 \font_math "auto" "auto"
-\font_default_family default
+\font_default_family rmdefault
 \use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
@@ -121,8 +45,8 @@ End
 \bibtex_command default
 \index_command default
 \float_placement H
-\float_alignment class
-\paperfontsize default
+\float_alignment center
+\paperfontsize 10
 \spacing onehalf
 \use_hyperref true
 \pdf_bookmarks true
@@ -135,7 +59,7 @@ End
 \pdf_backref false
 \pdf_pdfusetitle true
 \pdf_quoted_options "linkcolor=black, citecolor=black"
-\papersize default
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -188,11 +112,11 @@ End
 \topmargin 2.7cm
 \rightmargin 2cm
 \bottommargin 2cm
-\headheight 2cm
+\headheight 1cm
 \headsep 0cm
-\footskip 0.5cm
+\footskip 0cm
 \secnumdepth 3
-\tocdepth 2
+\tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation 0bp
 \is_math_indent 0
@@ -219,13 +143,18 @@ End
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "../../../../../AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
 literal "true"
 
 \end_inset
 
 
 \end_layout
+
+\begin_layout Standard
+\begin_inset Branch pdf
+inverted 0
+status open
 
 \begin_layout Right Header
 \begin_inset Argument 1
@@ -272,7 +201,7 @@ leftmark
 status open
 
 \begin_layout Plain Layout
-פירוט כל הקיצורים שלי
+פירוט כל הקיצורים - עִבְלִיקְס
 \end_layout
 
 \end_inset
@@ -353,6 +282,11 @@ LatexCommand tableofcontents
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -546,14 +480,11 @@ literal "false"
 \end_inset
 
 .
- מדובר בשישה קבצים בסך הכל:
- 
-\lang english
-cua
-\lang hebrew
- / 
-\lang english
-mac
+ מדובר בשישה קובצי קיצורים בסך הכל:
+\end_layout
+
+\begin_layout Enumerate
+קיצורים כלליים -
 \family roman
 \series medium
 \shape up
@@ -567,7 +498,6 @@ mac
 \uwave off
 \noun off
 \color none
-\lang hebrew
  
 \family default
 \series default
@@ -582,25 +512,49 @@ mac
 \uwave default
 \noun default
 \color inherit
-(השם תלוי במערכת ההפעלה),
+\lang english
+cua (windows) / mac (iOS)
+\lang hebrew
  
+\end_layout
+
+\begin_layout Enumerate
+עיצוב -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
 \lang english
 design
 \lang hebrew
-,
  
-\lang english
-environments
-\lang hebrew
-,
- 
-\lang english
-letters
-\lang hebrew
-,
- 
-\lang english
-retroactive
+\end_layout
+
+\begin_layout Enumerate
+סביבות -
 \family roman
 \series medium
 \shape up
@@ -614,7 +568,6 @@ retroactive
 \uwave off
 \noun off
 \color none
-\lang hebrew
  
 \family default
 \series default
@@ -629,38 +582,115 @@ retroactive
 \uwave default
 \noun default
 \color inherit
-ו-
+\lang english
+environments
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Enumerate
+אותיות -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+letters
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Enumerate
+החלה בדיעבד -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+retroactive
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Enumerate
+סמלים -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
 \lang english
 symbols
 \lang hebrew
-.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Formula $\clubsuit$
-\end_inset
-
- הקובץ "
-\lang english
-user.bind
-\lang hebrew
-" הנמצא בניתוב הנ"ל כולל את הקיצורים האישיים שלכם,
- והם דורסים כל קיצור שנקבע ע"י קובץ אחר (כולל אלו שלי כמובן).
- עניין זה אינו קשור לקבצים שלי - זוהי ההגדרה הבסיסית של התוכנה.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Formula $\clubsuit$
-\end_inset
-
- רבים מהקיצורים ניתן להחיל גם בדיעבד,
- בעמודה שכותרתה "
-\lang english
-Retroactive
-\lang hebrew
-" מופיעים הקיצורים המבצעים זאת.
+ 
 \end_layout
 
 \begin_layout Labeling
@@ -752,6 +782,114 @@ macro
 \end_layout
 
 \end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ רבים מהקיצורים ניתן להחיל גם בדיעבד;
+ לדוגמה:
+ אתם רוצים לכתוב 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset
+
+ וכבר כתבתם "
+\begin_inset Formula $\pi$
+\end_inset
+
+" - לחיצה על
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+alt+d f
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+תיצור את סימן השבר,
+ תשים את האות הקודמת (במקרה הזה מדובר באות 
+\begin_inset Formula $\pi$
+\end_inset
+
+) במונה ואת הסמן במכנה.
+ עבור קיצורים אלו ישנן שתי עמודות בטבלאות המתאימות:
+ תחת הכותרת "
+\lang english
+shortcut
+\lang hebrew
+" מופיע הקיצור הרגיל,
+ ותחת הכותרת "
+\lang english
+retroactive
+\lang hebrew
+" מופיע הקיצור להחלה בדיעבד.
+ הרעיון הגאוני הזה שייך כמובן למיכאל קלי...
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ הקובץ "
+\lang english
+user.bind
+\lang hebrew
+" הנמצא בניתוב הנ"ל כולל את הקיצורים האישיים שלכם,
+ והם דורסים כל קיצור שנקבע ע"י קובץ אחר (כולל אלו שלי כמובן).
+ עניין זה אינו קשור לקבצים שלי - זוהי ההגדרה הבסיסית של \SpecialChar LyX
+.
+\end_layout
+
 \begin_layout Standard
 על מנת שהקיצורים יהיו עקביים וקלים לזיכרון החלטתי לייחס למקשים "
 \lang english
@@ -834,7 +972,7 @@ Alt
 \lang hebrew
 " - החלשה / מקש ברירת המחדל לתחילת קיצורים
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 מפני שהרבה קידומות לקיצורים המתחילות ב-"
@@ -1460,11 +1598,11 @@ literal "false"
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features tabularvalignment="middle">
-<column alignment="right" valignment="top">
+<column alignment="left" valignment="top">
 <column alignment="right" valignment="top">
 <column alignment="right" valignment="top">
 <row>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1495,7 +1633,7 @@ Shortcut
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1528,7 +1666,7 @@ PDF
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1561,7 +1699,7 @@ F12
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10835,13 +10973,6 @@ otation
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 הגדרות,
  משפטים,
@@ -11650,79 +11781,6 @@ r
 )
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-\begin_inset Formula $\clubsuit$
-\end_inset
-
- כאן מופיע לראשונה (בקובץ זה) חידוש מדהים של מיכאל קלי:
- החלת סביבות בדיעבד,
- במקרה הזה כדי להחיל צבע על המילה האחרונה יש ללחוץ על
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-\lang english
-Alt+d
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\lang hebrew
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ולאחר מכן על האות המתאימה לצבע הרצוי;
- קיצורים מסוג זה יופיע יחד עם הקיצורים המקוריים (שמחילים את הסביבה מראש) בעמודה שכותרתה "
-\lang english
-Retroactive
-\lang hebrew
-".
-\end_layout
-
 \begin_layout Subsubsection
 לא מודגש
 \end_layout
@@ -11732,8 +11790,9 @@ Retroactive
 
 \lang english
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="4">
+<lyxtabular version="3" rows="21" columns="5">
 <features tabularvalignment="middle">
+<column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <column alignment="right" valignment="top">
@@ -11757,6 +11816,17 @@ Shortcut
 
 \lang english
 Retroactive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RGB
 \end_layout
 
 \end_inset
@@ -11803,11 +11873,20 @@ Alt+d o 0
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-חזור לצבע ברירת המחדל (בד"כ שחור)
+חזור לצבע ברירת המחדל
 \end_layout
 
 \end_inset
@@ -11843,6 +11922,17 @@ Alt+o 1
 
 \lang english
 Alt+d o 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,0,0
 \end_layout
 
 \end_inset
@@ -11889,6 +11979,17 @@ Alt+d o 2
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,255,255
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -11927,6 +12028,17 @@ Alt+o b
 
 \lang english
 Alt+d o b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,0,255
 \end_layout
 
 \end_inset
@@ -11986,6 +12098,17 @@ Alt+d o n
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+191,128,64
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -12037,6 +12160,17 @@ Alt+o c
 
 \lang english
 Alt+d o c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,173,239
 \end_layout
 
 \end_inset
@@ -12096,6 +12230,17 @@ Alt+d o Ctrl+y
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+64,64,64
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -12147,6 +12292,17 @@ Alt+o y
 
 \lang english
 Alt+d o y
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+128,128,128
 \end_layout
 
 \end_inset
@@ -12206,6 +12362,17 @@ Alt+d o g
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,255,0
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -12261,6 +12428,17 @@ Alt+d o Alt+y
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+191,191,191
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -12312,6 +12490,17 @@ Alt+o Alt+g
 
 \lang english
 Alt+d o Alt+g
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+191,255,0
 \end_layout
 
 \end_inset
@@ -12374,6 +12563,17 @@ Alt+d o m
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+234,2,140
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -12425,6 +12625,17 @@ Alt+o l
 
 \lang english
 Alt+d o l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+149,141,0
 \end_layout
 
 \end_inset
@@ -12487,6 +12698,17 @@ Alt+d o o
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,128,0
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -12540,6 +12762,17 @@ Alt+o Alt+p
 
 \lang english
 Alt+d o Alt+p
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,191,191
 \end_layout
 
 \end_inset
@@ -12601,13 +12834,24 @@ Alt+d o p
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+191,0,64
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 צבע טקסט ב
 \color purple
-סגול
+ארגמן
 \color inherit
  (
 \series bold
@@ -12654,6 +12898,17 @@ Alt+o r
 
 \lang english
 Alt+d o r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,0,0
 \end_layout
 
 \end_inset
@@ -12715,6 +12970,17 @@ Alt+d o t
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,128,128
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -12768,6 +13034,17 @@ Alt+o v
 
 \lang english
 Alt+d o v
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+128,0,128
 \end_layout
 
 \end_inset
@@ -12829,6 +13106,17 @@ Alt+d o w
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,241,0
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -12886,8 +13174,9 @@ w
 
 \lang english
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="4">
+<lyxtabular version="3" rows="21" columns="5">
 <features tabularvalignment="middle">
+<column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <column alignment="right" valignment="top">
@@ -12911,6 +13200,17 @@ Shortcut
 
 \lang english
 Retroactive
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RGB
 \end_layout
 
 \end_inset
@@ -12957,11 +13257,21 @@ Alt+d o Shift+(
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-חזור לצבע ברירת המחדל (בד"כ שחור) אך הדגש את הטקסט
+חזור לצבע ברירת המחדל,
+ אך הדגש את הטקסט
 \end_layout
 
 \end_inset
@@ -12997,6 +13307,17 @@ Alt+o Shift+!
 
 \lang english
 Alt+d o Shift+!
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,0,0
 \end_layout
 
 \end_inset
@@ -13043,6 +13364,17 @@ Alt+d o Shift+@
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,255,255
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13081,6 +13413,17 @@ Alt+o Shift+B
 
 \lang english
 Alt+d o Shift+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,0,255
 \end_layout
 
 \end_inset
@@ -13142,6 +13485,17 @@ Alt+d o Shift+N
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+191,128,64
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13195,6 +13549,17 @@ Alt+o Shift+C
 
 \lang english
 Alt+d o Shift+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,173,239
 \end_layout
 
 \end_inset
@@ -13256,6 +13621,17 @@ Alt+d o Ctrl+Shift+Y
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+64,64,64
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13268,7 +13644,7 @@ Alt+d o Ctrl+Shift+Y
 \color inherit
  (
 \lang english
-darkgra
+dark gra
 \series bold
 \bar under
 y
@@ -13309,6 +13685,17 @@ Alt+o Shift+Y
 
 \lang english
 Alt+d o Shift+Y
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+128,128,128
 \end_layout
 
 \end_inset
@@ -13370,6 +13757,17 @@ Alt+d o Shift+G
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,255,0
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13427,6 +13825,17 @@ Alt+d o Alt+Shift+Y
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+191,191,191
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13439,7 +13848,7 @@ Alt+d o Alt+Shift+Y
 \color inherit
  (
 \lang english
-lightgra
+light gra
 \series bold
 \bar under
 y
@@ -13480,6 +13889,17 @@ Alt+o Alt+Shift+G
 
 \lang english
 Alt+d o Alt+Shift+G
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+191,255,0
 \end_layout
 
 \end_inset
@@ -13544,6 +13964,17 @@ Alt+d o Shift+M
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+234,2,140
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13597,6 +14028,17 @@ Alt+o Shift+L
 
 \lang english
 Alt+d o Shift+L
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+149,141,0
 \end_layout
 
 \end_inset
@@ -13661,6 +14103,17 @@ Alt+d o Shift+O
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,128,0
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13716,6 +14169,17 @@ Alt+o Alt+p
 
 \lang english
 Alt+d o Alt+Shift+P
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,191,191
 \end_layout
 
 \end_inset
@@ -13779,6 +14243,17 @@ Alt+d o Shift+P
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+191,0,64
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13786,7 +14261,7 @@ Alt+d o Shift+P
 צבע טקסט ב
 \series bold
 \color purple
-סגול מודגש
+ארגמן מודגש
 \series default
 \color inherit
  (
@@ -13834,6 +14309,17 @@ Alt+o Shift+R
 
 \lang english
 Alt+d o Shift+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,0,0
 \end_layout
 
 \end_inset
@@ -13897,6 +14383,17 @@ Alt+d o Shift+T
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,128,128
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -13956,6 +14453,17 @@ Alt+d o Shift+V
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+128,0,128
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -14011,6 +14519,17 @@ Alt+o Shift+W
 
 \lang english
 Alt+d o Shift+W
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+255,241,0
 \end_layout
 
 \end_inset
@@ -14836,7 +15355,7 @@ x
 \begin_layout Plain Layout
 
 \numeric on
-2
+1
 \end_layout
 
 \end_inset
@@ -14901,7 +15420,7 @@ atrix
 \begin_layout Plain Layout
 
 \numeric on
-1
+2
 \end_layout
 
 \end_inset
@@ -17302,12 +17821,21 @@ Alt+d Shift+&
 \begin_inset Text
 
 \begin_layout Plain Layout
-שקול ל-"
+כתב עילי (
 \lang english
-Shift+^
+superscript
 \lang hebrew
-",
- נועד למקרה שמתבלבלים במקשים.
+)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+נועד למקרה שמתבלבלים במקשים.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -20865,228 +21393,8 @@ hoose
  קצר ככל האפשר
 \end_layout
 
-\begin_layout Subsubsection*
-סמלים שאינם זקוקים לקיצורי מקלדת
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\lang english
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
-<features tabularvalignment="middle">
-<column alignment="right" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="right" valignment="top">
-<row>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-פירוש
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-סמל
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-שוויון
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $=$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\numeric on
-1
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-חיבור
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $+$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\numeric on
-2
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-חיסור
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $-$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\numeric on
-3
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-קטן מ-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $<$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\numeric on
-4
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-גדול מ-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $>$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\numeric on
-5
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
-אי-שוויונות ואריתמטיקה בסיסית
+סמלים יסודיים
 \end_layout
 
 \begin_layout Standard
@@ -21094,12 +21402,34 @@ hoose
 
 \lang english
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="3">
+<lyxtabular version="3" rows="8" columns="5">
 <features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="right" valignment="top">
 <row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Shortcut
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+פלט
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -21164,6 +21494,29 @@ status collapsed
 
 \end_inset
 </cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -21193,6 +21546,29 @@ Ctrl+Alt+=
 
 \begin_layout Plain Layout
 \begin_inset Formula $\pm$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+$
 \end_inset
 
 
@@ -21236,6 +21612,29 @@ Ctrl+Alt+-
 
 \end_inset
 </cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -21265,6 +21664,29 @@ Alt+,
 
 \begin_layout Plain Layout
 \begin_inset Formula $\leq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Shift+<
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $<$
 \end_inset
 
 
@@ -21308,6 +21730,29 @@ Alt+.
 
 \end_inset
 </cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Shift+>
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $>$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -21344,6 +21789,24 @@ Ctrl+Alt+,
 
 \end_inset
 </cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -21375,6 +21838,24 @@ Ctrl+Alt+.
 \begin_inset Formula $\geqslant$
 \end_inset
 
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -22248,13 +22729,6 @@ macros
  שכן אורך שאר הפקודה (ללא הקידומת) הוא כשלוש-ארבע אותיות.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 חיצים
 \end_layout
@@ -22972,7 +23446,7 @@ Longleftrightarrow
 \begin_inset CommandInset href
 LatexCommand href
 name "קובץ הקוד המקורי"
-target "https://lyx.srayaa.com/files/shortcuts/all_my_shortcuts.lyx"
+target "https://lyx.srayaa.com/files/shortcuts/all_shortcuts.lyx"
 literal "false"
 
 \end_inset
@@ -26140,13 +26614,6 @@ v
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 יחסים בין קבוצות
 \end_layout
@@ -28594,6 +29061,13 @@ ngle
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 מכפלות,
  סכומים,
@@ -29001,7 +29475,7 @@ Alt+Shift+I
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula ${\displaystyle \iintop_{\ }}$
+\begin_inset Formula ${\displaystyle \iintop_{\ }^{\ }}$
 \end_inset
 
 
@@ -29132,7 +29606,7 @@ Alt+Shift+O
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula ${\displaystyle \oiintop_{\ }}$
+\begin_inset Formula ${\displaystyle \oiintop_{\ }^{\ }}$
 \end_inset
 
 
@@ -29213,7 +29687,7 @@ Ctrl+Alt+o
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula ${\displaystyle \ointop_{\ }}$
+\begin_inset Formula ${\displaystyle \ointop_{\ }^{\ }}$
 \end_inset
 
 
@@ -29434,13 +29908,6 @@ Alt+Shift+U Alt+a
 </row>
 </lyxtabular>
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -30071,13 +30538,13 @@ Alt+w
 <lyxtabular version="3" rows="27" columns="6">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="right" valignment="top">
 <column alignment="right" valignment="top">
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30097,7 +30564,7 @@ Shortcut
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30137,7 +30604,7 @@ Shortcut
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30155,7 +30622,7 @@ Shortcut
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30198,7 +30665,7 @@ Alt+w a
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30216,7 +30683,7 @@ Alt+w a
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30259,7 +30726,7 @@ Alt+w b
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30277,7 +30744,7 @@ Alt+w b
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30320,7 +30787,7 @@ Alt+w g
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30338,7 +30805,7 @@ Alt+w g
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30381,30 +30848,7 @@ Alt+w d
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Alt+w e
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\varepsilon$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30420,6 +30864,29 @@ Alt+w Alt+e
 
 \begin_layout Plain Layout
 \begin_inset Formula $\epsilon$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+w e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\varepsilon$
 \end_inset
 
 
@@ -30447,7 +30914,7 @@ Alt+w Alt+e
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30465,7 +30932,7 @@ Alt+w Alt+e
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30508,7 +30975,7 @@ Alt+w z
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30526,7 +30993,7 @@ Alt+w z
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30569,7 +31036,7 @@ Alt+w h
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30592,7 +31059,7 @@ Alt+w Alt+v
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30637,7 +31104,7 @@ Alt+w v
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30655,7 +31122,7 @@ Alt+w v
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30698,7 +31165,7 @@ Alt+w i
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30721,7 +31188,7 @@ Alt+w Alt+k
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30766,7 +31233,7 @@ Alt+w k
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30803,7 +31270,7 @@ status collapsed
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30848,7 +31315,7 @@ Alt+w l
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30866,7 +31333,7 @@ Alt+w l
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30911,7 +31378,7 @@ Alt+w m
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30929,7 +31396,7 @@ Alt+w m
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30974,7 +31441,7 @@ Alt+w n
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -30992,7 +31459,7 @@ Alt+w n
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31037,7 +31504,7 @@ Alt+w x
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31055,7 +31522,7 @@ Alt+w x
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31095,7 +31562,7 @@ Alt+w x
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31118,7 +31585,7 @@ Alt+w Alt+p
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31163,7 +31630,7 @@ Alt+w p
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31186,7 +31653,7 @@ Alt+w Alt+r
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31231,7 +31698,7 @@ Alt+w r
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31254,7 +31721,7 @@ Alt+w Alt+s
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31299,7 +31766,7 @@ Alt+w s
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31317,7 +31784,7 @@ Alt+w s
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31362,7 +31829,7 @@ Alt+w t
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31380,7 +31847,7 @@ Alt+w t
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31425,7 +31892,7 @@ Alt+w u
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31493,7 +31960,7 @@ Alt+w f
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31516,7 +31983,7 @@ Alt+w Alt+f
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31554,7 +32021,7 @@ Alt+w Alt+f
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31572,7 +32039,7 @@ Alt+w Alt+f
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31617,7 +32084,7 @@ Alt+w c
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31635,7 +32102,7 @@ Alt+w c
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31680,7 +32147,7 @@ Alt+w y
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -31698,7 +32165,7 @@ Alt+w y
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -35936,6 +36403,13 @@ Alt+c Shift+M
 </row>
 </lyxtabular>
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 

@@ -57,11 +57,6 @@
 \makeatother
 \newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
 \newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
-
-
-
-\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
-\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -97,7 +92,7 @@ End
 \language_package default
 \inputencoding auto-legacy
 \fontencoding auto
-\font_roman "default" "Times New Roman"
+\font_roman "default" "David"
 \font_sans "default" "Arial"
 \font_typewriter "default" "Courier New"
 \font_math "auto" "auto"
@@ -156,6 +151,26 @@ End
 \use_minted 0
 \use_lineno 0
 \boxbgcolor #cccccc
+\branch proofs
+\selected 1
+\filename_suffix 0
+\color #00ffff #000000
+\end_branch
+\branch pdf
+\selected 1
+\filename_suffix 0
+\color background background
+\end_branch
+\branch xhtml
+\selected 0
+\filename_suffix 0
+\color #71ffff #8e0000
+\end_branch
+\branch draft
+\selected 0
+\filename_suffix 0
+\color #71ffff #8e0000
+\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -191,6 +206,17 @@ End
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Standard
 \begin_inset Box Doublebox
@@ -261,7 +287,7 @@ status open
 \begin_layout Plain Layout
 \align center
 שם:
- ישראל ישראלי | ת
+ שריה אנסבכר | ת
 \begin_inset Quotes qrd
 \end_inset
 
@@ -295,7 +321,7 @@ status open
 \uwave default
 \noun default
 \color inherit
-123456789
+208026948
 \numeric off
  
 \end_layout

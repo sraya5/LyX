@@ -6,96 +6,17 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-% Set vertical space before and after dislpay equations to be longer for better redability:
-\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
-\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
 
-% The head's design for summuries,make the layout more similar to a book:
-\AtBeginDocument{
-\renewcommand\headrule{%
-  \kern -7pt
-  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
-  \kern 10pt
-}}
-% The footnoterule's design, put it on the right side.
-\AtBeginDocument{
-\renewcommand\footnoterule{%
-  \kern 3pt
-  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
-  \kern 4pt
-}}
-
-% Make the layout more similar to Hebrew Article, which I am more used to:
-\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
-\usepackage{titlesec}
-\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
-\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
-\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
-
-% Convert the Lyx colors into more pleasent colors:
-\usepackage{xcolor}
-\definecolor{blue}{RGB}{12,97,197}
-\definecolor{brown}{RGB}{154,58,0}
-\definecolor{green}{RGB}{0,128,40}
-\definecolor{orange}{RGB}{255,114,38}
-\definecolor{purple}{RGB}{94,53,177}
-\definecolor{red}{RGB}{235,16,16}
-
-% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
-\usepackage{amssymb}
-\renewcommand{\qedsymbol}{$\blacksquare$}
-
-% Create disjoint union symbols:
-\makeatletter
-\def\moverlay{\mathpalette\mov@rlay}
-\def\mov@rlay#1#2{\leavevmode\vtop{%
-   \baselineskip\z@skip \lineskiplimit-\maxdimen
-   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
-\newcommand{\charfusion}[3][\mathord]{
-    #1{\ifx#1\mathop\vphantom{#2}\fi
-        \mathpalette\mov@rlay{#2\cr#3}
-      }
-    \ifx#1\mathop\expandafter\displaylimits\fi}
-\makeatother
-\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
-\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
-
-
-
-\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
-\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
 \end_preamble
 \use_default_options true
 \begin_modules
 theorems-ams
 theorems-sec
-customHeadersFooters
+tca-style
 \end_modules
 \maintain_unincluded_children no
 \begin_local_layout
-Style Section
-	Font
-	  Series     Medium
-	  Shape      Smallcaps
-	  Size       Larger
-	  Series     Bold
-	EndFont
-	TocLevel 1
-End
-Style Section*
-	Font
-	  Series     Medium
-	  Shape      Smallcaps
-	  Size       Larger
-	  Series     Bold
-	EndFont
-End
-Style Solution
-	LabelString           ".פתרון \thetheorem "
-End
-Style Theorem
-	LabelString           ".משפט \thetheorem "
-End
+
 \end_local_layout
 \language hebrew
 \language_package default
@@ -105,7 +26,7 @@ End
 \font_sans "default" "Arial"
 \font_typewriter "default" "Courier New"
 \font_math "auto" "auto"
-\font_default_family default
+\font_default_family rmdefault
 \use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
@@ -121,8 +42,8 @@ End
 \bibtex_command default
 \index_command default
 \float_placement H
-\float_alignment class
-\paperfontsize default
+\float_alignment center
+\paperfontsize 10
 \spacing onehalf
 \use_hyperref true
 \pdf_bookmarks true
@@ -135,7 +56,7 @@ End
 \pdf_backref false
 \pdf_pdfusetitle true
 \pdf_quoted_options "linkcolor=black, citecolor=black"
-\papersize default
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -188,9 +109,9 @@ End
 \topmargin 2.7cm
 \rightmargin 2cm
 \bottommargin 2cm
-\headheight 2cm
+\headheight 1cm
 \headsep 0cm
-\footskip 0.5cm
+\footskip 0cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -381,6 +302,10 @@ literal "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+פרק ראשון
 \end_layout
 
 \end_body

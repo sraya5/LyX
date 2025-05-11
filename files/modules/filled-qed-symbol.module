@@ -1,0 +1,21 @@
+#\DeclareLyXModule{Filled QED}
+#\DeclareCategory{Maths}
+#DescriptionBegin
+#Change the qed symbol from "\Box" to "\blacksquare"
+#DescriptionEnd
+#Requires: theorems-std | theorems-ams
+
+#Author: Sraya Ansbacher <sites.srayaa@gmail.com>
+#Site: https://lyx.srayaa.com
+
+Format 104
+
+Requires	amssymb
+
+AddToPreamble
+	\renewcommand{\qedsymbol}{$\blacksquare$}
+EndPreamble
+
+Style Proof
+	EndLabelType          Filled_Box
+End

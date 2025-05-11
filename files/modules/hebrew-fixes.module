@@ -1,0 +1,109 @@
+#\DeclareLyXModule{Hebrew Fixes}
+#\DeclareCategory{Fixes & Hacks}
+#DescriptionBegin
+#Fixes for the Hebrew language.
+#DescriptionEnd
+
+#Author: Sraya Ansbacher <sites.srayaa@gmail.com>
+#Site: https://lyx.srayaa.com
+
+Format 104
+
+AddToPreamble
+	% Make the footnoterule on the right side.
+	\AtBeginDocument{
+	\renewcommand\footnoterule{%
+	\kern 3pt
+	\hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+	\kern 4pt
+	}}
+EndPreamble
+
+
+Style Proposition
+	LabelString           ".היגד \thetheorem"
+	Preamble
+	  \theoremstyle{plain}
+	  \newtheorem{prop}[thm]{\protect{היגד}}
+	EndPreamble
+End
+Style Problem
+	LabelString           ".בעיה \thetheorem"
+End
+Style Exercise
+	LabelString           ".תרגיל \thetheorem"
+End
+Style Solution
+	LabelString           ".פתרון \thetheorem"
+End
+Style Remark
+	LabelString           ".הערה \thetheorem"
+End
+Style Claim
+	LabelString           ".טענה \thetheorem"
+End
+Style Proof
+	LabelString           ".הוכחה"
+End
+Style Fact
+	LabelString           ".עובדה \thetheorem"
+End
+
+
+Style Theorem*
+	LabelString           ".משפט"
+End
+Style Corollary*
+	LabelString           ".מסקנה"
+End
+Style Lemma*
+	LabelString           ".למה"
+End
+Style Proposition*
+	LabelString           ".היגד"
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem*{prop*}{\protect{היגד}}
+	EndPreamble
+End
+Style Conjecture*
+	LabelString           ".השערה"
+End
+Style Definition*
+	LabelString           ".הגדרה"
+End
+Style Example*
+	LabelString           ".דוגמה"
+End
+Style Problem*
+	LabelString           ".בעיה"
+End
+Style Exercise*
+	LabelString           ".תרגיל"
+End
+Style Solution*
+	LabelString           ".פתרון"
+End
+Style Remark*
+	LabelString           ".הערה"
+End
+Style Claim*
+	LabelString           ".טענה"
+End
+Style Fact*
+	LabelString           ".עובדה"
+End
+
+
+Counter casei
+	LabelString ".מקרה \arabic{casei}"
+End
+Counter caseii
+	LabelString ".מקרה \arabic{caseii}"
+End
+Counter caseiii
+	LabelString ".מקרה \arabic{caseiii}"
+End
+Counter caseiv
+	LabelString ".מקרה \arabic{caseiv}"
+End

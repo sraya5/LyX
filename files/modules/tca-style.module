@@ -1,0 +1,211 @@
+#\DeclareLyXModule{TCA Style}
+#\DeclareCategory{Maths}
+#DescriptionBegin
+#The style of summaries from "The Comleteness Axiom" site: https://math.srayaa.com.
+#DescriptionEnd
+#Requires: theorems-std | theorems-ams
+
+#Author: Sraya Ansbacher <sites.srayaa@gmail.com>
+#Site: https://lyx.srayaa.com
+
+Format 104
+
+Input customHeadersFooters.module
+Input filled-qed-symbol.module
+Input hebrew-fixes.module
+
+
+AddToPreamble
+	% The head's design for summuries, makes the layout similar to a book:
+	\AtBeginDocument{
+		\ifcsname headrule\endcsname
+			\renewcommand\headrule{%
+			\kern -7pt
+			\hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+			\kern 10pt
+			}
+		\fi
+	}
+EndPreamble
+
+
+Style Theorem
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+		\theoremstyle{definition}
+		\newtheorem{thm}{\protect\theoremname}
+	EndPreamble
+End
+Style Corollary
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem{cor}[thm]{\protect\corollaryname}
+	EndPreamble
+End
+Style Lemma
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Shape               Italic
+	  Series              Medium
+	EndFont
+	Preamble
+	  \theoremstyle{remark}
+	  \newtheorem{lem}[thm]{\protect\lemmaname}
+	EndPreamble
+End
+Style Proposition
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem{prop}[thm]{\protect{היגד}}
+	EndPreamble
+End
+Style Conjecture
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem{conjecture}[thm]{\protect\conjecturename}
+	EndPreamble
+End
+Style Fact
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem{fact}[thm]{\protect\factname}
+	EndPreamble
+End
+Style Claim
+	LabelFont
+	  Shape               Up
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem{claim}[thm]{\protect\claimname}
+	EndPreamble
+End
+
+
+Style Theorem*
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+		\theoremstyle{definition}
+		\newtheorem*{thm*}{\protect\theoremname}
+	EndPreamble
+End
+Style Corollary*
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem*{cor*}{\protect\corollaryname}
+	EndPreamble
+End
+Style Lemma*
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Shape               Italic
+	  Series              Medium
+	EndFont
+	Preamble
+	  \theoremstyle{remark}
+	  \newtheorem*{lem*}{\protect\lemmaname}
+	EndPreamble
+End
+Style Proposition*
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem*{prop*}{\protect{היגד}}
+	EndPreamble
+End
+Style Conjecture*
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem*{conjecture*}{\protect\conjecturename}
+	EndPreamble
+End
+Style Fact*
+	Font
+	  Shape               Up
+	  Size                Normal
+	EndFont
+	LabelFont
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem*{fact*}{\protect\factname}
+	EndPreamble
+End
+Style Claim*
+	LabelFont
+	  Shape               Up
+	  Series              Bold
+	EndFont
+	Preamble
+	  \theoremstyle{definition}
+	  \newtheorem*{claim*}{\protect\claimname}
+	EndPreamble
+End

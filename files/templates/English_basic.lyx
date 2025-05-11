@@ -61,11 +61,6 @@
 \makeatother
 \newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
 \newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
-
-
-
-\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
-\newcommand{\indep}{\perp \!\!\! \perp}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -95,7 +90,7 @@ End
 \language_package default
 \inputencoding auto-legacy
 \fontencoding auto
-\font_roman "times" "Times New Roman"
+\font_roman "times" "David"
 \font_sans "default" "Arial"
 \font_typewriter "default" "Courier New"
 \font_math "auto" "auto"
@@ -152,6 +147,26 @@ End
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\branch proofs
+\selected 1
+\filename_suffix 0
+\color #00ffff #000000
+\end_branch
+\branch pdf
+\selected 1
+\filename_suffix 0
+\color background background
+\end_branch
+\branch xhtml
+\selected 0
+\filename_suffix 0
+\color #71ffff #8e0000
+\end_branch
+\branch draft
+\selected 0
+\filename_suffix 0
+\color #71ffff #8e0000
+\end_branch
 \index Index
 \shortcut idx
 \color #008000

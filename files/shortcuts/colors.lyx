@@ -5,89 +5,17 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
-\begin_preamble
-% Set vertical space before and after dislpay equations to be longer for better redability:
-\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
-\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
-
-% The footnoterule's design, put it on the right side.
-\AtBeginDocument{
-\renewcommand\footnoterule{%
-  \kern 3pt
-  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
-  \kern 4pt
-}}
-
-% Convert the Lyx colors into more pleasent colors:
-\usepackage{xcolor}
-\definecolor{blue}{RGB}{12,97,197}
-\definecolor{brown}{RGB}{154,58,0}
-\definecolor{green}{RGB}{0,128,40}
-\definecolor{orange}{RGB}{255,114,38}
-\definecolor{purple}{RGB}{94,53,177}
-\definecolor{red}{RGB}{235,16,16}
-
-% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
-\usepackage{amssymb}
-\renewcommand{\qedsymbol}{$\blacksquare$}
-
-% Make the layout more similar to Hebrew Article, which I am more used to:
-\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
-\usepackage{titlesec}
-\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
-\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
-\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
-
-% Create disjoint union symbols:
-\makeatletter
-\def\moverlay{\mathpalette\mov@rlay}
-\def\mov@rlay#1#2{\leavevmode\vtop{%
-   \baselineskip\z@skip \lineskiplimit-\maxdimen
-   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
-\newcommand{\charfusion}[3][\mathord]{
-    #1{\ifx#1\mathop\vphantom{#2}\fi
-        \mathpalette\mov@rlay{#2\cr#3}
-      }
-    \ifx#1\mathop\expandafter\displaylimits\fi}
-\makeatother
-\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
-\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
-\end_preamble
 \use_default_options true
 \begin_modules
 theorems-ams
+filled-qed-symbol
 \end_modules
 \maintain_unincluded_children no
-\begin_local_layout
-Style Section
-	Font
-	  Series     Medium
-	  Shape      Smallcaps
-	  Size       Larger
-	  Series     Bold
-	EndFont
-	TocLevel 1
-End
-Style Section*
-	Font
-	  Series     Medium
-	  Shape      Smallcaps
-	  Size       Larger
-	  Series     Bold
-	EndFont
-End
-Style Solution
-	LabelString           ".פתרון \thetheorem "
-End
-Style Theorem
-	LabelString           ".משפט \thetheorem "
-End
-\end_local_layout
-\language hebrew
+\language english
 \language_package default
 \inputencoding auto-legacy
 \fontencoding auto
-\font_roman "default" "David"
+\font_roman "times" "David"
 \font_sans "default" "Arial"
 \font_typewriter "default" "Courier New"
 \font_math "auto" "auto"
@@ -107,7 +35,7 @@ End
 \bibtex_command default
 \index_command default
 \float_placement H
-\float_alignment class
+\float_alignment center
 \paperfontsize default
 \spacing onehalf
 \use_hyperref true
@@ -171,12 +99,12 @@ End
 \color #008000
 \end_index
 \leftmargin 2cm
-\topmargin 2.7cm
+\topmargin 2cm
 \rightmargin 2cm
-\bottommargin 2cm
-\headheight 2cm
+\bottommargin 3cm
+\headheight 0cm
 \headsep 0cm
-\footskip 0cm
+\footskip 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -193,7 +121,7 @@ End
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
-\html_math_output 0
+\html_math_output 3
 \html_css_as_file 0
 \html_be_strict false
 \docbook_table_output 0
@@ -202,12 +130,171 @@ End
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
-literal "false"
+\begin_layout Enumerate
 
+\size giant
+blue - 
+\begin_inset Formula ${\color{blue}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+brown - 
+\begin_inset Formula ${\color{brown}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+cyan - 
+\begin_inset Formula ${\color{cyan}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+dark gray - 
+\begin_inset Formula ${\color{darkgray}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+gray - 
+\begin_inset Formula ${\color{gray}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+green - 
+\begin_inset Formula ${\color{green}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+light gray - 
+\begin_inset Formula ${\color{lightgray}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+light green - 
+\begin_inset Formula ${\color{lime}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+magenta - 
+\begin_inset Formula ${\color{magenta}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+olive green - 
+\begin_inset Formula ${\color{olive}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+orange - 
+\begin_inset Formula ${\color{orange}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+pink - 
+\begin_inset Formula ${\color{pink}\boldsymbol{\blacksquare}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+purple - 
+\begin_inset Formula ${\color{purple}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+red - 
+\begin_inset Formula ${\color{red}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+teal - 
+\begin_inset Formula ${\color{teal}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+violet - 
+\begin_inset Formula ${\color{violet}\blacksquare}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\size giant
+yellow - 
+\begin_inset Formula ${\color{yellow}\blacksquare}$
 \end_inset
 
 
