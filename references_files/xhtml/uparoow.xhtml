@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he-IL">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <style>
+        #scrollButton {
+            position: fixed; /* Keeps the button in a fixed position */
+            bottom: 0.7em; /* Distance from the bottom */
+            right: 0.7em; /* Distance from the right */
+            z-index: 1;
+            height: 3.5em;
+            width: 3.5em;
+            cursor: pointer;
+            background-color: #084149;
+            opacity: 80%;
+        }
+        #scrollImage {
+            position: fixed; /* Keeps the button in a fixed position */
+            bottom: 0.7em; /* Distance from the bottom */
+            right: 0.7em; /* Distance from the right */
+            height: 3.5em;
+            width: 3.5em;
+            opacity: 80%;
+        }
+    </style>
+    <button id="scrollButton" onclick="scrollToTop()">
+        <img id="scrollImage" src="https://lyx.srayaa.com/references_files/png/uparrow.png" />
+    </button>
+    <script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
+</body>
+</html>

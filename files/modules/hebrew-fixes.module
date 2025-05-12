@@ -9,6 +9,8 @@
 
 Format 104
 
+Requires	fontspec
+
 AddToPreamble
 	% Make the footnoterule on the right side.
 	\AtBeginDocument{
@@ -17,6 +19,13 @@ AddToPreamble
 	\hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
 	\kern 4pt
 	}}
+
+	% Correct the \Longleftarrow and the \Longrightarrow symbols
+	\IfFontExistsTF{Latin Modern Math}
+	{\newfontfamily\arrowfont{Latin Modern Math}
+	\renewcommand{\Longleftarrow}{\mathrel{\text{\arrowfont\char"27F8}}}
+	\renewcommand{\Longrightarrow}{\mathrel{\text{\arrowfont\char"27F9}}}
+	}
 EndPreamble
 
 
