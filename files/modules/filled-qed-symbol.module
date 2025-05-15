@@ -13,7 +13,7 @@ Format 104
 Requires	amssymb
 
 AddToPreamble
-	\renewcommand{\qedsymbol}{$\blacksquare$}
+	\AtBeginDocument{\renewcommand{\qedsymbol}{$\blacksquare$}}
 EndPreamble
 
 Style Proof
