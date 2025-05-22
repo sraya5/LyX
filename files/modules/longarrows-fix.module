@@ -1,0 +1,23 @@
+#\DeclareLyXModule{Longarrows Fix}
+#\DeclareCategory{Fixes & Hacks}
+#DescriptionBegin
+#Fix the broken "\Longleftarrow" and "\Longrightarrow".
+#DescriptionEnd
+
+#Author: Sraya Ansbacher <sites.srayaa@gmail.com>
+#Site: https://lyx.srayaa.com
+
+Format 104
+
+Requires	fontspec
+
+AddToPreamble
+	% Correct the \Longleftarrow and the \Longrightarrow symbols
+	\AtBeginDocument{
+	\IfFontExistsTF{Latin Modern Math}
+	{\newfontfamily\arrowfont{Latin Modern Math}
+	\renewcommand{\Longleftarrow}{\mathrel{\text{\arrowfont\char"27F8}}}
+	\renewcommand{\Longrightarrow}{\mathrel{\text{\arrowfont\char"27F9}}}
+	}
+	}
+EndPreamble

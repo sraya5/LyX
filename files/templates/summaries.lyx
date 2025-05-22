@@ -10,8 +10,6 @@
 \end_preamble
 \use_default_options true
 \begin_modules
-theorems-ams
-theorems-sec
 tca-style
 \end_modules
 \maintain_unincluded_children no

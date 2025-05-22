@@ -3,13 +3,13 @@
 #DescriptionBegin
 #The style of summaries from "The Comleteness Axiom" site: https://math.srayaa.com.
 #DescriptionEnd
-#Requires: theorems-std | theorems-ams
 
 #Author: Sraya Ansbacher <sites.srayaa@gmail.com>
 #Site: https://lyx.srayaa.com
 
 Format 104
 
+Input theorems-ams.module
 Input customHeadersFooters.module
 Input filled-qed-symbol.module
 Input hebrew-fixes.module
@@ -18,13 +18,15 @@ Input hebrew-fixes.module
 AddToPreamble
 	% The head's design for summuries, makes the layout similar to a book:
 	\AtBeginDocument{
-		\ifcsname headrule\endcsname
-			\renewcommand\headrule{%
-			\kern -7pt
-			\hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
-			\kern 10pt
-			}
-		\fi
+	\ifcsname headrule\endcsname
+	\renewcommand\headrule{%
+	\kern -7pt
+	\hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+	\kern 10pt
+	}
+	\fi
+	\setlength\abovedisplayskip{0.5em}
+	\setlength\belowdisplayskip{0.5em}
 	}
 EndPreamble
 
@@ -209,3 +211,7 @@ Style Claim*
 	  \newtheorem*{claim*}{\protect\claimname}
 	EndPreamble
 End
+
+
+Input theorems-sec.module
+Input longarrows-fix.module
