@@ -3,8 +3,8 @@ Contributors: takanakui, freemius, freshlightlab
 link: http://profiles.wordpress.org/takanakui
 Tags:   mobile, responsive, menu,  responsive menu, mobile menu
 Requires at least: 4.4
-Tested up to: 6.7
-Stable tag: 2.8.7
+Tested up to: 6.8
+Stable tag: 2.8.8
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -134,6 +134,12 @@ Not available at the moment
  
 == Changelog ==
 
+
+
+
+= 2.8.8 =
+* New! - SVG icons that will load faster
+* Improvment! - Update Freemius SDK
 
 
 = 2.8.7 =
