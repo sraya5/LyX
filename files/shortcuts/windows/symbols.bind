@@ -204,7 +204,7 @@ Format 5
 \bind "M-i S-d"             "command-sequence math-insert \\stackrelthree{\\MKbigcupdot}; down; down"
 \bind "M-i S-j"             "command-sequence math-insert \\bigcap; math-superscript; cell-backward; math-subscript"
 \bind "M-i S-asterisk"      "command-sequence math-insert \\bigotimes; math-superscript; cell-backward; math-subscript"
-\bind "M-m S-plus"          "command-sequence math-insert \\bigoplus; math-superscript; cell-backward; math-subscript"
+\bind "M-i S-plus"          "command-sequence math-insert \\bigoplus; math-superscript; cell-backward; math-subscript"
 
 \bind "M-i C-S-u"           "command-sequence math-insert \\bigcup_{n=1}^{\\infty}; escape"
 \bind "M-i C-S-d"           "command-sequence math-insert \\stackrelthree{\\MKbigcupdot}{\\infty}{n=1}; escape"
