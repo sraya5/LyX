@@ -1,0 +1,87 @@
+# LyX 2.4.4 generated this file. If you want to make your own
+# modifications you should do them from inside LyX and save.
+
+Format 38
+
+
+#
+# MISC SECTION ######################################
+#
+
+\path_prefix "C:/Program Files/MiKTeX/miktex/bin/x64;$LyXDir/bin;$LyXDir/Python;$LyXDir/Python/Lib;$LyXDir/Python/Scripts;$LyXDir/imagemagick;$LyXDir/ghostscript/bin"
+\kbmap true
+\kbmap_primary "null"
+\kbmap_secondary "hebrew"
+\user_name ""
+\user_email ""
+\user_initials ""
+
+#
+# SCREEN & FONTS SECTION ############################
+#
+
+\scroll_below_document true
+\screen_font_sizes 5 7 8 9 10 12 14.4 17.26 20.74 24.88
+
+#
+# COLOR SECTION ###################################
+#
+
+
+#
+# PRINTER SECTION ###################################
+#
+
+
+#
+# TEX SECTION #######################################
+#
+
+
+#
+# FILE SECTION ######################################
+#
+
+\completion_inline_text true
+\completion_popup_delay 1.5
+\completion_popup_text true
+\make_backup false
+
+#
+# PLAIN TEXT EXPORT SECTION ##############################
+#
+
+
+#
+# SPELLCHECKER SECTION ##############################
+#
+
+\alternate_language "he"
+
+#
+# LANGUAGE SUPPORT SECTION ##########################
+#
+
+\visual_cursor true
+\language_custom_package ""
+
+#
+# 2nd MISC SUPPORT SECTION ##########################
+#
+
+\gui_language english
+
+#
+# FORMATS SECTION ##########################
+#
+
+
+#
+# CONVERTERS SECTION ##########################
+#
+
+
+#
+# COPIERS SECTION ##########################
+#
+
