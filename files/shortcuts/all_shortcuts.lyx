@@ -302,7 +302,7 @@ LatexCommand tableofcontents
 
 \begin_layout Standard
 בקובץ שלפניכם מופיעים כל קיצורי המקלדת שבקובצי הקיצורים שלי,
- וכדי להחיל את הקיצורים הללו אצלכם עליכם לשים אותם בכתובת הבאה:
+ וכדי להחיל את הקיצורים הללו אצלכם עליכם לשים אותם בניתוב הבא:
 \end_layout
 
 \begin_layout Standard
@@ -317,7 +317,7 @@ LatexCommand tableofcontents
 \begin_inset Text
 
 \begin_layout Plain Layout
-כתובת
+ניתוב
 \end_layout
 
 \end_inset
@@ -355,7 +355,13 @@ AppData
 \backslash
 Roaming
 \backslash
-LyX2.4
+LyX
+\series bold
+\color blue
+<version>
+\series default
+\color inherit
+
 \backslash
 bind
 \end_layout
@@ -395,7 +401,13 @@ Library
 \backslash
 Application Support
 \backslash
-LyX-2.4
+LyX-
+\series bold
+\color blue
+<version>
+\series default
+\color inherit
+
 \backslash
 bind
 \end_layout
