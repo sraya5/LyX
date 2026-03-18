@@ -1,14 +1,18 @@
 @echo off
 :: ============================================================
-::  Run-Installer.cmd
+::  installer.cmd
 ::  Double-click this file to launch Install-MiKTeX-LyX.ps1
 ::  with administrator privileges and an unrestricted
 ::  execution policy.
 ::
+::  If the "files" sub-folder is missing, the required files
+::  are downloaded automatically from:
+::  https://lyx.srayaa.com/install/windows/files
+::
 ::  Expected folder layout:
 ::
 ::    (any folder)\
-::        Run-Installer.cmd        <-- THIS file
+::        installer.cmd            <-- THIS file
 ::        files\
 ::            Install-MiKTeX-LyX.ps1
 ::            preferences
@@ -21,20 +25,49 @@
 
 setlocal EnableDelayedExpansion
 
-:: ---  Resolve the "files" sub-folder relative to this .cmd  ----------------
 set "SCRIPT_ROOT=%~dp0"
-set "PS1_PATH=%SCRIPT_ROOT%files\Install-MiKTeX-LyX.ps1"
+set "FILES_DIR=%SCRIPT_ROOT%files"
+set "PS1_PATH=%FILES_DIR%\Install-MiKTeX-LyX.ps1"
+set "BASE_URL=https://lyx.srayaa.com/install/windows/files"
 
-if not exist "%PS1_PATH%" (
+:: ---  Download any missing files  ------------------------------------------
+set "NEED_DOWNLOAD=0"
+for %%F in (Install-MiKTeX-LyX.ps1 preferences user.bind he_IL.dic he_IL.aff) do (
+    if not exist "%FILES_DIR%\%%F" set "NEED_DOWNLOAD=1"
+)
+
+if "%NEED_DOWNLOAD%"=="1" (
     echo.
-    echo  [ERROR] Cannot find the PowerShell script at:
-    echo          %PS1_PATH%
+    echo  [INFO] One or more required files are missing - downloading from:
+    echo         %BASE_URL%
     echo.
-    echo  Make sure Install-MiKTeX-LyX.ps1 is inside a sub-folder
-    echo  called "files" that sits next to this .cmd file.
+
+    if not exist "%FILES_DIR%" mkdir "%FILES_DIR%"
+
+    powershell -NoProfile -ExecutionPolicy Bypass -Command ^
+        "$baseUrl = '%BASE_URL%'; $dest = '%FILES_DIR%';" ^
+        "$files = @('Install-MiKTeX-LyX.ps1','preferences','user.bind','he_IL.dic','he_IL.aff');" ^
+        "$wc = New-Object System.Net.WebClient;" ^
+        "foreach ($f in $files) {" ^
+        "    $out = Join-Path $dest $f;" ^
+        "    if (Test-Path $out) { Write-Host ('  [SKIP] ' + $f + ' (already exists)'); continue }" ^
+        "    $url = $baseUrl + '/' + $f;" ^
+        "    Write-Host ('  Downloading ' + $f + '...');" ^
+        "    try { $wc.DownloadFile($url, $out); Write-Host ('  [OK]  ' + $f) -ForegroundColor Green }" ^
+        "    catch { Write-Host ('  [ERR] ' + $f + ': ' + $_.Exception.Message) -ForegroundColor Red; exit 1 }" ^
+        "}"
+
+    if !errorlevel! neq 0 (
+        echo.
+        echo  [ERROR] Download failed. Check your internet connection and try again.
+        echo.
+        pause
+        exit /b 1
+    )
+
     echo.
-    pause
-    exit /b 1
+    echo  [OK]  All files are ready.
+    echo.
 )
 
 :: ---  Self-elevate to Administrator if not already  ------------------------
