@@ -7,8 +7,8 @@
 #      user.bind                (LyX key-binding file)
 #      he_IL.dic                (Hebrew Hunspell dict  - fallback)
 #      he_IL.aff                (Hebrew Hunspell affix - fallback)
-#      basic-miktex-*-x64.exe   (optional)
-#      LyX-*-x64.exe            (optional)
+#      basic-miktex-*-x64.exe   (optional - downloaded automatically if absent)
+#      LyX-*-x64.exe            (optional - downloaded automatically if absent)
 # ===========================================================================
 
 Set-StrictMode -Version Latest
@@ -129,7 +129,9 @@ $DictUrlAff = 'https://raw.githubusercontent.com/LibreOffice/dictionaries/master
 # ---------------------------------------------------------------------------
 [Win32.PowerState]::SetThreadExecutionState([Convert]::ToUInt32('80000003', 16)) | Out-Null
 
-$logFile = Join-Path $env:TEMP ("LyX_install-" + (Get-Date -Format 'yyyyMMdd-HHmmss') + ".log")
+$logsDir = Join-Path $ScriptDir 'logs'
+if (-not (Test-Path $logsDir)) { New-Item -ItemType Directory -Force -Path $logsDir | Out-Null }
+$logFile = Join-Path $logsDir ("LyX_install-" + (Get-Date -Format 'yyyyMMdd-HHmmss') + ".log")
 Start-Transcript -Path $logFile -Append | Out-Null
 
 $GlobalStart = [System.Diagnostics.Stopwatch]::StartNew()
@@ -161,36 +163,43 @@ if ($env:USERNAME -match '[^\x20-\x7E]') {
 Write-Header 'STEP 1 - MiKTeX installation and setup'
 $stepStart = [System.Diagnostics.Stopwatch]::StartNew()
 
-# --- 1a: Find or download MiKTeX installer ---
-function Find-MiKTeXInstaller {
-    foreach ($dir in @($ScriptDir, $DownloadsDir)) {
-        $f = Get-ChildItem -Path $dir -Filter 'basic-miktex-*-x64.exe' -ErrorAction SilentlyContinue |
-             Sort-Object LastWriteTime -Descending | Select-Object -First 1
-        if ($f) { Write-OK ("Found MiKTeX installer: " + $f.FullName); return $f.FullName }
-    }
-    return $null
-}
-
-$miktexExe = Find-MiKTeXInstaller
-if (-not $miktexExe) {
-    Write-Step 'Not found locally - downloading MiKTeX basic installer...'
-    $miktexExe = Join-Path $env:TEMP 'basic-miktex-x64.exe'
-    try {
-        (New-Object System.Net.WebClient).DownloadFile(
-            'https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-x64.exe',
-            $miktexExe)
-        Write-OK "Downloaded: $miktexExe"
-    } catch {
-        Write-Err "Download failed: $_"
-        Write-Err "Place basic-miktex-*-x64.exe in $ScriptDir or $DownloadsDir"
-        Stop-Transcript | Out-Null; exit 1
-    }
-}
-
-# --- 1b: Install if not already present ---
+# --- 1a: Find or download MiKTeX installer (skipped if already installed) ---
+$miktexExe = $null
 if (Test-Path (Join-Path $MiKTeXBinDir 'miktexsetup.exe')) {
     Write-Step 'MiKTeX already installed - skipping.'
 } else {
+    foreach ($dir in @($ScriptDir, $DownloadsDir)) {
+        $f = Get-ChildItem -Path $dir -Filter 'basic-miktex-*-x64.exe' -ErrorAction SilentlyContinue |
+             Sort-Object LastWriteTime -Descending | Select-Object -First 1
+        if ($f) { Write-OK ("Found MiKTeX installer: " + $f.FullName); $miktexExe = $f.FullName; break }
+    }
+    if (-not $miktexExe) {
+        Write-Step 'Not found locally - downloading MiKTeX basic installer...'
+        $miktexExe = Join-Path $ScriptDir 'basic-miktex-x64.exe'
+        try {
+            $ctanDir = 'https://ctan.math.illinois.edu/systems/win32/miktex/setup/windows-x64/'
+            $html    = (New-Object System.Net.WebClient).DownloadString($ctanDir)
+            $match   = [System.Text.RegularExpressions.Regex]::Matches(
+                           $html, 'basic-miktex-[\d.]+-x64\.exe',
+                           [System.Text.RegularExpressions.RegexOptions]::IgnoreCase) |
+                       Select-Object -Last 1
+            $dlUrl   = if ($match) { $ctanDir + $match.Value } else {
+                           Write-Warn 'Could not scrape MiKTeX URL - using fallback.'
+                           'https://ctan.math.illinois.edu/systems/win32/miktex/setup/windows-x64/basic-miktex-25.12-x64.exe'
+                       }
+            Write-Step "Downloading from: $dlUrl"
+            (New-Object System.Net.WebClient).DownloadFile($dlUrl, $miktexExe)
+            Write-OK "Downloaded: $miktexExe"
+        } catch {
+            Write-Err "Download failed: $_"
+            Write-Err "Place basic-miktex-*-x64.exe in $ScriptDir or $DownloadsDir"
+            Stop-Transcript | Out-Null; exit 1
+        }
+    }
+}
+
+# --- 1b: Install ---
+if ($miktexExe) {
     Write-Step "Installing MiKTeX to: $MiKTeXInstallDir"
     $proc = Start-Process -FilePath $miktexExe `
         -ArgumentList @('--unattended', '--private', '--auto-install=yes', "--user-install=$MiKTeXInstallDir") `
@@ -272,57 +281,62 @@ Write-Step ("Step 1 completed in " + (Format-Elapsed $stepStart.Elapsed))
 Write-Header 'STEP 2 - LyX installation'
 $stepStart = [System.Diagnostics.Stopwatch]::StartNew()
 
-# --- 2a: Find or download LyX installer ---
-function Find-LyXInstaller {
+# --- 2a: Find or download LyX installer (skipped if already installed) ---
+$lyxExe = $null
+if (@(Get-ChildItem 'C:\Program Files\' -Filter 'LyX*' -Directory -ErrorAction SilentlyContinue).Count -gt 0) {
+    Write-Step 'LyX already installed - skipping.'
+} else {
     foreach ($dir in @($ScriptDir, $DownloadsDir)) {
         foreach ($pat in @('LyX-*-x64.exe', 'LyX-*-Installer*.exe', 'LyX*.exe')) {
             $f = Get-ChildItem -Path $dir -Filter $pat -ErrorAction SilentlyContinue |
                  Sort-Object LastWriteTime -Descending | Select-Object -First 1
-            if ($f) { Write-OK ("Found LyX installer: " + $f.FullName); return $f.FullName }
+            if ($f) { Write-OK ("Found LyX installer: " + $f.FullName); $lyxExe = $f.FullName; break }
         }
+        if ($lyxExe) { break }
     }
-    return $null
-}
-
-$lyxExe = Find-LyXInstaller
-if (-not $lyxExe) {
-    Write-Step 'Not found locally - resolving from lyx.org...'
-    try {
-        $html    = (New-Object System.Net.WebClient).DownloadString('https://www.lyx.org/Download')
-        $rxMatch = [System.Text.RegularExpressions.Regex]::Match(
-            $html, 'href="([^"]*LyX[^"]*x64[^"]*\.exe)"',
-            [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
-        if ($rxMatch.Success) {
-            $url = $rxMatch.Groups[1].Value
-            if ($url -notmatch '^https?://') { $url = 'https://www.lyx.org' + $url }
-        } else {
-            $url = 'https://ftp.lip6.fr/pub/lyx/bin/2.4.3/LyX-2.4.3-Installer-x64.exe'
-            Write-Warn 'Could not scrape URL - using fallback.'
+    if (-not $lyxExe) {
+        Write-Step 'Not found locally - resolving from LyX FTP...'
+        $lyxExe = Join-Path $ScriptDir 'LyX-Installer-x64.exe'
+        try {
+            $ftpBase  = 'https://ftp.lip6.fr/pub/lyx/bin/'
+            $html     = (New-Object System.Net.WebClient).DownloadString($ftpBase)
+            $verMatch = [System.Text.RegularExpressions.Regex]::Matches($html, 'href="(\d+\.\d+\.\d+)/"') |
+                        Sort-Object { [version]$_.Groups[1].Value } | Select-Object -Last 1
+            if (-not $verMatch) { throw 'Could not find version folder on FTP.' }
+            $verDir   = $ftpBase + $verMatch.Groups[1].Value + '/'
+            $dirHtml  = (New-Object System.Net.WebClient).DownloadString($verDir)
+            $fileMatch = [System.Text.RegularExpressions.Regex]::Matches(
+                             $dirHtml, 'LyX-\d+-Installer-\d+-x64\.exe',
+                             [System.Text.RegularExpressions.RegexOptions]::IgnoreCase) |
+                         Select-Object -Last 1
+            if (-not $fileMatch) { throw 'No x64 installer found in version folder.' }
+            $url = $verDir + $fileMatch.Value
+            Write-Step "Downloading from: $url"
+            (New-Object System.Net.WebClient).DownloadFile($url, $lyxExe)
+            Write-OK 'LyX installer downloaded.'
+        } catch {
+            Write-Warn "Could not resolve from FTP: $_ - using fallback."
+            try {
+                $url = 'https://ftp.lip6.fr/pub/lyx/bin/2.5.0/LyX-250-Installer-1-x64.exe'
+                Write-Step "Downloading from: $url"
+                (New-Object System.Net.WebClient).DownloadFile($url, $lyxExe)
+                Write-OK 'LyX installer downloaded.'
+            } catch {
+                Write-Err "Download failed: $_"
+                Write-Err "Place LyX-*-x64.exe in $ScriptDir or $DownloadsDir"
+                Stop-Transcript | Out-Null; exit 1
+            }
         }
-        $lyxExe = Join-Path $env:TEMP 'LyX-Installer-x64.exe'
-        Write-Step "Downloading from: $url"
-        (New-Object System.Net.WebClient).DownloadFile($url, $lyxExe)
-        Write-OK 'LyX installer downloaded.'
-    } catch {
-        Write-Err "Download failed: $_"
-        Write-Err "Place LyX-*-x64.exe in $ScriptDir or $DownloadsDir"
-        Stop-Transcript | Out-Null; exit 1
     }
 }
 
 # --- 2b: Install with time-based progress bar ---
-$lyxAlreadyInstalled = @(
-    Get-ChildItem 'C:\Program Files\' -Filter 'LyX*' -Directory -ErrorAction SilentlyContinue
-).Count -gt 0
-
-if ($lyxAlreadyInstalled) {
-    Write-Step 'LyX already installed - skipping.'
-} else {
+if ($lyxExe) {
     Write-Step 'Running LyX silent installer...'
     Write-Host ''
 
-    # Block outbound HTTP/HTTPS for the duration of the install so the LyX
-    # installer cannot download dictionaries - we deploy them ourselves in Step 3.
+    # Block outbound HTTP/HTTPS so the LyX installer cannot download dictionaries.
+    # We deploy the Hebrew dicts ourselves in Step 3.
     $fwRules = @{ 'LyX-Installer-Block80' = 80; 'LyX-Installer-Block443' = 443 }
     $fwAdded = [System.Collections.Generic.List[string]]::new()
     foreach ($name in $fwRules.Keys) {
