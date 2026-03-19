@@ -6,6 +6,9 @@
 \origin unavailable
 \textclass article
 \begin_preamble
+\usepackage{polyglossia}
+\setdefaultlanguage{hebrew}
+\setotherlanguage{english}
 % Make the footnoterule on the right side.
 \AtBeginDocument{
 \renewcommand\footnoterule{%
@@ -24,7 +27,7 @@ theorems-ams
 
 \end_local_layout
 \language hebrew
-\language_package default
+\language_package none
 \inputencoding auto-legacy
 \fontencoding auto
 \font_roman "default" "Times New Roman"
@@ -521,7 +524,16 @@ MiKTeX
 \color inherit
 במקום ב-
 \lang english
-TeX Live
+
+\begin_inset CommandInset href
+LatexCommand href
+name "TeX Live"
+target "https://www.tug.org/texlive"
+literal "false"
+
+\end_inset
+
+
 \family sans
 \series medium
 \shape up
@@ -654,16 +666,18 @@ literal "false"
  כדי ליהנות מהיתרון הזה בצורה הטובה ביותר כדאי לייבא קובצי קיצורים שכתבו אנשים אחרים - כך ניתן להתחיל את השימוש בתוכנה כשקיצורים שימושיים רבים כבר נמצאים במחשב האישי שלכם,
  ללא צורך ביצירה ידנית של כל אחד מהם.
  הדרך לעשות זאת היא להוריד את הקבצים מהאינטרנט (היכן שהמשתמשים הללו מפרסמים את הקבצים),
- ולמקם אותם בניתוב הבא
-\begin_inset Foot
-status collapsed
+ ולמקם אותם בניתוב הבא:
+\end_layout
 
-\begin_layout Plain Layout
-את הניתוב של
+\begin_deeper
+\begin_layout Itemize
+ב-
+\lang english
+Windows
 \family sans
 \series medium
 \shape up
-\size footnotesize
+\size normal
 \emph off
 \nospellcheck off
 \bar no
@@ -673,11 +687,12 @@ status collapsed
 \uwave off
 \noun off
 \color none
- 
-\family roman
+\lang hebrew
+ -
+\family default
 \series default
 \shape default
-\size normal
+\size default
 \emph default
 \nospellcheck default
 \bar default
@@ -687,54 +702,7 @@ status collapsed
 \uwave default
 \noun default
 \color inherit
-\lang english
-Linux
-\family default
-\size default
-\lang hebrew
- קיבלתי מבינה מלאכותית,
- אשמח לדעת שהיא נכונה.
-\end_layout
-
-\end_inset
-
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ניתוב
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-מערכת הפעלה
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+ 
 \lang english
 C:
 \backslash
@@ -761,28 +729,47 @@ LyX
 
 \backslash
 bind
+\lang hebrew
+.
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\begin_layout Itemize
+ב-
 \lang english
-Windows
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+iOS
+\family sans
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+(
+\lang english
+Mac
+\lang hebrew
+) - 
 \lang english
 Users
 \backslash
@@ -807,28 +794,43 @@ LyX-
 
 \backslash
 bind
+\lang hebrew
+.
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\begin_layout Itemize
+ב-
 \lang english
-iOS (Mac)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Linux
+\family sans
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ -
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
 \lang english
 /home/
 \series bold
@@ -843,27 +845,19 @@ iOS (Mac)
 \series default
 \color inherit
 /bind
-\end_layout
+\lang hebrew
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Foot
+status collapsed
 
 \begin_layout Plain Layout
-
-\lang english
-Linux
+את הניתוב הזה קיבלתי מבינה מלאכותית,
+ אשמח לדעת אם הוא נכון.
 \end_layout
 
 \end_inset
-</cell>
-</row>
-</lyxtabular>
 
-\end_inset
-
-
+.
 \end_layout
 
 \begin_layout Standard
