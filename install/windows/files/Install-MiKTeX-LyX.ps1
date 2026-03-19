@@ -171,7 +171,13 @@ if (Test-Path (Join-Path $MiKTeXBinDir 'miktexsetup.exe')) {
     foreach ($dir in @($ScriptDir, $DownloadsDir)) {
         $f = Get-ChildItem -Path $dir -Filter 'basic-miktex-*-x64.exe' -ErrorAction SilentlyContinue |
              Sort-Object LastWriteTime -Descending | Select-Object -First 1
-        if ($f) { Write-OK ("Found MiKTeX installer: " + $f.FullName); $miktexExe = $f.FullName; break }
+        if ($f) {
+            if ($dir -eq $DownloadsDir -and $f.LastWriteTime -lt (Get-Date).AddDays(-7)) {
+                Write-Warn ("MiKTeX installer in Downloads is older than 1 week - ignoring: " + $f.FullName)
+            } else {
+                Write-OK ("Found MiKTeX installer: " + $f.FullName); $miktexExe = $f.FullName; break
+            }
+        }
     }
     if (-not $miktexExe) {
         Write-Step 'Not found locally - downloading MiKTeX basic installer...'
@@ -236,6 +242,7 @@ $miktexExeCli = Join-Path $MiKTeXBinDir 'miktex.exe'
 
 if (-not (Test-Path $mpmExe)) {
     Write-Warn 'mpm.exe not found - skipping package operations.'
+    $miktexUpdateOk = $false
 } else {
     if (Test-Path $initexmfExe) {
         Write-Step 'Refreshing file name database...'
@@ -243,30 +250,33 @@ if (-not (Test-Path $mpmExe)) {
         Write-OK 'File name database refreshed.'
     }
 
-    Write-Step 'Checking for package updates (may take a few minutes)...'
-    $prev = $ErrorActionPreference
-    $ErrorActionPreference = 'Continue'
-    $updateOut = [System.Collections.Generic.List[string]]::new()
-    $streamLine = {
-        param([string]$line)
-        if ($line -match 'security.risk|elevated.priv') { return }
-        if ($line -match '\S') { Write-Host "     $line"; $updateOut.Add($line) }
+    function Invoke-MiKTeXUpdate {
+        $prev = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
+        $out = [System.Collections.Generic.List[string]]::new()
+        $stream = {
+            param([string]$line)
+            if ($line -match 'security.risk|elevated.priv') { return }
+            if ($line -match '\S') { Write-Host "     $line"; $out.Add($line) }
+        }
+        if (Test-Path $miktexExeCli) {
+            & $miktexExeCli packages update 2>&1 | ForEach-Object { & $stream "$_" }
+        } else {
+            & $mpmExe --update-package-database 2>&1 | ForEach-Object { & $stream "$_" }
+            & $mpmExe --upgrade                 2>&1 | ForEach-Object { & $stream "$_" }
+        }
+        $failed = @($out | Where-Object { $_ -match "Sorry|error|couldn't|failed|resolve" }).Count -gt 0
+        $ErrorActionPreference = $prev
+        return ($LASTEXITCODE -eq 0) -and (-not $failed)
     }
-    if (Test-Path $miktexExeCli) {
-        & $miktexExeCli packages update 2>&1 | ForEach-Object { & $streamLine "$_" }
-    } else {
-        & $mpmExe --update-package-database 2>&1 | ForEach-Object { & $streamLine "$_" }
-        & $mpmExe --upgrade                 2>&1 | ForEach-Object { & $streamLine "$_" }
-    }
-    $updateFailed = @($updateOut | Where-Object { $_ -match "Sorry|error|couldn't|failed|resolve" }).Count -gt 0
-    $updateOk     = ($LASTEXITCODE -eq 0) -and (-not $updateFailed)
-    $ErrorActionPreference = $prev
 
-    if ($updateOk) {
+    Write-Step 'Checking for package updates (may take a few minutes)...'
+    $miktexUpdateOk = Invoke-MiKTeXUpdate
+
+    if ($miktexUpdateOk) {
         Write-OK 'Packages up to date.'
     } else {
-        Write-Warn 'Update failed (possibly a network issue). To update manually:'
-        Write-Warn '  Open MiKTeX Console -> Updates -> Check for updates -> wait -> Update now'
+        Write-Warn 'Update failed (possibly a network issue) - will retry before PDF export.'
     }
     Write-OK 'MiKTeX setup complete.'
 }
@@ -290,7 +300,13 @@ if (@(Get-ChildItem 'C:\Program Files\' -Filter 'LyX*' -Directory -ErrorAction S
         foreach ($pat in @('LyX-*-x64.exe', 'LyX-*-Installer*.exe', 'LyX*.exe')) {
             $f = Get-ChildItem -Path $dir -Filter $pat -ErrorAction SilentlyContinue |
                  Sort-Object LastWriteTime -Descending | Select-Object -First 1
-            if ($f) { Write-OK ("Found LyX installer: " + $f.FullName); $lyxExe = $f.FullName; break }
+            if ($f) {
+                if ($dir -eq $DownloadsDir -and $f.LastWriteTime -lt (Get-Date).AddDays(-7)) {
+                    Write-Warn ("LyX installer in Downloads is older than 1 week - ignoring: " + $f.FullName)
+                } else {
+                    Write-OK ("Found LyX installer: " + $f.FullName); $lyxExe = $f.FullName; break
+                }
+            }
         }
         if ($lyxExe) { break }
     }
@@ -525,7 +541,22 @@ Write-Step ("Step 3 completed in " + (Format-Elapsed $stepStart.Elapsed))
 Write-Header 'STEP 4 - Test: export test.lyx to PDF'
 $stepStart = [System.Diagnostics.Stopwatch]::StartNew()
 
-$testLyxSrc = Join-Path $ScriptDir 'test.lyx'
+# Retry MiKTeX update if it failed in Step 1
+if (-not $miktexUpdateOk -and (Test-Path $mpmExe)) {
+    Write-Step 'Retrying MiKTeX package update...'
+    $miktexUpdateOk = Invoke-MiKTeXUpdate
+    if ($miktexUpdateOk) {
+        Write-OK 'Packages up to date.'
+    } else {
+        Write-Warn 'Update failed again. To update manually:'
+        Write-Warn '  Open MiKTeX Console -> Updates -> Check for updates -> wait -> Update now'
+    }
+}
+
+if (-not $miktexUpdateOk) {
+    Write-Warn 'Skipping PDF export - MiKTeX packages are not up to date.'
+    Write-Warn 'Please update MiKTeX manually, then re-run the script or compile test.lyx yourself.'
+} else {
 if (-not (Test-Path $testLyxSrc)) {
     Write-Step 'test.lyx not found locally - downloading...'
     try {
@@ -581,6 +612,7 @@ if ($testLyxSrc -and (Test-Path $testLyxSrc)) {
         }
     }
 }
+} # end of $miktexUpdateOk else block
 
 $stepStart.Stop()
 Write-Step ("Step 4 completed in " + (Format-Elapsed $stepStart.Elapsed))
