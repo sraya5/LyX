@@ -159,8 +159,12 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-זה הזמן לפרסומת לא כל כך סמויה.
- כשהתחלתי את התואר הראשון (מרץ
+זה הזמן לשתי פרסומות לא כל כך סמויות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+כשהתחלתי את התואר הראשון (מרץ
 \family sans
 \series medium
 \shape up
@@ -230,8 +234,35 @@ literal "false"
 \noun default
 \color inherit
 2026
+\family sans
+\series medium
+\shape up
+\size normal
+\emph off
 \numeric off
-) אחרי עבודה רבה שנפרשה לאורך
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- אחרי
 \family sans
 \series medium
 \shape up
@@ -289,8 +320,7 @@ literal "false"
 \uwave default
 \noun default
 \color inherit
-שנים,
- אני גאה בהישג של יצירת סקריפט המתקין את 
+שנים) אני גאה בכך שהידע שצברתי אפשר לי להתקין את 
 \lang english
 \SpecialChar LyX
 
@@ -322,7 +352,8 @@ literal "false"
 \uwave default
 \noun default
 \color inherit
-בפחות מ-
+ללא תקלות בניסיון הראשון,
+ לקצר את זמן ההתקנה לפחות מ-
 \numeric on
 10
 \family sans
@@ -411,19 +442,12 @@ literal "false"
 \uwave default
 \noun default
 \color inherit
-מהר יותר!).
- אני סבור שזה ראוי להערכה רבה מצידכם,
- אם תרצו אתם מוזמנים לבטא אותה ע"י מתן טיפ באתר 
-\begin_inset CommandInset href
-LatexCommand href
-name "עִבְלִיקְס"
-target "https://lyx.srayaa.com/home/donation"
-literal "false"
+מהר יותר!)
+\begin_inset Foot
+status collapsed
 
-\end_inset
-
-.
- אמנם השיפור בזמן ההתקנה נובע בעיקר מהשימוש ב-
+\begin_layout Plain Layout
+אמנם השיפור הזה נזקף בעיקר לזכות השיפור של 
 \lang english
 
 \begin_inset CommandInset href
@@ -435,11 +459,132 @@ literal "false"
 \end_inset
 
 
+\family sans
+\series medium
+\shape up
+\size footnotesize
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 \lang hebrew
-,
- אך העובדה שההתקנה מתבצעת ללא תקלות נזקפת לזכות העבודה הקשה שלי.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בשנים האחרונות,
+ אבל גם הבחירה להשתמש ב-
+\lang english
+MiKTeX
+\family sans
+\series medium
+\shape up
+\size footnotesize
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+במקום ב-
+\lang english
+TeX Live
+\family sans
+\series medium
+\shape up
+\size footnotesize
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+היא בחירה שנובעת מהניסיון שצברתי.
 \end_layout
 
+\end_inset
+
+,
+ ולעשות זאת באמצעות סקריפט שאינו דורש התערבות מצד המשתמש.
+ אני סבור שזה ראוי להערכה רבה מצידכם,
+ אם תרצו אתם מוזמנים לבטא אותה ע"י מתן טיפ באתר 
+\begin_inset CommandInset href
+LatexCommand href
+name "עִבְלִיקְס"
+target "https://lyx.srayaa.com/home/donation"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+אם אתם כאן,
+ כנראה שתתעניינו גם באתר הסיכומים שלי מהתואר במתמטיקה - "
+\begin_inset CommandInset href
+LatexCommand href
+name "אקסיומת השלמות"
+target "https://math.srayaa.com"
+literal "false"
+
+\end_inset
+
+".
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 הכירו את 
 \begin_inset CommandInset href
@@ -825,13 +970,6 @@ literal "false"
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\align center
-
-\size largest
-בהצלחה!
-\end_layout
-
 \begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
