@@ -303,6 +303,7 @@ if (@(Get-ChildItem 'C:\Program Files\' -Filter 'LyX*' -Directory -ErrorAction S
             if ($f) {
                 if ($dir -eq $DownloadsDir -and $f.LastWriteTime -lt (Get-Date).AddDays(-7)) {
                     Write-Warn ("LyX installer in Downloads is older than 1 week - ignoring: " + $f.FullName)
+                    break
                 } else {
                     Write-OK ("Found LyX installer: " + $f.FullName); $lyxExe = $f.FullName; break
                 }
@@ -557,6 +558,8 @@ if (-not $miktexUpdateOk) {
     Write-Warn 'Skipping PDF export - MiKTeX packages are not up to date.'
     Write-Warn 'Please update MiKTeX manually, then re-run the script or compile test.lyx yourself.'
 } else {
+
+$testLyxSrc = Join-Path $ScriptDir 'test.lyx'
 if (-not (Test-Path $testLyxSrc)) {
     Write-Step 'test.lyx not found locally - downloading...'
     try {
