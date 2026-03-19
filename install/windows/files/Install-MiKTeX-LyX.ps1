@@ -58,6 +58,30 @@ function Invoke-Native {
 }
 
 # ---------------------------------------------------------------------------
+#  RUN MiKTeX PACKAGE UPDATE
+#  Returns $true if update succeeded, $false otherwise.
+# ---------------------------------------------------------------------------
+function Invoke-MiKTeXUpdate {
+    $prev = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    $out = [System.Collections.Generic.List[string]]::new()
+    $stream = {
+        param([string]$line)
+        if ($line -match 'security.risk|elevated.priv') { return }
+        if ($line -match '\S') { Write-Host "     $line"; $out.Add($line) }
+    }
+    if (Test-Path $miktexExeCli) {
+        & $miktexExeCli packages update 2>&1 | ForEach-Object { & $stream "$_" }
+    } else {
+        & $mpmExe --update-package-database 2>&1 | ForEach-Object { & $stream "$_" }
+        & $mpmExe --upgrade                 2>&1 | ForEach-Object { & $stream "$_" }
+    }
+    $failed = @($out | Where-Object { $_ -match "Sorry|error|couldn't|failed|resolve" }).Count -gt 0
+    $ErrorActionPreference = $prev
+    return ($LASTEXITCODE -eq 0) -and (-not $failed)
+}
+
+# ---------------------------------------------------------------------------
 #  WIN32 TYPES
 # ---------------------------------------------------------------------------
 
@@ -164,11 +188,14 @@ Write-Header 'STEP 1 - MiKTeX installation and setup'
 $stepStart = [System.Diagnostics.Stopwatch]::StartNew()
 
 # --- 1a: Find or download MiKTeX installer (skipped if already installed) ---
-$miktexExe = $null
+# Search order: Downloads (fresh only) -> files folder -> internet
+$miktexExe      = $null
+$miktexUpdateOk = $true   # assume ok; set false if mpm missing or update fails
+
 if (Test-Path (Join-Path $MiKTeXBinDir 'miktexsetup.exe')) {
     Write-Step 'MiKTeX already installed - skipping.'
 } else {
-    foreach ($dir in @($ScriptDir, $DownloadsDir)) {
+    foreach ($dir in @($DownloadsDir, $ScriptDir)) {
         $f = Get-ChildItem -Path $dir -Filter 'basic-miktex-*-x64.exe' -ErrorAction SilentlyContinue |
              Sort-Object LastWriteTime -Descending | Select-Object -First 1
         if ($f) {
@@ -249,30 +276,8 @@ if (-not (Test-Path $mpmExe)) {
         Invoke-Native -Exe $initexmfExe -Args @('--update-fndb') | Out-Null
         Write-OK 'File name database refreshed.'
     }
-
-    function Invoke-MiKTeXUpdate {
-        $prev = $ErrorActionPreference
-        $ErrorActionPreference = 'Continue'
-        $out = [System.Collections.Generic.List[string]]::new()
-        $stream = {
-            param([string]$line)
-            if ($line -match 'security.risk|elevated.priv') { return }
-            if ($line -match '\S') { Write-Host "     $line"; $out.Add($line) }
-        }
-        if (Test-Path $miktexExeCli) {
-            & $miktexExeCli packages update 2>&1 | ForEach-Object { & $stream "$_" }
-        } else {
-            & $mpmExe --update-package-database 2>&1 | ForEach-Object { & $stream "$_" }
-            & $mpmExe --upgrade                 2>&1 | ForEach-Object { & $stream "$_" }
-        }
-        $failed = @($out | Where-Object { $_ -match "Sorry|error|couldn't|failed|resolve" }).Count -gt 0
-        $ErrorActionPreference = $prev
-        return ($LASTEXITCODE -eq 0) -and (-not $failed)
-    }
-
     Write-Step 'Checking for package updates (may take a few minutes)...'
     $miktexUpdateOk = Invoke-MiKTeXUpdate
-
     if ($miktexUpdateOk) {
         Write-OK 'Packages up to date.'
     } else {
@@ -292,11 +297,13 @@ Write-Header 'STEP 2 - LyX installation'
 $stepStart = [System.Diagnostics.Stopwatch]::StartNew()
 
 # --- 2a: Find or download LyX installer (skipped if already installed) ---
+# Search order: Downloads (fresh only) -> files folder -> internet
 $lyxExe = $null
+
 if (@(Get-ChildItem 'C:\Program Files\' -Filter 'LyX*' -Directory -ErrorAction SilentlyContinue).Count -gt 0) {
     Write-Step 'LyX already installed - skipping.'
 } else {
-    foreach ($dir in @($ScriptDir, $DownloadsDir)) {
+    foreach ($dir in @($DownloadsDir, $ScriptDir)) {
         foreach ($pat in @('LyX-*-x64.exe', 'LyX-*-Installer*.exe', 'LyX*.exe')) {
             $f = Get-ChildItem -Path $dir -Filter $pat -ErrorAction SilentlyContinue |
                  Sort-Object LastWriteTime -Descending | Select-Object -First 1
@@ -315,13 +322,13 @@ if (@(Get-ChildItem 'C:\Program Files\' -Filter 'LyX*' -Directory -ErrorAction S
         Write-Step 'Not found locally - resolving from LyX FTP...'
         $lyxExe = Join-Path $ScriptDir 'LyX-Installer-x64.exe'
         try {
-            $ftpBase  = 'https://ftp.lip6.fr/pub/lyx/bin/'
-            $html     = (New-Object System.Net.WebClient).DownloadString($ftpBase)
-            $verMatch = [System.Text.RegularExpressions.Regex]::Matches($html, 'href="(\d+\.\d+\.\d+)/"') |
-                        Sort-Object { [version]$_.Groups[1].Value } | Select-Object -Last 1
+            $ftpBase   = 'https://ftp.lip6.fr/pub/lyx/bin/'
+            $html      = (New-Object System.Net.WebClient).DownloadString($ftpBase)
+            $verMatch  = [System.Text.RegularExpressions.Regex]::Matches($html, 'href="(\d+\.\d+\.\d+)/"') |
+                         Sort-Object { [version]$_.Groups[1].Value } | Select-Object -Last 1
             if (-not $verMatch) { throw 'Could not find version folder on FTP.' }
-            $verDir   = $ftpBase + $verMatch.Groups[1].Value + '/'
-            $dirHtml  = (New-Object System.Net.WebClient).DownloadString($verDir)
+            $verDir    = $ftpBase + $verMatch.Groups[1].Value + '/'
+            $dirHtml   = (New-Object System.Net.WebClient).DownloadString($verDir)
             $fileMatch = [System.Text.RegularExpressions.Regex]::Matches(
                              $dirHtml, 'LyX-\d+-Installer-\d+-x64\.exe',
                              [System.Text.RegularExpressions.RegexOptions]::IgnoreCase) |
@@ -558,64 +565,63 @@ if (-not $miktexUpdateOk) {
     Write-Warn 'Skipping PDF export - MiKTeX packages are not up to date.'
     Write-Warn 'Please update MiKTeX manually, then re-run the script or compile test.lyx yourself.'
 } else {
-
-$testLyxSrc = Join-Path $ScriptDir 'test.lyx'
-if (-not (Test-Path $testLyxSrc)) {
-    Write-Step 'test.lyx not found locally - downloading...'
-    try {
-        (New-Object System.Net.WebClient).DownloadFile('https://lyx.srayaa.com/install/test.lyx', $testLyxSrc)
-        Write-OK "Downloaded test.lyx to $testLyxSrc"
-    } catch {
-        Write-Warn ("Could not download test.lyx: " + $_)
-        Write-Warn 'Skipping PDF export test.'
-        $testLyxSrc = $null
+    $testLyxSrc = Join-Path $ScriptDir 'test.lyx'
+    if (-not (Test-Path $testLyxSrc)) {
+        Write-Step 'test.lyx not found locally - downloading...'
+        try {
+            (New-Object System.Net.WebClient).DownloadFile('https://lyx.srayaa.com/install/test.lyx', $testLyxSrc)
+            Write-OK "Downloaded test.lyx to $testLyxSrc"
+        } catch {
+            Write-Warn ("Could not download test.lyx: " + $_)
+            Write-Warn 'Skipping PDF export test.'
+            $testLyxSrc = $null
+        }
     }
-}
 
-if ($testLyxSrc -and (Test-Path $testLyxSrc)) {
-    $lyxBin = Get-ChildItem 'C:\Program Files\LyX*\bin\lyx.exe' -ErrorAction SilentlyContinue |
-              Sort-Object FullName -Descending | Select-Object -First 1
+    if ($testLyxSrc -and (Test-Path $testLyxSrc)) {
+        $lyxBin = Get-ChildItem 'C:\Program Files\LyX*\bin\lyx.exe' -ErrorAction SilentlyContinue |
+                  Sort-Object FullName -Descending | Select-Object -First 1
 
-    if (-not $lyxBin) {
-        Write-Warn 'lyx.exe not found - cannot export PDF.'
-    } else {
-        $pdfOut = Join-Path $ScriptDir 'test.pdf'
-        if (Test-Path $pdfOut) {
-            Remove-Item -Path $pdfOut -Force
-            Write-OK 'Deleted existing test.pdf.'
-        }
-        Write-Step ("Exporting: " + $testLyxSrc)
-        Write-Step ("Output   : " + $pdfOut)
-        Write-Step 'Running LyX export (this may take a few minutes)...'
-
-        $prev = $ErrorActionPreference
-        $ErrorActionPreference = 'Continue'
-        $exportProc = Start-Process -FilePath $lyxBin.FullName `
-            -ArgumentList @('-e', 'pdf4', $testLyxSrc) `
-            -Wait -PassThru -WindowStyle Hidden
-        $ErrorActionPreference = $prev
-
-        if ($exportProc.ExitCode -ne 0) {
-            Write-Warn ("LyX export exited with code " + $exportProc.ExitCode + " - PDF may not have been created.")
-        }
-
-        # LyX exports the PDF next to the source; move to ScriptDir if needed
-        $autoOutPdf = [System.IO.Path]::ChangeExtension($testLyxSrc, '.pdf')
-        if ((Test-Path $autoOutPdf) -and ($autoOutPdf -ne $pdfOut)) {
-            Move-Item -Path $autoOutPdf -Destination $pdfOut -Force
-        }
-
-        if (Test-Path $pdfOut) {
-            Write-OK ("PDF created: " + $pdfOut)
-            Write-Step 'Opening PDF...'
-            Start-Process $pdfOut
-            Write-OK 'PDF opened.'
+        if (-not $lyxBin) {
+            Write-Warn 'lyx.exe not found - cannot export PDF.'
         } else {
-            Write-Warn 'PDF file not found after export - check LyX logs for errors.'
+            $pdfOut = Join-Path $ScriptDir 'test.pdf'
+            if (Test-Path $pdfOut) {
+                Remove-Item -Path $pdfOut -Force
+                Write-OK 'Deleted existing test.pdf.'
+            }
+            Write-Step ("Exporting: " + $testLyxSrc)
+            Write-Step ("Output   : " + $pdfOut)
+            Write-Step 'Running LyX export (this may take a few minutes)...'
+
+            $prev = $ErrorActionPreference
+            $ErrorActionPreference = 'Continue'
+            $exportProc = Start-Process -FilePath $lyxBin.FullName `
+                -ArgumentList @('-e', 'pdf4', $testLyxSrc) `
+                -Wait -PassThru -WindowStyle Hidden
+            $ErrorActionPreference = $prev
+
+            if ($exportProc.ExitCode -ne 0) {
+                Write-Warn ("LyX export exited with code " + $exportProc.ExitCode + " - PDF may not have been created.")
+            }
+
+            # LyX exports the PDF next to the source; move to ScriptDir if needed
+            $autoOutPdf = [System.IO.Path]::ChangeExtension($testLyxSrc, '.pdf')
+            if ((Test-Path $autoOutPdf) -and ($autoOutPdf -ne $pdfOut)) {
+                Move-Item -Path $autoOutPdf -Destination $pdfOut -Force
+            }
+
+            if (Test-Path $pdfOut) {
+                Write-OK ("PDF created: " + $pdfOut)
+                Write-Step 'Opening PDF...'
+                Start-Process $pdfOut
+                Write-OK 'PDF opened.'
+            } else {
+                Write-Warn 'PDF file not found after export - check LyX logs for errors.'
+            }
         }
     }
 }
-} # end of $miktexUpdateOk else block
 
 $stepStart.Stop()
 Write-Step ("Step 4 completed in " + (Format-Elapsed $stepStart.Elapsed))
