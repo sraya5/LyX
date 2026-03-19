@@ -6,9 +6,6 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-\usepackage{polyglossia}
-\setdefaultlanguage{hebrew}
-\setotherlanguage{english}
 % Make the footnoterule on the right side.
 \AtBeginDocument{
 \renewcommand\footnoterule{%
@@ -27,7 +24,7 @@ theorems-ams
 
 \end_local_layout
 \language hebrew
-\language_package none
+\language_package default
 \inputencoding auto-legacy
 \fontencoding auto
 \font_roman "default" "Times New Roman"
