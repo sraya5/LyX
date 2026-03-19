@@ -209,23 +209,35 @@ if (Test-Path (Join-Path $MiKTeXBinDir 'miktexsetup.exe')) {
     if (-not $miktexExe) {
         Write-Step 'Not found locally - downloading MiKTeX basic installer...'
         $miktexExe = Join-Path $ScriptDir 'basic-miktex-x64.exe'
-        try {
-            $ctanDir = 'https://ctan.math.illinois.edu/systems/win32/miktex/setup/windows-x64/'
-            $html    = (New-Object System.Net.WebClient).DownloadString($ctanDir)
-            $match   = [System.Text.RegularExpressions.Regex]::Matches(
-                           $html, 'basic-miktex-[\d.]+-x64\.exe',
-                           [System.Text.RegularExpressions.RegexOptions]::IgnoreCase) |
-                       Select-Object -Last 1
-            $dlUrl   = if ($match) { $ctanDir + $match.Value } else {
-                           Write-Warn 'Could not scrape MiKTeX URL - using fallback.'
-                           'https://ctan.math.illinois.edu/systems/win32/miktex/setup/windows-x64/basic-miktex-25.12-x64.exe'
-                       }
-            Write-Step "Downloading from: $dlUrl"
-            (New-Object System.Net.WebClient).DownloadFile($dlUrl, $miktexExe)
-            Write-OK "Downloaded: $miktexExe"
-        } catch {
-            Write-Err "Download failed: $_"
-            Write-Err "Place basic-miktex-*-x64.exe in $ScriptDir or $DownloadsDir"
+        $ctanMirrors = @(
+            'https://ctan.math.illinois.edu/systems/win32/miktex/setup/windows-x64/',
+            'https://ctan.mirror.norbert-ruehl.de/systems/win32/miktex/setup/windows-x64/',
+            'https://mirrors.rit.edu/CTAN/systems/win32/miktex/setup/windows-x64/'
+        )
+        $downloaded = $false
+        foreach ($ctanDir in $ctanMirrors) {
+            try {
+                Write-Step "Trying mirror: $ctanDir"
+                $html  = (New-Object System.Net.WebClient).DownloadString($ctanDir)
+                $match = [System.Text.RegularExpressions.Regex]::Matches(
+                             $html, 'basic-miktex-[\d.]+-x64\.exe',
+                             [System.Text.RegularExpressions.RegexOptions]::IgnoreCase) |
+                         Select-Object -Last 1
+                $dlUrl = if ($match) { $ctanDir + $match.Value } else {
+                             Write-Warn 'Could not scrape MiKTeX URL - using fallback filename.'
+                             $ctanDir + 'basic-miktex-25.12-x64.exe'
+                         }
+                Write-Step "Downloading from: $dlUrl"
+                (New-Object System.Net.WebClient).DownloadFile($dlUrl, $miktexExe)
+                Write-OK "Downloaded: $miktexExe"
+                $downloaded = $true
+                break
+            } catch {
+                Write-Warn ("Mirror failed: " + $_)
+            }
+        }
+        if (-not $downloaded) {
+            Write-Err 'All mirrors failed. Place basic-miktex-*-x64.exe in $ScriptDir or $DownloadsDir'
             Stop-Transcript | Out-Null; exit 1
         }
     }
