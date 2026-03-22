@@ -235,6 +235,41 @@ thepage}
 פירוט כל הקיצורים - עִבְלִיקְס
 \end_layout
 
+\begin_layout Date
+מרץ
+\family roman
+\series medium
+\shape up
+\size large
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2026
+\numeric off
+ 
+\end_layout
+
 \begin_layout Standard
 \align center
 נכתב ע"י שריה אנסבכר
