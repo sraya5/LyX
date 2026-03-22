@@ -1,0 +1,2678 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-ams
+hebrew-fixes
+filled-qed-symbol
+longarrows-fix
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+
+\end_local_layout
+\language hebrew
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "Arial"
+\font_typewriter "default" "Courier New"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\branch proofs
+\selected 1
+\filename_suffix 0
+\color #00ffff #000000
+\end_branch
+\branch pdf
+\selected 1
+\filename_suffix 0
+\color background background
+\end_branch
+\branch xhtml
+\selected 0
+\filename_suffix 0
+\color #71ffff #8e0000
+\end_branch
+\branch draft
+\selected 0
+\filename_suffix 0
+\color #71ffff #8e0000
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 3
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size giant
+רשימת שינויים
+\end_layout
+
+\begin_layout Section
+הקדמה
+\end_layout
+
+\begin_layout Standard
+להלן רשימת השינויים מגירסת קובצי הקיצורים של מרץ
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2025
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+לזו של מרץ
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2026
+\numeric off
+.
+\end_layout
+
+\begin_layout Section
+קיצורים כלליים
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+(CUA)
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Itemize
+שינוי:
+ הקיצורים "
+\lang english
+Ctrl+Right
+\lang hebrew
+" ו-"
+\lang english
+Ctrl+Left
+\lang hebrew
+" זזים מילה אחת ימינה/שמאלה,
+ במקום להוסיף את הסימנים "
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+" ו-"
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+" (עבור אלו נוספו הקיצורים "
+\lang english
+Alt+b Right
+\lang hebrew
+" ו-"
+\lang english
+Alt+b Left
+\lang hebrew
+").
+\end_layout
+
+\begin_layout Itemize
+שינוי:
+ הקיצורים "
+\lang english
+Ctrl+Shift+Right
+\lang hebrew
+" ו-"
+\lang english
+Ctrl+Shift+Left
+\lang hebrew
+" בוחרים מילה אחת ימינה/שמאלה,
+ במקום להוסיף את הסימנים "
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+" ו-"
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+" (עבור אלו נוספו הקיצורים "
+\lang english
+Alt+b Shift+Right
+\lang hebrew
+" ו-"
+\lang english
+Alt+b Shift+Left
+\lang hebrew
+").
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Ctrl+Alt+Space
+\lang hebrew
+" המוסיף רווח ארוך:
+ |
+\begin_inset space \qquad{}
+\end_inset
+
+|.
+\end_layout
+
+\begin_layout Section
+עיצוב
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+(DESIGN)
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Itemize
+שינוי:
+ הקיצור "
+\lang english
+Alr+r d
+\lang hebrew
+" מוסיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+brunch
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בשם "
+\lang english
+draft
+\lang hebrew
+",
+ במקום לפתוח את דיאלוג התוחמים/סוגריים (
+\lang english
+delimiters
+\lang hebrew
+).
+ עבורו נוסף הקיצור "
+\lang english
+Ctrl+d d
+\lang hebrew
+".
+\begin_inset Newline newline
+\end_inset
+
+שימו לב:
+ על ה-
+\lang english
+brunch
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+להיות מוגדר במסמך כדי שהקיצור יעבוד.
+\end_layout
+
+\begin_layout Itemize
+
+\color gray
+חדש:
+ "
+\lang english
+Ctrl+d d
+\lang hebrew
+" פותח את דיאלוג התוחמים/סוגריים (
+\lang english
+delimiters
+\lang hebrew
+) - ראה שינוי קודם.
+\end_layout
+
+\begin_layout Itemize
+מחיקה:
+ מחיקת הקיצור "
+\lang english
+Alr+r Shift+D
+\lang hebrew
+" שהוסיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בשם "
+\lang english
+draft
+\lang hebrew
+".
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alr+r m
+\lang hebrew
+" מוסיף ייבוא של קובץ מאקרוז מסוים.
+ שימו לב:
+ הניתוב שמופיע בקיצור הוא הניתוב של קובץ המאקרוז שלי במחשב האישי שלי,
+ אתם צריכים לערוך אותו כדי שיתאים לשלכם.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alr+r Alt+o
+\lang hebrew
+" מוסיף הערת שוליים בצד העמוד.
+\end_layout
+
+\begin_layout Itemize
+שינוי:
+ "
+\lang english
+Alr+r v
+\lang hebrew
+" מוסיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+brunch
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בשם "
+\lang english
+proof
+\lang hebrew
+" במקום הקיצור "
+\lang english
+Alt+r Shift+P
+\lang hebrew
+".
+ שימו לב:
+ על ה-
+\lang english
+brunch
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+להיות מוגדר במסמך כדי שהקיצור יעבוד.
+\end_layout
+
+\begin_layout Itemize
+קיצורים חדשים:
+ "
+\lang english
+Alr+r w
+\lang hebrew
+" ו-"
+\lang english
+Alr+r Alt+w
+\lang hebrew
+" מוסיפים קישור לוויקיפדיה העברית/אנגלית.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+p enter
+\lang hebrew
+" מוסיף הפרדה בין
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+layouts
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שונים מאותו סוג (לדוגמה:
+ שני משפטים).
+ זהו קיצור מקורי של התוכנה,
+ ומחוסר תשומת לב הוא נמחק בגרסה הקודמת
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+תודה ליוסף קורן ולגלעד שרם על התיקון.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+e o
+\lang hebrew
+" ו-"
+\lang english
+Alt+e Shift+o
+\lang hebrew
+" מוסיפים היגד (
+\lang english
+proposition
+\lang hebrew
+) ממוספר / לא ממוספר.
+\end_layout
+
+\begin_layout Itemize
+שינוי:
+ הקיצור "
+\lang english
+M-e r
+\lang hebrew
+" המוסיף הוכחה דו-כיוונית עוצב כעת כך שיוסיף חיצים ארוכים במקום קצרים (
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ ו-
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+ במקום 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ ו-
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+אם יש לכם בעיה עם הקימפול של חיצים ארוכים עליכם להשתמש במודול "
+\lang english
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Longarrows Fix"
+target "https://lyx.srayaa.com/files"
+literal "false"
+
+\end_inset
+
+
+\lang hebrew
+" שכתבתי לשם כך.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+סביבות
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+(ENVIRONMENTS)
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Itemize
+שינוי:
+ הקיצור "
+\lang english
+Alt+Shift+Up
+\lang hebrew
+" מוסיף סביבת וקטור - 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+,
+ במקום להוסיף את הסימן 
+\begin_inset Formula $\longleftrightarrow$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+Shift+" 
+\lang hebrew
+" מעתיק את תוכן ה-
+\lang english
+inset
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הנוכחי,
+ מוסיף סימן 
+\begin_inset Formula $=$
+\end_inset
+
+ ומדביק את ה-
+\lang english
+inset
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ - שימושי לשלב הראשון בפיתוח משוואות (בשלבים הבאים נוח להשתמש ב-
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+"
+\lang english
+Ctrl+Shift+' 
+\lang hebrew
+" היורד שורה).
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+Shift+!
+\lang hebrew
+" מעלה בחזקת 
+\begin_inset Formula $-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+Shift+@
+\lang hebrew
+" מעלה בחזקה שנייה.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+Shift+#
+\lang hebrew
+" מעלה בחזקה שלישית.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Ctrl+Alt+1
+\lang hebrew
+" מעלה בחזקת 
+\begin_inset Formula $-1$
+\end_inset
+
+ ללא בסיס.
+\end_layout
+
+\begin_layout Itemize
+שינוי:
+ הקיצור "
+\lang english
+Ctrl+Alt+2
+\lang hebrew
+" מעלה בחזקת 
+\begin_inset Formula $2$
+\end_inset
+
+ ללא בסיס,
+ במקום להוסיף 
+\begin_inset CommandInset href
+LatexCommand href
+name "דקר"
+target "https://he.wikipedia.org/wiki/%D7%93%D7%A7%D7%A8_(%D7%A1%D7%99%D7%9E%D7%9F)"
+literal "false"
+
+\end_inset
+
+ (
+\begin_inset Formula $\ ^{\dagger}$
+\end_inset
+
+) לביטוי האחרון.
+ עבורו נוסף הקיצור "
+\lang english
+Ctrl+Alt+d
+\lang hebrew
+".
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Ctrl+Alt+3
+\lang hebrew
+" מעלה בחזקת 
+\begin_inset Formula $3$
+\end_inset
+
+ ללא בסיס.
+\end_layout
+
+\begin_layout Itemize
+
+\color gray
+חדש:
+ "
+\lang english
+Ctrl+Alt+d
+\lang hebrew
+" מוסיף 
+\begin_inset CommandInset href
+LatexCommand href
+name "דקר"
+target "https://he.wikipedia.org/wiki/%D7%93%D7%A7%D7%A8_(%D7%A1%D7%99%D7%9E%D7%9F)"
+literal "false"
+
+\end_inset
+
+ (
+\begin_inset Formula $\ ^{\dagger}$
+\end_inset
+
+) לביטוי האחרון.
+\end_layout
+
+\begin_layout Itemize
+מחיקה:
+ הקיצור "
+\lang english
+Alt+Shift+p
+\lang hebrew
+" המוסיף חזקה שלישית נמחק.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+סמלים
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+(SYMBOLS)
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+הקיצורים של החיצים השתנו לפי הטבלאות שלהלן:
+\end_layout
+
+\begin_layout Itemize
+קיצורים ישנים -
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Shortcut
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+פלט
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Ctrl+Up
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Uparrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Ctrl+Down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Downarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Ctrl+Right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Ctrl+Left
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Ctrl+Shift+Up
+\backslash
+Down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Longleftrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Ctrl+Shift+Right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Ctrl+Shift+Left
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Shortcut
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+פלט
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Up
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\downarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Left
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+Shift+Up
+\backslash
+Down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\longleftrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Shift+Right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\longrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Shift+Left
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\longleftarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+קיצורים חדשים -
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Shortcut
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+פלט
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+b Up
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Uparrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+b Down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Downarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+b Right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+b Left
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+b Shift+Up
+\backslash
+Down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Longleftrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+b Shift+Right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+b Shift+Left
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Shortcut
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+פלט
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Up
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\downarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Left
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\lang english
+Alt+Shift+Down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+\begin_inset Formula $\longleftrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Shift+Right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\longrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Alt+Shift+Left
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\longleftarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+מחיקה:
+ "
+\lang english
+Ctrl+8
+\lang hebrew
+" - הוסיף את קוד הלאטך "
+\lang english
+
+\backslash
+ast
+\lang hebrew
+" (
+\begin_inset Formula $\ast$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+Shift+*
+\lang hebrew
+" מוסיף את התו * (עובד גם בתוך סביבת המתמטיקה ונראה בדיוק כמו "
+\lang english
+
+\backslash
+ast
+\lang hebrew
+").
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+q p
+\lang hebrew
+" מוסיף את 
+\begin_inset Formula $\MKspan$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+i Alt+i
+\lang hebrew
+" מוסיף את 
+\begin_inset Formula $\in$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+שינוי:
+ הקיצור "
+\lang english
+Alt+i Shift+d
+\lang hebrew
+" המוסיף את 
+\begin_inset Formula $\MKbigcupdot$
+\end_inset
+
+ משתמש ב-
+\lang english
+superscript
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+(^) ו-
+\lang english
+subscript
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+(_) במקום בקוד הלאטך "
+\lang english
+
+\backslash
+stackrelthree
+\lang hebrew
+".
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+Alt+g Shift+a
+\lang hebrew
+" מוסיף את 
+\begin_inset Formula $\angle$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+alt+g 3
+\lang hebrew
+" מוסיף את 
+\begin_inset Formula $\triangle$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+חדש:
+ "
+\lang english
+alt+g 4
+\lang hebrew
+" מוסיף את 
+\begin_inset Formula $\square$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+חדשים:
+ "
+\lang english
+Ctrl+Shift+I 0
+\lang hebrew
+" ו-"
+\lang english
+Ctrl+Shift+I a
+\lang hebrew
+" מוסיפים את 
+\begin_inset Formula $\intop_{0}^{\infty}f\left(x\right)dx$
+\end_inset
+
+ ו-
+\begin_inset Formula $\intop_{a}^{b}f\left(x\right)dx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+חדשים:
+ "
+\lang english
+Alt+Shift+P 1
+\lang hebrew
+",
+ "
+\lang english
+Alt+Shift+P 0
+\lang hebrew
+",
+ "
+\lang english
+Alt+Shift+P a
+\lang hebrew
+" ו-"
+\lang english
+Alt+Shift+P Alt+a
+\lang hebrew
+" מוסיפים את 
+\begin_inset Formula $\prod_{n=1}^{\infty}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\prod_{n=0}^{\infty}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\prod_{n=1}^{\infty}a_{n}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\prod_{n=0}^{\infty}a_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+אותיות
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+(LETTERS)
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+אין שינויים.
+\end_layout
+
+\end_body
+\end_document

@@ -98,7 +98,6 @@ Format 5
 
 \bind "C-d b"               "branch-add-insert"
 \bind "C-d c"	            "dialog-show spellchecker"
-\bind "C-d d"               "dialog-show mathdelimiter"
 \bind "C-d s"               "inset-settings"
 \bind "C-d t"               "dialog-show toc"
 
@@ -111,23 +110,20 @@ Format 5
 \bind "M-r a"               "float-insert algorithm"
 \bind "M-r b"               "box-insert"
 \bind "M-r c"               "math-insert \\cases"
-\bind "M-r d"               "branch-insert draft"
+\bind "M-r d"               "dialog-show mathdelimiter"
 \bind "M-r f"               "command-sequence float-insert figure; escape; inset-settings;  line-begin"
 \bind "M-r g"               "command-sequence paragraph-params \\align center; dialog-show-new-inset graphics"
 \bind "M-r h"               "dialog-show-new-inset line"
 \bind "M-r k"               "href-insert"
 \bind "M-r l"               "label-insert"
-\bind "M-r m"               "inset-insert include CommandInset include LatexCommand include filename \"C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx\" literal \"false\" \\end_inset"
 \bind "M-r n"               "note-insert"
 \bind "M-r o"               "footnote-insert"
-\bind "M-r M-o"             "marginalnote-insert"
 \bind "M-r p"               "newpage-insert newpage"
 \bind "M-r r"               "dialog-show-new-inset ref"
 \bind "M-r t"               "command-sequence paragraph-params \align center; tabular-insert 4 3; tabular-feature delete-row"
+\bind "M-r S-d"             "branch-insert draft"
+\bind "M-r S-p"             "branch-insert proofs"
 \bind "M-r S-t"             "argument-insert 1"
-\bind "M-r v"               "command-sequence branch-insert proofs; layout Proof"
-\bind "M-r w"               "href-insert https://he.wikipedia.org/wiki/"
-\bind "M-r M-w"             "href-insert https://en.wikipedia.org/wiki/"
 
 
 #########################################################################################################################################
@@ -137,7 +133,6 @@ Format 5
 # prefix: Alt+p or Alt+e
 
 \bind "M-p space"		    "drop-layouts-choice"
-\bind "M-p Return"		    "command-alternatives environment-split; environment-split previous"
 
 \bind "M-p s"			    "layout Standard"
 \bind "M-p c"			    "layout LyX-Code"
@@ -186,36 +181,34 @@ Format 5
 \bind "M-p S-B"			    "layout Bibliography"
 
 # Reasoning
+\bind "M-e d"               "layout Definition"
 \bind "M-e t"               "layout Theorem"
 \bind "M-e x"               "layout Corollary"
+\bind "M-e c"               "layout Claim"
 \bind "M-e l"               "layout Lemma"
-\bind "M-e o"               "layout Proposition"
-\bind "M-e d"               "layout Definition"
 \bind "M-e e"               "layout Example"
 \bind "M-e p"               "layout Problem"
 \bind "M-e s"               "layout Solution"
 \bind "M-e comma"           "layout Exercise"
 \bind "M-e g"               "layout Remark"
-\bind "M-e c"               "layout Claim"
 \bind "M-e q"               "layout Question"
 \bind "M-e n"               "layout Notation"
 
 # Unnumbered Reasoning
+\bind "M-e S-d"             "layout Definition*"
 \bind "M-e S-t"             "layout Theorem*"
 \bind "M-e S-x"             "layout Corollary*"
+\bind "M-e S-c"             "layout Claim*"
 \bind "M-e S-l"             "layout Lemma*"
-\bind "M-e S-o"             "layout Proposition*"
-\bind "M-e S-d"             "layout Definition*"
 \bind "M-e S-e"             "layout Example*"
 \bind "M-e S-p"             "layout Problem*"
-\bind "M-e S-less"          "layout Exercise*"
 \bind "M-e S-s"             "layout Solution*"
+\bind "M-e S-less"          "layout Exercise*"
 \bind "M-e S-g"             "layout Remark*"
-\bind "M-e S-c"             "layout Claim*"
 
 # Proofs
 \bind "M-e v"               "layout Proof"
-\bind "M-e r"               "command-sequence layout Proof; line-begin; space-insert normal; paragraph-break; layout Itemize; depth-increment; math-insert \\Longleftarrow; escape; newline-insert newline; paragraph-break; math-insert \\Longrightarrow; escape; newline-insert newline; paragraph-up; up"
+\bind "M-e r"               "command-sequence layout Proof; line-begin; space-insert normal; paragraph-break; layout Itemize; depth-increment; math-insert \\Leftarrow; escape; paragraph-break; depth-increment; space-insert normal; line-end; paragraph-break; depth-decrement; math-insert \\Rightarrow; escape; up; line-begin; char-delete-forward confirm ; line-end; up; escape; newline-insert newline"
 \bind "M-e f"               "command-sequence layout Proof; line-begin; space-insert normal; paragraph-break; layout Itemize; depth-increment; line-end"
 
 # Personal

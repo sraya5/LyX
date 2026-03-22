@@ -70,34 +70,25 @@ Format 5
 # prefix: as short as possible
 
 # Move only
-\bind "C-Up"			"paragraph-up"
-\bind "C-Down"			"paragraph-down"
-\bind "C-Right"			"word-right"
-\bind "C-Left"			"word-left"
-
+\bind "C-KP_Insert"		"paragraph-up"
+\bind "C-KP_Delete"		"paragraph-down"
 \bind "C-Home"			"buffer-begin"
 \bind "C-End"			"buffer-end"
 \bind "C-M-Home"		"inset-begin"
 \bind "C-M-End"			"inset-end"
-
 \bind "C-S-b"           "line-begin"
 \bind "C-S-e"           "line-end"
-
 \bind "C-M-0"			"screen-recenter" # the screen on the current cursor position.
 \bind "S-Escape"        "char-backward"
 
 
 # Move & Select
-\bind "S-Up"			"up-select"
-\bind "S-Down"			"down-select"
 \bind "S-Right"			"char-right-select"
 \bind "S-Left"			"char-left-select"
-
+\bind "S-Up"			"up-select"
+\bind "S-Down"			"down-select"
 \bind "C-S-Up"			"paragraph-up-select"
 \bind "C-S-Down"		"paragraph-down-select"
-\bind "C-S-Right"		"word-right-select"
-\bind "C-S-Left"		"word-left-select"
-
 \bind "S-Home"			"line-begin-select"
 \bind "S-End"			"line-end-select"
 \bind "S-Prior"			"screen-up-select"
@@ -124,7 +115,6 @@ Format 5
 \bind "C-M-Down"        "command-alternatives outline-down; paragraph-move-down; tabular-feature move-row-down"
 
 \bind "C-space"         "space-insert normal"
-\bind "C-M-space"       "space-insert qquad"
 \bind "C-S-space"       "space-insert thin"
 
 
