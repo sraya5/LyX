@@ -1,6 +1,9 @@
 @echo off
 :: ============================================================
-::  Uninstall-MiKTeX-LyX.cmd
+::  LyX_cleaner.cmd
+::  Source: https://lyx.srayaa.com/install/windows
+::  Wrote by Sraya Ansbacher with Claude ai.
+::
 ::  Double-click to run the PowerShell uninstaller as Admin.
 ::  Auto-downloads the PS1 if missing.
 :: ============================================================

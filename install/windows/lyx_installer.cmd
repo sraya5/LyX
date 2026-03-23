@@ -1,6 +1,9 @@
 @echo off
 :: ============================================================
-::  installer.cmd
+::  LyX_installer.cmd
+::  Source: https://lyx.srayaa.com/install/windows
+::  Wrote by Sraya Ansbacher with Claude ai.
+::
 ::  Double-click this file to launch Install-MiKTeX-LyX.ps1
 ::  with administrator privileges and an unrestricted
 ::  execution policy.
@@ -12,7 +15,7 @@
 ::  Expected folder layout:
 ::
 ::    (any folder)\
-::        installer.cmd            <-- THIS file
+::        LyX_installer.cmd.cmd            <-- THIS file
 ::        files\
 ::            Install-MiKTeX-LyX.ps1
 ::            preferences

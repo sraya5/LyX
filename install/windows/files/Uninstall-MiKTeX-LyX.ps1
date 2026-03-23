@@ -1,5 +1,8 @@
 # ============================================================
 #  Uninstall-MiKTeX-LyX.ps1
+#  Source: https://lyx.srayaa.com/install/windows
+#  Wrote by Sraya Ansbacher with Claude ai.
+#
 #  Silent removal of MiKTeX and LyX (no GUI popups)
 #  Handles locked files by killing related processes first
 #  Run as Administrator in PowerShell

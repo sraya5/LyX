@@ -1,6 +1,8 @@
 #Requires -Version 5.1
 # ===========================================================================
 #  Install-MiKTeX-LyX.ps1
+#  Source: https://lyx.srayaa.com/install/windows
+#  Wrote by Sraya Ansbacher with Claude ai.
 #
 #  Bundled files (same folder as this script):
 #      preferences              (LyX preferences file - no extension)

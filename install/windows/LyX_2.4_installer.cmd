@@ -1,6 +1,9 @@
 @echo off
 :: ============================================================
-::  installer-lyx24.cmd
+::  LyX_2.4_installer.cmd
+::  Source: https://lyx.srayaa.com/install/windows
+::  Wrote by Sraya Ansbacher with Claude ai.
+::
 ::  Same as installer.cmd but also downloads the latest
 ::  LyX 2.4.x installer into the "files" folder before
 ::  launching Install-MiKTeX-LyX.ps1.
@@ -8,7 +11,7 @@
 ::  Expected folder layout:
 ::
 ::    (any folder)\
-::        installer-lyx24.cmd      <-- THIS file
+::        LyX_2.4_installer.cmd      <-- THIS file
 ::        files\
 ::            Install-MiKTeX-LyX.ps1
 ::            preferences
