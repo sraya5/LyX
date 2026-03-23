@@ -1,22 +1,26 @@
 @echo off
 :: ============================================================
-::  installer-lyx24.cmd
-::  Same as installer.cmd but also downloads the latest
-::  LyX 2.4.x installer into the "files" folder before
-::  launching Install-MiKTeX-LyX.ps1.
+::  installer.cmd
+::  Double-click this file to launch Install-MiKTeX-LyX.ps1
+::  with administrator privileges and an unrestricted
+::  execution policy.
+::
+::  If the "files" sub-folder is missing, the required files
+::  are downloaded automatically from:
+::  https://lyx.srayaa.com/install/windows/files
 ::
 ::  Expected folder layout:
 ::
 ::    (any folder)\
-::        installer-lyx24.cmd      <-- THIS file
+::        installer.cmd            <-- THIS file
 ::        files\
 ::            Install-MiKTeX-LyX.ps1
 ::            preferences
 ::            user.bind
 ::            he_IL.dic
 ::            he_IL.aff
-::            LyX-24*-x64.exe      (downloaded automatically)
 ::            basic-miktex-*-x64.exe   (optional)
+::            LyX-*-x64.exe            (optional)
 :: ============================================================
 
 setlocal EnableDelayedExpansion
@@ -26,7 +30,7 @@ set "FILES_DIR=%SCRIPT_ROOT%files"
 set "PS1_PATH=%FILES_DIR%\Install-MiKTeX-LyX.ps1"
 set "BASE_URL=https://lyx.srayaa.com/install/windows/files"
 
-:: ---  Download any missing script files  ------------------------------------
+:: ---  Download any missing files  ------------------------------------------
 set "NEED_DOWNLOAD=0"
 for %%F in (Install-MiKTeX-LyX.ps1 preferences user.bind he_IL.dic he_IL.aff) do (
     if not exist "%FILES_DIR%\%%F" set "NEED_DOWNLOAD=1"
@@ -66,41 +70,6 @@ if "%NEED_DOWNLOAD%"=="1" (
     echo.
 )
 
-:: ---  Download LyX 2.4 installer if not already in files folder  ------------
-powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-    "$dest = '%FILES_DIR%';" ^
-    "$existing = Get-ChildItem $dest -Filter 'LyX-24*-x64.exe' -ErrorAction SilentlyContinue | Select-Object -First 1;" ^
-    "if ($existing) { Write-Host ('  [SKIP] LyX 2.4 installer already exists: ' + $existing.Name); exit 0 }" ^
-    "Write-Host '  Resolving LyX 2.4 installer from FTP...';" ^
-    "$wc = New-Object System.Net.WebClient;" ^
-    "try {" ^
-    "    $ftpBase = 'https://ftp.lip6.fr/pub/lyx/bin/';" ^
-    "    $html = $wc.DownloadString($ftpBase);" ^
-    "    $vers = [System.Text.RegularExpressions.Regex]::Matches($html, 'href=""(2\.4\.\d+)\/""') |" ^
-    "            Sort-Object { [version]$_.Groups[1].Value } | Select-Object -Last 1;" ^
-    "    if (-not $vers) { throw 'No LyX 2.4.x folder found on FTP.' }" ^
-    "    $verDir = $ftpBase + $vers.Groups[1].Value + '/';" ^
-    "    $dirHtml = $wc.DownloadString($verDir);" ^
-    "    $file = [System.Text.RegularExpressions.Regex]::Matches($dirHtml, 'LyX-24\d*-Installer-\d+-x64\.exe') |" ^
-    "            Select-Object -Last 1;" ^
-    "    if (-not $file) { throw 'No LyX 2.4 x64 installer found.' }" ^
-    "    $url = $verDir + $file.Value;" ^
-    "    $out = Join-Path $dest $file.Value;" ^
-    "    Write-Host ('  Downloading ' + $file.Value + '...');" ^
-    "    $wc.DownloadFile($url, $out);" ^
-    "    Write-Host ('  [OK]  ' + $file.Value) -ForegroundColor Green" ^
-    "} catch {" ^
-    "    Write-Host ('  [ERR] ' + $_.Exception.Message) -ForegroundColor Red; exit 1" ^
-    "}"
-
-if !errorlevel! neq 0 (
-    echo.
-    echo  [ERROR] Could not download LyX 2.4 installer. Check your internet connection.
-    echo.
-    pause
-    exit /b 1
-)
-
 :: ---  Self-elevate to Administrator if not already  ------------------------
 net session >nul 2>&1
 if %errorlevel% neq 0 (
@@ -113,7 +82,7 @@ if %errorlevel% neq 0 (
 :: ---  Launch PowerShell with -ExecutionPolicy Bypass  ----------------------
 echo.
 echo  ==========================================================
-echo   Starting MiKTeX + LyX Installer  (LyX 2.4)
+echo   Starting MiKTeX + LyX Installer
 echo   Script : %PS1_PATH%
 echo  ==========================================================
 echo.
