@@ -18,7 +18,6 @@ Format 5
 \bind "C-M-apostrophe"          "command-sequence newline-insert newline; inset-select-all; copy; cell-forward; cell-forward; paste"
 \bind "C-M-semicolon"           "command-sequence newline-insert newline; cell-backward; space-insert normal; inset-select-all; copy; line-begin; char-delete-forward; cell-forward; cell-forward; paste; line-begin; char-delete-forward; cell-backward; inset-select-all; copy; cell-forward; cell-forward; paste"
 \bind "C-S-quotedbl"            "command-sequence inset-select-all; cut; cell-backward; cell-backward; line-end; paste; cell-forward; cell-forward; tabular-feature delete-row"
-\bind "M-S-quotedbl"            "command-sequence inset-select-all; copy; paste; self-insert =; paste"
 \bind "C-apostrophe"            "command-sequence line-begin; line-begin; line-begin; line-begin; line-begin; line-begin; line-begin; line-begin; line-end-select; copy; line-end; math-display; paste"
 
 \bind "C-S-Return"              "command-sequence line-end-select; math-insert \\left[\\right.; char-left; inset-select-all; textstyle-update family 16 series 2 shape 4 size 12 color 0; escape; escape; char-left-select; textstyle-update family ignore series ignore shape ignore size ignore color 16; newline-insert newline; cell-forward; math-insert +; cell-forward; textstyle-update family ignore series ignore shape ignore size ignore color 16; math-insert \\left.\\right]; textstyle-update family ignore series ignore shape ignore size ignore color 0"
@@ -105,22 +104,16 @@ Format 5
 
 # Exponentiation
 \bind "S-7"             "math-insert ^"
+\bind "C-semicolon"             "command-sequence math-superscript; math-insert -1; escape"
+\bind "C-p"                     "command-sequence math-superscript; math-insert 2; escape"
+\bind "M-S-p"                   "command-sequence math-superscript; math-insert 3; escape"
 
-\bind "M-S-1"              "command-sequence math-insert ^{-1}; escape"
-\bind "M-S-2"                  "command-sequence math-insert ^{2}; escape"
-\bind "M-S-3"          "command-sequence math-insert ^{3}; escape"
-\bind "C-M-1"                   "command-sequence math-insert ^{-1}; escape"
-\bind "C-M-2"                   "command-sequence math-insert ^{2}; escape"
-\bind "C-M-3"                   "command-sequence math-insert ^{3}; escape"
-
-\bind "C-semicolon"             "command-sequence math-superscript; math-insert -1; escape"  #madlyx compatibility
-\bind "C-p"                     "command-sequence math-superscript; math-insert 2; escape"  #madlyx compatibility
-\bind "C-S-semicolon"               "command-sequence math-insert ^{-1}; escape"  #madlyx compatibility
-\bind "C-S-p"                   "command-sequence math-insert ^{2}; escape"  #madlyx compatibility
-
+\bind "C-S-semicolon"               "command-sequence math-insert ^{-1}; escape"
+\bind "C-S-p"                   "command-sequence math-insert ^{2}; escape"
 \bind "M-apostrophe"            "command-sequence math-superscript; math-insert \\prime; escape"
+
+\bind "C-M-2"                   "command-sequence math-superscript; math-insert \\dagger; escape"
 \bind "C-M-8"                   "command-sequence math-superscript; math-insert \\ast; escape"
-\bind "C-M-d"                   "command-sequence math-superscript; math-insert \\dagger; escape"
 \bind "C-M-t"                   "command-sequence math-superscript; math-insert T; escape"
 
 # Delimeters

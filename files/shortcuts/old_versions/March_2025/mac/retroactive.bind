@@ -72,9 +72,9 @@ Format 5
 \bind "M-d r"                   "command-sequence char-left-select; math-insert \\root"
 
 # Exponentiation
-\bind "M-d 2"                   "command-sequence math-superscript; math-insert \\dagger; escape"  #madlyx compatibility
-\bind "M-d 8"                   "command-sequence math-superscript; math-insert \\ast; escape"  #madlyx compatibility
-\bind "M-d S-t"                 "command-sequence math-superscript; math-insert T; escape"  #madlyx compatibility
+\bind "M-d 2"                   "command-sequence math-superscript; math-insert \\dagger; escape"
+\bind "M-d 8"                   "command-sequence math-superscript; math-insert \\ast; escape"
+\bind "M-d S-t"                 "command-sequence math-superscript; math-insert T; escape"
 \bind "M-d S-7"         "command-sequence char-left-select; math-delim ( ); math-superscript"
 
 # Delimeters

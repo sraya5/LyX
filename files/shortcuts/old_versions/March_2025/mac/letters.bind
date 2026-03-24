@@ -1,0 +1,166 @@
+Format 5
+
+# This file is based on the LyX's original shortcut files, and on the Michael Kali's shortcut file (see https://mkali56.wixsite.com/madlyx).
+# These files edited and published by me (Sraya Ansbacher), in the hope that it would help as many people as possible.
+
+# This file is one of six files: cua.bind, design.bind, environments.bind, symbols.bind, letters.bind, retroactive.bind
+# For more details go to my site: https://srayaa.wixsite.com/math
+# Email: sraya.ansbacher@mail.huji.ac.il
+
+
+#########################################################################################################################################
+
+##### GREEK LETTERS #####
+
+# prefix: Alt+w
+
+# Lowcase
+\bind "M-w a"       "math-insert \\alpha"
+\bind "M-w b"       "math-insert \\beta"
+\bind "M-w g"       "math-insert \\gamma"
+\bind "M-w d"       "math-insert \\delta"
+\bind "M-w M-e"     "math-insert \\epsilon"
+\bind "M-w e"       "math-insert \\varepsilon"
+\bind "M-w z"       "math-insert \\zeta"
+\bind "M-w h"       "math-insert \\eta"
+\bind "M-w v"       "math-insert \\theta"
+\bind "M-w M-v"     "math-insert \\vartheta"
+\bind "M-w i"       "math-insert \\iota"
+\bind "M-w k"       "math-insert \\kappa"
+\bind "M-w M-k"     "math-insert \\varkappa"
+\bind "M-w l"       "math-insert \\lambda"
+\bind "M-w m"       "math-insert \\mu"
+\bind "M-w n"       "math-insert \\nu"
+\bind "M-w x"       "math-insert \\xi"
+\bind "M-w p"       "math-insert \\pi"
+\bind "M-w M-p"     "math-insert \\varpi"
+\bind "M-w r"       "math-insert \\rho"
+\bind "M-w M-r"     "math-insert \\varrho"
+\bind "M-w s"       "math-insert \\sigma"
+\bind "M-w M-s"     "math-insert \\varsigma"
+\bind "M-w t"       "math-insert \\tau"
+\bind "M-w u"       "math-insert \\upsilon"
+\bind "M-w f"       "math-insert \\phi"
+\bind "M-w j"       "math-insert \\varphi"
+\bind "M-w M-f"     "math-insert \\varphi"
+\bind "M-w c"       "math-insert \\chi"
+\bind "M-w y"       "math-insert \\psi"
+\bind "M-w o"       "math-insert \\omega"
+\bind "M-w w"       "math-insert \\omega"
+
+# Uppercase
+\bind "M-w S-g"     "math-insert \\Gamma"
+\bind "M-w S-d"     "math-insert \\Delta"
+\bind "M-w S-v"     "math-insert \\Theta"
+\bind "M-w S-l"     "math-insert \\Lambda"
+\bind "M-w S-x"     "math-insert \\Xi"
+\bind "M-w S-p"     "math-insert \\Pi"
+\bind "M-w S-s"     "math-insert \\Sigma"
+\bind "M-w S-u"     "math-insert \\Upsilon"
+\bind "M-w S-f"     "math-insert \\Phi"
+\bind "M-w S-y"     "math-insert \\Psi"
+\bind "M-w S-o"     "math-insert \\Omega"
+\bind "M-w S-w"     "math-insert \\Omega"
+
+# varUppercase
+\bind "M-w S-a"     "math-insert \\MKcla"
+\bind "M-w S-b"     "math-insert \\MKclb"
+\bind "M-w S-c"     "math-insert \\MKclc"
+\bind "M-w M-S-g"   "math-insert \\varGamma"
+\bind "M-w M-S-d"   "math-insert \\varDelta"
+\bind "M-w M-S-v"   "math-insert \\varTheta"
+\bind "M-w M-S-l"   "math-insert \\varLambda"
+\bind "M-w M-S-x"   "math-insert \\varXi"
+\bind "M-w M-S-p"   "math-insert \\varPi"
+\bind "M-w M-S-s"   "math-insert \\varSigma"
+\bind "M-w M-S-u"   "math-insert \\varUpsilon"
+\bind "M-w M-S-f"   "math-insert \\varPhi"
+\bind "M-w M-S-y"   "math-insert \\varPsi"
+\bind "M-w M-S-o"   "math-insert \\varOmega"
+\bind "M-w M-S-w"   "math-insert \\varOmega"
+
+\bind "M-w M-l"     "math-insert \\ell"
+\bind "M-w S-n"     "math-insert \\nabla"
+
+
+#########################################################################################################################################
+
+##### FONTS #####
+
+# prefix: Alt-<font-letter>
+
+# Mathbb
+\bind "M-b S-a"     "math-insert \\MKbba"
+\bind "M-b S-b"     "math-insert \\MKbbb"
+\bind "M-b S-c"     "math-insert \\MKcomplex"
+\bind "M-b S-d"     "math-insert \\MKbbd"
+\bind "M-b S-e"     "math-insert \\MKbbe"
+\bind "M-b S-f"     "math-insert \\MKfield"
+\bind "M-b S-g"     "math-insert \\MKbbg"
+\bind "M-b S-h"     "math-insert \\MKbbh"
+\bind "M-b S-i"     "math-insert \\MKbbi"
+\bind "M-b S-j"     "math-insert \\MKbbj"
+\bind "M-b S-k"     "math-insert \\MKbbk"
+\bind "M-b S-l"     "math-insert \\MKbbl"
+\bind "M-b S-m"     "math-insert \\MKbbm"
+\bind "M-b S-n"     "math-insert \\MKnatural"
+\bind "M-b S-o"     "math-insert \\MKbbo"
+\bind "M-b S-p"     "math-insert \\MKbbp"
+\bind "M-b S-q"     "math-insert \\MKrational"
+\bind "M-b S-r"     "math-insert \\MKreal"
+\bind "M-b S-s"     "math-insert \\MKbbs"
+\bind "M-b S-t"     "math-insert \\MKbbt"
+\bind "M-b S-u"     "math-insert \\MKbbu"
+\bind "M-b S-v"     "math-insert \\MKbbv"
+\bind "M-b S-w"     "math-insert \\MKbbw"
+\bind "M-b S-x"     "math-insert \\MKbbx"
+\bind "M-b S-y"     "math-insert \\MKbby"
+\bind "M-b S-z"     "math-insert \\MKinteger"
+\bind "M-b 1"       "math-insert \\MKindicator"
+
+# Mathcal
+\bind "M-c S-a"     "math-insert \\MKcla"
+\bind "M-c S-b"     "math-insert \\MKclb"
+\bind "M-c S-c"     "math-insert \\MKclc"
+\bind "M-c S-d"     "math-insert \\MKcld"
+\bind "M-c S-e"     "math-insert \\MKcle"
+\bind "M-c S-f"     "math-insert \\MKclf"
+\bind "M-c S-g"     "math-insert \\MKclg"
+\bind "M-c S-h"     "math-insert \\MKclh"
+\bind "M-c S-i"     "math-insert \\MKcli"
+\bind "M-c S-j"     "math-insert \\MKclj"
+\bind "M-c S-k"     "math-insert \\MKclk"
+\bind "M-c S-l"     "math-insert \\MKcll"
+\bind "M-c S-m"     "math-insert \\MKclm"
+\bind "M-c S-n"     "math-insert \\MKcln"
+\bind "M-c S-o"     "math-insert \\MKclo"
+\bind "M-c S-p"     "math-insert \\MKclp"
+\bind "M-c S-q"     "math-insert \\MKclq"
+\bind "M-c S-r"     "math-insert \\MKclr"
+\bind "M-c S-s"     "math-insert \\MKcls"
+\bind "M-c S-t"     "math-insert \\MKclt"
+\bind "M-c S-u"     "math-insert \\MKclu"
+\bind "M-c S-v"     "math-insert \\MKclv"
+\bind "M-c S-w"     "math-insert \\MKclw"
+\bind "M-c S-x"     "math-insert \\MKclx"
+\bind "M-c S-y"     "math-insert \\MKcly"
+\bind "M-c S-z"     "math-insert \\MKclz"
+
+# Normal text mode
+\bind "M-t h"       "math-insert \\MKhom"
+\bind "M-t e"       "math-insert \\MKend"
+\bind "M-t a"       "math-insert \\MKaut"
+\bind "M-t i"       "math-insert \\MKinn"
+\bind "M-t o"       "math-insert \\MKout"
+
+\bind "M-t s"       "command-sequence math-insert \\MKsl_{n}; char-forward"
+\bind "M-t g"       "command-sequence math-insert \\MKgl_{n}; char-forward"
+
+\bind "M-t 2"       "math-insert \\MKeven"
+\bind "M-t 1"       "math-insert \\MKodd"
+\bind "M-t 3"       "math-insert \\MKprime"
+\bind "M-t S-o"     "command-sequence math-insert \\MKord_{p}; char-forward"
+
+\bind "M-t c"       "math-insert \\MKchar"
+
+\bind "M-t p"       "math-insert \\MKspan"

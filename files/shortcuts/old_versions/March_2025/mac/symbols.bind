@@ -39,7 +39,7 @@ Format 5
 
 # Others
 \bind "M-8"                 "math-insert \\infty"
-\bind "M-S-8"        "self-insert *"
+\bind "C-8"                 "math-insert \\ast"
 \bind "C-backslash"         "math-insert \\mid"
 \bind "C-M-backslash"       "math-insert \\nmid"
 \bind "M-S-backslash"             "math-insert \\Bigg|"
@@ -47,6 +47,38 @@ Format 5
 
 # Macros prefix
 \bind "C-k"                 "command-sequence math-insert \\MK; char-backward"
+
+
+#########################################################################################################################################
+
+##### ARROWS #####
+
+# prefix: as short as possible or Alt+a
+
+# Regular
+\bind "M-Up"                "math-insert \\uparrow"
+\bind "M-Down"              "math-insert \\downarrow"
+\bind "M-Right"             "math-insert \\rightarrow"
+\bind "M-Left"              "math-insert \\leftarrow"
+
+\bind "M-S-Down"            "math-insert \\longleftrightarrow"
+\bind "M-S-Right"           "math-insert \\longrightarrow"
+\bind "M-S-Left"            "math-insert \\longleftarrow"
+
+# Blackboard bold
+\bind "C-Up"                "math-insert \\Uparrow"
+\bind "C-Down"              "math-insert \\Downarrow"
+\bind "C-Right"             "math-insert \\Rightarrow"
+\bind "C-Left"              "math-insert \\Leftarrow"
+
+\bind "C-S-Down"            "math-insert \\Longleftrightarrow"
+\bind "C-S-Right"           "math-insert \\Longrightarrow"
+\bind "C-S-Left"            "math-insert \\Longleftarrow"
+
+# Special arrows
+\bind "M-a Right"           "math-insert \\mapsto"
+\bind "M-a M-Right"         "math-insert \\twoheadrightarrow"
+\bind "M-a C-Right"         "math-insert \\hookrightarrow"
 
 
 #########################################################################################################################################
@@ -70,9 +102,8 @@ Format 5
 \bind "M-q M-d"             "math-insert \\dim"
 \bind "M-q S-d"             "math-insert \\deg"
 \bind "M-q d"               "math-insert \\det"
-\bind "M-q p"               "math-insert \\MKspan"
-\bind "M-q r"               "math-insert \\MKrank"
 \bind "M-q C-S-t"           "math-insert \\MKtrace"
+\bind "M-q r"               "math-insert \\MKrank"
 
 # Analysis
 \bind "M-q e"               "math-insert \\exp"
@@ -143,7 +174,6 @@ Format 5
 
 # Relations
 \bind "M-i i"               "math-insert \\in"
-\bind "M-i M-i"             "math-insert \\in"
 \bind "M-i b"               "math-insert \\subseteq"
 \bind "M-i p"               "math-insert \\supseteq"
 \bind "M-i M-b"             "math-insert \\subset"
@@ -171,7 +201,7 @@ Format 5
 \bind "M-i equal"           "math-insert \\oplus"
 
 \bind "M-i S-u"             "command-sequence math-insert \\bigcup; math-superscript; cell-backward; math-subscript"
-\bind "M-i S-d"             "command-sequence math-insert \\MKbigcupdot; math-superscript; cell-backward; math-subscript"
+\bind "M-i S-d"             "command-sequence math-insert \\stackrelthree{\\MKbigcupdot}; down; down"
 \bind "M-i S-j"             "command-sequence math-insert \\bigcap; math-superscript; cell-backward; math-subscript"
 \bind "M-i S-8"      "command-sequence math-insert \\bigotimes; math-superscript; cell-backward; math-subscript"
 \bind "M-i S-equal"          "command-sequence math-insert \\bigoplus; math-superscript; cell-backward; math-subscript"
@@ -181,39 +211,6 @@ Format 5
 \bind "M-i C-S-j"           "command-sequence math-insert \\bigcap_{n=1}^{\\infty}; escape"
 \bind "M-i C-S-8"    "command-sequence math-insert \\bigotimes_{n=1}^{\\infty}; escape"
 \bind "M-i C-S-equal"        "command-sequence math-insert \\bigoplus_{n=1}^{\\infty}; escape"
-
-
-#########################################################################################################################################
-
-##### ARROWS #####
-
-# prefix: as short as possible or Alt+b or Alt+i
-
-# Regular
-\bind "M-Up"                "math-insert \\uparrow"
-\bind "M-Down"              "math-insert \\downarrow"
-\bind "M-Right"             "math-insert \\rightarrow"
-\bind "M-Left"              "math-insert \\leftarrow"
-
-\bind "M-S-Down"            "math-insert \\longleftrightarrow"
-\bind "M-S-Right"           "math-insert \\longrightarrow"
-\bind "M-S-Left"            "math-insert \\longleftarrow"
-
-# Blackboard bold
-\bind "M-b Up"              "math-insert \\Uparrow"
-\bind "M-b Down"            "math-insert \\Downarrow"
-\bind "M-b Right"           "math-insert \\Rightarrow"
-\bind "M-b Left"            "math-insert \\Leftarrow"
-
-\bind "M-b S-Up"            "math-insert \\Longleftrightarrow"
-\bind "M-b S-Down"          "math-insert \\Longleftrightarrow"
-\bind "M-b S-Right"         "math-insert \\Longrightarrow"
-\bind "M-b S-Left"          "math-insert \\Longleftarrow"
-
-# Special arrows
-\bind "M-i Right"           "math-insert \\mapsto"
-\bind "M-i M-Right"         "math-insert \\twoheadrightarrow"
-\bind "M-i C-Right"         "math-insert \\hookrightarrow"
 
 
 #########################################################################################################################################
@@ -250,10 +247,7 @@ Format 5
 \bind "M-g p"               "math-insert \\parallel"
 \bind "M-g S-p"             "math-insert \\nparallel"
 \bind "M-g a"               "math-insert \\measuredangle"
-\bind "M-g S-a"             "math-insert \\angle"
 \bind "M-g M-a"             "math-insert \\sphericalangle"
-\bind "M-g 3"               "math-insert \\triangle"
-\bind "M-g 4"               "math-insert \\square"
 
 
 #########################################################################################################################################
@@ -270,19 +264,12 @@ Format 5
 \bind "C-M-o"               "command-sequence math-insert \\ointop; math-subscript"
 
 \bind "C-S-u"               "command-sequence math-insert \\sum_{n=1}^{\\infty}; escape"
-
-\bind "C-S-i 0"             "command-sequence math-insert \\intop_{0}^{\\infty}f\\left(x\\right)dx; char-left; char-left; char-left; char-left; char-left; char-left; char-right-select"
-\bind "C-S-i a"             "command-sequence math-insert \\intop_{a}^{b}f\\left(x\\right)dx; char-left; char-left; char-left; char-left; char-left; char-left; char-right-select"
+\bind "C-S-i"               "command-sequence math-insert \\intop_{a}^{b}f\\left(x\\right)dx; char-left; char-left; char-left; char-left; char-left; char-left; char-right-select"
 
 \bind "M-S-u 1"             "command-sequence math-insert \\sum_{n=1}^{\\infty}; escape"
 \bind "M-S-u 0"             "command-sequence math-insert \\sum_{n=0}^{\\infty}; escape"
 \bind "M-S-u a"             "math-insert \\sum_{n=1}^{\\infty}a_{n}"
 \bind "M-S-u M-a"           "math-insert \\sum_{n=0}^{\\infty}a_{n}"
-
-\bind "M-S-p 1"             "command-sequence math-insert \\prod_{n=1}^{\\infty}; escape"
-\bind "M-S-p 0"             "command-sequence math-insert \\prod_{n=0}^{\\infty}; escape"
-\bind "M-S-p a"             "math-insert \\prod_{n=1}^{\\infty}a_{n}"
-\bind "M-S-p M-a"           "math-insert \\prod_{n=0}^{\\infty}a_{n}"
 
 \bind "M-S-i"               "command-sequence math-insert \\iintop; math-subscript"
 \bind "M-S-o"               "command-sequence math-insert \\oiintop; math-subscript"
