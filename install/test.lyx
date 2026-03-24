@@ -152,6 +152,20 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
+לאחר מכן,
+ אנא מלאו את הסקר 
+\begin_inset CommandInset href
+LatexCommand href
+name "הזה"
+target "https://forms.gle/rfdkeqFxeZhgu8GS8"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
 זה הזמן לשתי פרסומות לא כל כך סמויות:
 \end_layout
 
