@@ -30,11 +30,11 @@ theorems-ams
 \language_package none
 \inputencoding auto-legacy
 \fontencoding auto
-\font_roman "default" "Times New Roman"
+\font_roman "default" "Arial"
 \font_sans "default" "Arial"
-\font_typewriter "default" "Courier New"
+\font_typewriter "default" "Arial"
 \font_math "auto" "auto"
-\font_default_family sfdefault
+\font_default_family default
 \use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
@@ -1107,7 +1107,7 @@ V-E+F=2
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
+\begin_inset space ~
 \end_inset
 
 

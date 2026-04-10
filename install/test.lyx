@@ -6,19 +6,17 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-\usepackage{polyglossia}
-\setdefaultlanguage{hebrew}
-\setotherlanguage{english}
-% Make the footnoterule on the right side.
-\AtBeginDocument{
-\renewcommand\footnoterule{%
-\kern 3pt
-\hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
-\kern 4pt
-}
-}
-% Added by lyx2lyx
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage{polyglossia}
+\setdefaultlanguage{hebrew}
+\setotherlanguage{english}
+% Make the footnoterule on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+\kern 3pt
+\hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+\kern 4pt
+}
+}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -31,9 +29,9 @@ theorems-ams
 \language_package none
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "Times New Roman"
+\font_roman "default" "Arial"
 \font_sans "default" "Arial"
-\font_typewriter "default" "Courier New"
+\font_typewriter "default" "Arial"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts true
@@ -1060,7 +1058,7 @@ V-E+F=2
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
+\begin_inset space ~
 \end_inset
 
 
