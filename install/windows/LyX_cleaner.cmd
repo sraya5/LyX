@@ -1,7 +1,7 @@
 @echo off
 :: ============================================================
 ::  LyX_cleaner.cmd
-::  Source: https://lyx.srayaa.com/install/windows
+::  Source: https://lyx.srayaa.com/install
 ::  Wrote by Sraya Ansbacher with Claude ai.
 ::
 ::  Double-click to run the PowerShell uninstaller as Admin.

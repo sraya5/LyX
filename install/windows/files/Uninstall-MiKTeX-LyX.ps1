@@ -1,6 +1,6 @@
 # ============================================================
 #  Uninstall-MiKTeX-LyX.ps1
-#  Source: https://lyx.srayaa.com/install/windows
+#  Source: https://lyx.srayaa.com/install
 #  Wrote by Sraya Ansbacher with Claude ai.
 #
 #  Silent removal of MiKTeX and LyX (no GUI popups)

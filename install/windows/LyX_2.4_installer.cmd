@@ -1,7 +1,7 @@
 @echo off
 :: ============================================================
 ::  LyX_2.4_installer.cmd
-::  Source: https://lyx.srayaa.com/install/windows
+::  Source: https://lyx.srayaa.com/install
 ::  Wrote by Sraya Ansbacher with Claude ai.
 ::
 ::  Same as installer.cmd but also downloads the latest
@@ -45,15 +45,24 @@ if "%NEED_DOWNLOAD%"=="1" (
 
     powershell -NoProfile -ExecutionPolicy Bypass -Command ^
         "$baseUrl = '%BASE_URL%'; $dest = '%FILES_DIR%';" ^
-        "$files = @('Install-MiKTeX-LyX.ps1','preferences','user.bind','he_IL.dic','he_IL.aff');" ^
+        "$required = @('Install-MiKTeX-LyX.ps1','preferences','user.bind');" ^
+        "$optional = @('he_IL.dic','he_IL.aff');" ^
         "$wc = New-Object System.Net.WebClient;" ^
-        "foreach ($f in $files) {" ^
+        "foreach ($f in $required) {" ^
         "    $out = Join-Path $dest $f;" ^
         "    if (Test-Path $out) { Write-Host ('  [SKIP] ' + $f + ' (already exists)'); continue }" ^
         "    $url = $baseUrl + '/' + $f;" ^
         "    Write-Host ('  Downloading ' + $f + '...');" ^
         "    try { $wc.DownloadFile($url, $out); Write-Host ('  [OK]  ' + $f) -ForegroundColor Green }" ^
         "    catch { Write-Host ('  [ERR] ' + $f + ': ' + $_.Exception.Message) -ForegroundColor Red; exit 1 }" ^
+        "}" ^
+        "foreach ($f in $optional) {" ^
+        "    $out = Join-Path $dest $f;" ^
+        "    if (Test-Path $out) { Write-Host ('  [SKIP] ' + $f + ' (already exists)'); continue }" ^
+        "    $url = $baseUrl + '/' + $f;" ^
+        "    Write-Host ('  Downloading ' + $f + '...');" ^
+        "    try { $wc.DownloadFile($url, $out); Write-Host ('  [OK]  ' + $f) -ForegroundColor Green }" ^
+        "    catch { Write-Host ('  [!!]  ' + $f + ': ' + $_.Exception.Message + ' - skipping') -ForegroundColor Magenta }" ^
         "}"
 
     if !errorlevel! neq 0 (

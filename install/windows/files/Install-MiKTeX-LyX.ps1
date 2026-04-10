@@ -1,14 +1,14 @@
 #Requires -Version 5.1
 # ===========================================================================
 #  Install-MiKTeX-LyX.ps1
-#  Source: https://lyx.srayaa.com/install/windows
+#  Source: https://lyx.srayaa.com/install
 #  Wrote by Sraya Ansbacher with Claude ai.
 #
 #  Bundled files (same folder as this script):
 #      preferences              (LyX preferences file - no extension)
 #      user.bind                (LyX key-binding file)
-#      he_IL.dic                (Hebrew Hunspell dict  - fallback)
-#      he_IL.aff                (Hebrew Hunspell affix - fallback)
+#      he_IL.dic                (Hebrew Hunspell dict  - optional fallback)
+#      he_IL.aff                (Hebrew Hunspell affix - optional fallback)
 #      basic-miktex-*-x64.exe   (optional - downloaded automatically if absent)
 #      LyX-*-x64.exe            (optional - downloaded automatically if absent)
 # ===========================================================================
@@ -374,22 +374,26 @@ if ($lyxExe) {
     Write-Step 'Running LyX silent installer...'
     Write-Host ''
 
-    # Block outbound HTTP/HTTPS so the LyX installer cannot download dictionaries.
-    # We deploy the Hebrew dicts ourselves in Step 3.
-    $fwRules = @{ 'LyX-Installer-Block80' = 80; 'LyX-Installer-Block443' = 443 }
-    $fwAdded = [System.Collections.Generic.List[string]]::new()
-    foreach ($name in $fwRules.Keys) {
-        try {
-            New-NetFirewallRule -Name $name -DisplayName $name `
-                -Direction Outbound -Action Block -Protocol TCP -RemotePort $fwRules[$name] `
-                -ErrorAction Stop | Out-Null
-            $fwAdded.Add($name)
-        } catch { Write-Warn "Could not add firewall rule '$name': $_" }
-    }
-    if ($fwAdded.Count -eq $fwRules.Count) {
-        Write-OK 'Firewall rules added - dictionary download will be skipped.'
-    } else {
-        Write-Warn 'Some firewall rules could not be added - dictionary download may occur.'
+    # Block only the LyX dictionary download server by adding a temporary hosts
+    # entry. This leaves all other internet access untouched.
+    # We deploy the Hebrew dicts ourselves in Step 3 regardless.
+    $hostsFile    = "$env:SystemRoot\System32\drivers\etc\hosts"
+    $hostsMarker  = '# LyX-dict-block'
+    $hostsEntries = @(
+        "127.0.0.1 ftp.lip6.fr $hostsMarker",
+        "127.0.0.1 ftp.lyx.org $hostsMarker",
+        "127.0.0.1 www.lyx.org $hostsMarker"
+    )
+    $hostsAdded = $false
+    try {
+        $current = Get-Content $hostsFile -Raw -ErrorAction Stop
+        if ($current -notmatch [regex]::Escape($hostsMarker)) {
+            Add-Content -Path $hostsFile -Value ("`r`n" + ($hostsEntries -join "`r`n")) -ErrorAction Stop
+            $hostsAdded = $true
+            Write-OK 'Hosts entries added - dictionary download server blocked.'
+        }
+    } catch {
+        Write-Warn "Could not modify hosts file: $_ - dictionary download may occur."
     }
 
     try {
@@ -398,7 +402,6 @@ if ($lyxExe) {
         $lyxProc = [System.Diagnostics.Process]::Start($psi)
     } catch {
         Write-Err "Could not launch LyX installer: $_"
-        $fwAdded | ForEach-Object { Remove-NetFirewallRule -Name $_ -ErrorAction SilentlyContinue }
         Stop-Transcript | Out-Null; exit 1
     }
 
@@ -417,8 +420,17 @@ if ($lyxExe) {
     $timer.Stop()
     Write-Host ''
 
-    $fwAdded | ForEach-Object { Remove-NetFirewallRule -Name $_ -ErrorAction SilentlyContinue }
-    if ($fwAdded.Count -gt 0) { Write-OK 'Firewall rules removed.' }
+    # Remove the temporary hosts entries
+    if ($hostsAdded) {
+        try {
+            $lines = Get-Content $hostsFile | Where-Object { $_ -notmatch [regex]::Escape($hostsMarker) }
+            Set-Content -Path $hostsFile -Value $lines -ErrorAction Stop
+            Write-OK 'Hosts entries removed.'
+        } catch {
+            Write-Warn "Could not remove hosts entries: $_"
+            Write-Warn "Please manually remove lines containing '$hostsMarker' from $hostsFile"
+        }
+    }
 
     if (($null -ne $lyxProc.ExitCode) -and ($lyxProc.ExitCode -ne 0)) {
         Write-Warn ("LyX installer exited with code " + $lyxProc.ExitCode)
@@ -533,7 +545,7 @@ function Get-Dict {
         Copy-Item -Path $Fallback -Destination $Dest -Force
         Write-OK "Used bundled $Label as fallback."
     } else {
-        Write-Err "$Label unavailable - Hebrew spell-check will be missing."
+        Write-Warn "$Label not available - Hebrew spell-check will be missing."
     }
 }
 
