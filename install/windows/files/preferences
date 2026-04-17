@@ -9,6 +9,8 @@ Format 38
 #
 
 \path_prefix "C:/Program Files/MiKTeX/miktex/bin/x64;$LyXDir/bin;$LyXDir/Python;$LyXDir/Python/Lib;$LyXDir/Python/Scripts;$LyXDir/imagemagick;$LyXDir/ghostscript/bin"
+# The time interval between auto-saves in seconds.
+\autosave 60
 \kbmap true
 \kbmap_primary "null"
 \kbmap_secondary "hebrew"
@@ -45,7 +47,6 @@ Format 38
 \completion_inline_text true
 \completion_popup_delay 1.5
 \completion_popup_text true
-\make_backup false
 
 #
 # PLAIN TEXT EXPORT SECTION ##############################
